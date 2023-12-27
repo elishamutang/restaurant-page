@@ -8,6 +8,7 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         filename: 'main.js',
         clean: true,
+        assetModuleFilename: '[name][ext]',
     },
     devtool: 'source-map',
     devServer: {
@@ -19,6 +20,14 @@ module.exports = {
         hot: true,
         compress: true,
         historyApiFallback: true,
+    },
+    module: {
+        rules: [
+            {
+                test: /\.(png|svg|jpg|jpeg|gif)$/i,
+                type: 'asset/resource'
+            },
+        ],
     },
     plugins: [
         new HtmlWebpackPlugin({
