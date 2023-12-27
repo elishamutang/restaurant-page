@@ -9,6 +9,7 @@ module.exports = {
         filename: 'main.js',
         clean: true,
     },
+    devtool: 'source-map',
     devServer: {
         static: {
             directory: path.resolve(__dirname, 'dist')
