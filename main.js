@@ -15,7 +15,7 @@
   \**********************/
 /***/ (() => {
 
-eval("const test = document.querySelector(\"#content\");\n\ntest.innerHTML = \"Restaurant page test\";\n\n//# sourceURL=webpack://package.json/./src/index.js?");
+eval("const test = document.querySelector(\"#content\");\n\ntest.innerHTML = \"Restaurant page test\";\n\nconsole.log(\"Webpack dev test\");\n\n//# sourceURL=webpack://package.json/./src/index.js?");
 
 /***/ })
 
