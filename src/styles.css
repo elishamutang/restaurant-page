@@ -3,35 +3,59 @@
     padding: 0;
 }
 
+/* Declare CSS variables */
+:root {
+    --header: #47814e;
+    --content: #c9ffe2;
+    --tabBar: rgb(216, 31, 31);
+}
+
 body {
     box-sizing: border-box;
     height: 100vh;
+    background-color: var(--content);
 }
 
 /* Main container div */
 #mainContainer {
     width: 100vw;
     height: 100vh;
-    background-color: #c9ffe2;
+    background-color: var(--content);
 
     display: grid;
-    grid-template-rows: 200px 1fr;
+    grid-template-rows: 150px 1fr;
 }
 
 /* Header div */
 #header {
     width: 100vw;
-    height: 200px;
+    height: 150px;
     border: 1px solid black;
-    background-color: #4b7f52;
+    background-color: var(--header);
     position: fixed;
     grid-row: 1 / 2;
+
+    display: grid;
+    grid-template-rows: 0.7fr 0.3fr;
+}
+
+/* Logo div */
+#logoDiv {
+    width: inherit;
+    background-color: var(--header);
+    grid-row: 1 / 2;
+}
+
+/* Tab bar div */
+#tabDiv {
+    width: inherit;
+    background-color: var(--tabBar);
+    grid-row: 2 / 3;
 }
 
 /* Main content div */
 #content {
     width: inherit;
     height: 100%;
-    border: 1px solid red;
     grid-row: 2 / 3;
 }
