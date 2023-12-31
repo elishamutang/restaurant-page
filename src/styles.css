@@ -6,16 +6,16 @@
 body {
     box-sizing: border-box;
     height: 100vh;
-
-    display: grid;
-    grid-template-rows: 0.2fr 1fr;
 }
 
-/* Content div */
+/* Main container div */
 #mainContainer {
     width: 100vw;
     height: 100vh;
     background-color: #c9ffe2;
+
+    display: grid;
+    grid-template-rows: 200px 1fr;
 }
 
 /* Header div */
@@ -26,4 +26,12 @@ body {
     background-color: #4b7f52;
     position: fixed;
     grid-row: 1 / 2;
+}
+
+/* Main content div */
+#content {
+    width: inherit;
+    height: 100%;
+    border: 1px solid red;
+    grid-row: 2 / 3;
 }
