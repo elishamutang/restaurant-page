@@ -29,9 +29,6 @@ ___CSS_LOADER_EXPORT___.push([module.id, `* {
 body {
     box-sizing: border-box;
     height: 100vh;
-
-    display: grid;
-    grid-template-rows: 0.2fr 1fr;
 }
 
 /* Main container div */
@@ -39,6 +36,9 @@ body {
     width: 100vw;
     height: 100vh;
     background-color: #c9ffe2;
+
+    display: grid;
+    grid-template-rows: 200px 1fr;
 }
 
 /* Header div */
@@ -48,7 +48,7 @@ body {
     border: 1px solid black;
     background-color: #4b7f52;
     position: fixed;
-    grid-row: 2 / 3;
+    grid-row: 1 / 2;
 }
 
 /* Main content div */
@@ -56,8 +56,8 @@ body {
     width: inherit;
     height: 100%;
     border: 1px solid red;
-    grid-row: 1 / 2;
-}`, "",{"version":3,"sources":["webpack://./src/styles.css"],"names":[],"mappings":"AAAA;IACI,SAAS;IACT,UAAU;AACd;;AAEA;IACI,sBAAsB;IACtB,aAAa;;IAEb,aAAa;IACb,6BAA6B;AACjC;;AAEA,uBAAuB;AACvB;IACI,YAAY;IACZ,aAAa;IACb,yBAAyB;AAC7B;;AAEA,eAAe;AACf;IACI,YAAY;IACZ,aAAa;IACb,uBAAuB;IACvB,yBAAyB;IACzB,eAAe;IACf,eAAe;AACnB;;AAEA,qBAAqB;AACrB;IACI,cAAc;IACd,YAAY;IACZ,qBAAqB;IACrB,eAAe;AACnB","sourcesContent":["* {\n    margin: 0;\n    padding: 0;\n}\n\nbody {\n    box-sizing: border-box;\n    height: 100vh;\n\n    display: grid;\n    grid-template-rows: 0.2fr 1fr;\n}\n\n/* Main container div */\n#mainContainer {\n    width: 100vw;\n    height: 100vh;\n    background-color: #c9ffe2;\n}\n\n/* Header div */\n#header {\n    width: 100vw;\n    height: 200px;\n    border: 1px solid black;\n    background-color: #4b7f52;\n    position: fixed;\n    grid-row: 2 / 3;\n}\n\n/* Main content div */\n#content {\n    width: inherit;\n    height: 100%;\n    border: 1px solid red;\n    grid-row: 1 / 2;\n}"],"sourceRoot":""}]);
+    grid-row: 2 / 3;
+}`, "",{"version":3,"sources":["webpack://./src/styles.css"],"names":[],"mappings":"AAAA;IACI,SAAS;IACT,UAAU;AACd;;AAEA;IACI,sBAAsB;IACtB,aAAa;AACjB;;AAEA,uBAAuB;AACvB;IACI,YAAY;IACZ,aAAa;IACb,yBAAyB;;IAEzB,aAAa;IACb,6BAA6B;AACjC;;AAEA,eAAe;AACf;IACI,YAAY;IACZ,aAAa;IACb,uBAAuB;IACvB,yBAAyB;IACzB,eAAe;IACf,eAAe;AACnB;;AAEA,qBAAqB;AACrB;IACI,cAAc;IACd,YAAY;IACZ,qBAAqB;IACrB,eAAe;AACnB","sourcesContent":["* {\n    margin: 0;\n    padding: 0;\n}\n\nbody {\n    box-sizing: border-box;\n    height: 100vh;\n}\n\n/* Main container div */\n#mainContainer {\n    width: 100vw;\n    height: 100vh;\n    background-color: #c9ffe2;\n\n    display: grid;\n    grid-template-rows: 200px 1fr;\n}\n\n/* Header div */\n#header {\n    width: 100vw;\n    height: 200px;\n    border: 1px solid black;\n    background-color: #4b7f52;\n    position: fixed;\n    grid-row: 1 / 2;\n}\n\n/* Main content div */\n#content {\n    width: inherit;\n    height: 100%;\n    border: 1px solid red;\n    grid-row: 2 / 3;\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
