@@ -2,5 +2,5 @@
 // load-up.
 
 import test from './home.js';
-import styles from "./styles.css";
+import styles from './styles.css';
 
