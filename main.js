@@ -1,4 +1,5 @@
 /******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
 /***/ "./node_modules/css-loader/dist/cjs.js!./src/styles.css":
@@ -7,7 +8,6 @@
   \**************************************************************/
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -21,9 +21,35 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, `body {
-    color: lightblue;
-}`, "",{"version":3,"sources":["webpack://./src/styles.css"],"names":[],"mappings":"AAAA;IACI,gBAAgB;AACpB","sourcesContent":["body {\n    color: lightblue;\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, `* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    box-sizing: border-box;
+    height: 100vh;
+
+    display: grid;
+    grid-template-rows: 0.2fr 1fr;
+}
+
+/* Content div */
+#mainContainer {
+    width: 100vw;
+    height: 100vh;
+    background-color: #c9ffe2;
+}
+
+/* Header div */
+#header {
+    width: 100vw;
+    height: 200px;
+    border: 1px solid black;
+    background-color: #4b7f52;
+    position: fixed;
+    grid-row: 1 / 2;
+}`, "",{"version":3,"sources":["webpack://./src/styles.css"],"names":[],"mappings":"AAAA;IACI,SAAS;IACT,UAAU;AACd;;AAEA;IACI,sBAAsB;IACtB,aAAa;;IAEb,aAAa;IACb,6BAA6B;AACjC;;AAEA,gBAAgB;AAChB;IACI,YAAY;IACZ,aAAa;IACb,yBAAyB;AAC7B;;AAEA,eAAe;AACf;IACI,YAAY;IACZ,aAAa;IACb,uBAAuB;IACvB,yBAAyB;IACzB,eAAe;IACf,eAAe;AACnB","sourcesContent":["* {\n    margin: 0;\n    padding: 0;\n}\n\nbody {\n    box-sizing: border-box;\n    height: 100vh;\n\n    display: grid;\n    grid-template-rows: 0.2fr 1fr;\n}\n\n/* Content div */\n#mainContainer {\n    width: 100vw;\n    height: 100vh;\n    background-color: #c9ffe2;\n}\n\n/* Header div */\n#header {\n    width: 100vw;\n    height: 200px;\n    border: 1px solid black;\n    background-color: #4b7f52;\n    position: fixed;\n    grid-row: 1 / 2;\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -36,7 +62,6 @@ ___CSS_LOADER_EXPORT___.push([module.id, `body {
   \*****************************************************/
 /***/ ((module) => {
 
-"use strict";
 
 
 /*
@@ -131,7 +156,6 @@ module.exports = function (cssWithMappingToString) {
   \************************************************************/
 /***/ ((module) => {
 
-"use strict";
 
 
 module.exports = function (item) {
@@ -157,7 +181,6 @@ module.exports = function (item) {
   \************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -212,7 +235,6 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
   \****************************************************************************/
 /***/ ((module) => {
 
-"use strict";
 
 
 var stylesInDOM = [];
@@ -306,7 +328,6 @@ module.exports = function (list, options) {
   \********************************************************************/
 /***/ ((module) => {
 
-"use strict";
 
 
 var memo = {};
@@ -350,7 +371,6 @@ module.exports = insertBySelector;
   \**********************************************************************/
 /***/ ((module) => {
 
-"use strict";
 
 
 /* istanbul ignore next  */
@@ -370,7 +390,6 @@ module.exports = insertStyleElement;
   \**********************************************************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-"use strict";
 
 
 /* istanbul ignore next  */
@@ -390,7 +409,6 @@ module.exports = setAttributesWithoutAttributes;
   \***************************************************************/
 /***/ ((module) => {
 
-"use strict";
 
 
 /* istanbul ignore next  */
@@ -461,7 +479,6 @@ module.exports = domAPI;
   \*********************************************************************/
 /***/ ((module) => {
 
-"use strict";
 
 
 /* istanbul ignore next  */
@@ -479,20 +496,21 @@ module.exports = styleTagTransform;
 
 /***/ }),
 
-/***/ "./src/home.js":
-/*!*********************!*\
-  !*** ./src/home.js ***!
-  \*********************/
-/***/ (() => {
+/***/ "./src/header.js":
+/*!***********************!*\
+  !*** ./src/header.js ***!
+  \***********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-// export const test = document.querySelector("#content");
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   header: () => (/* binding */ header)
+/* harmony export */ });
+// Module for generating and appending header to webpage.
 
-// test.innerHTML = "Restaurant page test";
-
-// export const testDiv = document.createElement('div');
-
-// testDiv.innerHTML = "Test Div";
-// test.append(testDiv);
+const header = document.createElement("div");
+header.className = "header";
+header.id = "header";
 
 /***/ })
 
@@ -570,23 +588,24 @@ module.exports = styleTagTransform;
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be in strict mode.
+// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 (() => {
-"use strict";
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _home_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./home.js */ "./src/home.js");
-/* harmony import */ var _home_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_home_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./styles.css */ "./src/styles.css");
+/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles.css */ "./src/styles.css");
+/* harmony import */ var _header_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./header.js */ "./src/header.js");
 // This module is the main module containing of the tab switching logic and page 
 // load-up.
 
 
 
 
+// Target content div
+const contentDiv = document.querySelector('#content');
 
+contentDiv.append(_header_js__WEBPACK_IMPORTED_MODULE_1__.header);
 })();
 
 /******/ })()
