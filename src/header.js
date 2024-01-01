@@ -9,9 +9,15 @@ header.id = "header";
 const logoDiv = document.createElement('div');
 logoDiv.className = 'header';
 logoDiv.id = 'logoDiv';
-logoDiv.textContent = 'Oriental Kopi';
 
 header.append(logoDiv);
+
+// Company name
+const companyName = document.createElement('div');
+companyName.id = 'companyName';
+companyName.textContent = 'Oriental Kopi';
+
+logoDiv.append(companyName);
 
 // Tabs on header div
 const tabDiv = document.createElement('div');
