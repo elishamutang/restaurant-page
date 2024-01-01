@@ -20,7 +20,7 @@ companyName.textContent = 'Oriental Kopi';
 logoDiv.append(companyName);
 
 // Tabs on header div
-const tabDiv = document.createElement('div');
+export const tabDiv = document.createElement('div');
 tabDiv.className = 'header';
 tabDiv.id = 'tabDiv';
 
