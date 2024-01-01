@@ -6,8 +6,12 @@ export const menuBarDivs = [];
 for(let i = 0; i < 5; i++) {
     const item = document.createElement('div');
     item.dataset.index = `${i}`;
-    item.textContent = `${menuBarItems[i]}`;
+    item.className = 'menu-item';
     menuBarDivs.push(item);
+
+    const itemLink = document.createElement('a');
+    itemLink.textContent = `${menuBarItems[i]}`;
+    menuBarDivs[i].append(itemLink);
 }
 
 console.log(menuBarDivs);
