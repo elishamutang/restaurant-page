@@ -5,7 +5,7 @@
 
 /* Declare CSS variables */
 :root {
-    --header: #47814e;
+    --header: #45714a;
     --content: #c9ffe2;
     --tabBar: rgb(187, 37, 37);
 }
@@ -83,8 +83,12 @@ a:hover {
 }
 
 /* Main content div */
-#content {
+#picture {
     width: inherit;
     height: 100%;
     grid-row: 2 / 3;
+}
+
+#picture > img {
+    width: 100vw;
 }

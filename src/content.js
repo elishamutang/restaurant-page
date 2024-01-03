@@ -1,16 +1,10 @@
-// Content after header
-
-export const content = document.createElement('div');
-content.className = 'content';
-content.id = 'content';
-
-content.textContent = 'Testing, this is a main content div';
+import orientalImg from './assets/oriental_picture.jpeg';
 
 // Oriental kopi picture
-const pictureDiv = document.createElement('div');
+export const pictureDiv = document.createElement('div');
 pictureDiv.id = 'picture';
 
 const image = document.createElement('img');
-image.src = './assets/oriental_picture.jpeg';
+image.src = orientalImg;
 
 pictureDiv.append(image);

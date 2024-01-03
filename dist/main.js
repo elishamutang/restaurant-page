@@ -79,11 +79,6 @@ body {
     align-items: center;
 }
 
-/* Company name */
-#companyName {
-    /* border: 1px solid black; */
-}
-
 /* Tab bar div */
 #tabDiv {
     width: inherit;
@@ -115,7 +110,7 @@ a:hover {
     width: inherit;
     height: 100%;
     grid-row: 2 / 3;
-}`, "",{"version":3,"sources":["webpack://./src/styles.css"],"names":[],"mappings":"AAAA;IACI,SAAS;IACT,UAAU;AACd;;AAEA,0BAA0B;AAC1B;IACI,iBAAiB;IACjB,kBAAkB;IAClB,0BAA0B;AAC9B;;AAEA;IACI,sBAAsB;IACtB,aAAa;IACb,gCAAgC;AACpC;;AAEA,uBAAuB;AACvB;IACI,YAAY;IACZ,aAAa;IACb,gCAAgC;;IAEhC,aAAa;IACb,6BAA6B;AACjC;;AAEA,eAAe;AACf;IACI,YAAY;IACZ,aAAa;IACb,uBAAuB;IACvB,+BAA+B;IAC/B,eAAe;IACf,eAAe;;IAEf,aAAa;IACb,+BAA+B;AACnC;;AAEA,aAAa;AACb;IACI,cAAc;IACd,+BAA+B;IAC/B,eAAe;;IAEf,yCAAyC;IACzC,eAAe;IACf,iBAAiB;IACjB,YAAY;IACZ,mBAAmB;;IAEnB,aAAa;IACb,uBAAuB;IACvB,mBAAmB;AACvB;;AAEA,iBAAiB;AACjB;IACI,6BAA6B;AACjC;;AAEA,gBAAgB;AAChB;IACI,cAAc;IACd,+BAA+B;IAC/B,eAAe;;IAEf,aAAa;IACb,uBAAuB;IACvB,mBAAmB;IACnB,SAAS;AACb;;AAEA;IACI,6BAA6B;IAC7B,YAAY;AAChB;;AAEA;IACI,eAAe;IACf,gBAAgB;AACpB;;AAEA;IACI,oBAAoB;AACxB;;AAEA,qBAAqB;AACrB;IACI,cAAc;IACd,YAAY;IACZ,eAAe;AACnB","sourcesContent":["* {\n    margin: 0;\n    padding: 0;\n}\n\n/* Declare CSS variables */\n:root {\n    --header: #47814e;\n    --content: #c9ffe2;\n    --tabBar: rgb(187, 37, 37);\n}\n\nbody {\n    box-sizing: border-box;\n    height: 100vh;\n    background-color: var(--content);\n}\n\n/* Main container div */\n#mainContainer {\n    width: 100vw;\n    height: 100vh;\n    background-color: var(--content);\n\n    display: grid;\n    grid-template-rows: 150px 1fr;\n}\n\n/* Header div */\n#header {\n    width: 100vw;\n    height: 150px;\n    border: 1px solid black;\n    background-color: var(--header);\n    position: fixed;\n    grid-row: 1 / 2;\n\n    display: grid;\n    grid-template-rows: 0.7fr 0.3fr;\n}\n\n/* Logo div */\n#logoDiv {\n    width: inherit;\n    background-color: var(--header);\n    grid-row: 1 / 2;\n\n    font-family: Arial, Helvetica, sans-serif;\n    font-size: 50px;\n    font-weight: bold;\n    color: white;\n    letter-spacing: 3px;\n\n    display: flex;\n    justify-content: center;\n    align-items: center;\n}\n\n/* Company name */\n#companyName {\n    /* border: 1px solid black; */\n}\n\n/* Tab bar div */\n#tabDiv {\n    width: inherit;\n    background-color: var(--tabBar);\n    grid-row: 2 / 3;\n\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    gap: 20px;\n}\n\n.menu-item {\n    /* border: 1px solid black; */\n    color: white;\n}\n\na {\n    cursor: pointer;\n    transition: 0.2s;\n}\n\na:hover {\n    color: var(--header);\n}\n\n/* Main content div */\n#content {\n    width: inherit;\n    height: 100%;\n    grid-row: 2 / 3;\n}"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/styles.css"],"names":[],"mappings":"AAAA;IACI,SAAS;IACT,UAAU;AACd;;AAEA,0BAA0B;AAC1B;IACI,iBAAiB;IACjB,kBAAkB;IAClB,0BAA0B;AAC9B;;AAEA;IACI,sBAAsB;IACtB,aAAa;IACb,gCAAgC;AACpC;;AAEA,uBAAuB;AACvB;IACI,YAAY;IACZ,aAAa;IACb,gCAAgC;;IAEhC,aAAa;IACb,6BAA6B;AACjC;;AAEA,eAAe;AACf;IACI,YAAY;IACZ,aAAa;IACb,uBAAuB;IACvB,+BAA+B;IAC/B,eAAe;IACf,eAAe;;IAEf,aAAa;IACb,+BAA+B;AACnC;;AAEA,aAAa;AACb;IACI,cAAc;IACd,+BAA+B;IAC/B,eAAe;;IAEf,yCAAyC;IACzC,eAAe;IACf,iBAAiB;IACjB,YAAY;IACZ,mBAAmB;;IAEnB,aAAa;IACb,uBAAuB;IACvB,mBAAmB;AACvB;;AAEA,gBAAgB;AAChB;IACI,cAAc;IACd,+BAA+B;IAC/B,eAAe;;IAEf,aAAa;IACb,uBAAuB;IACvB,mBAAmB;IACnB,SAAS;AACb;;AAEA;IACI,6BAA6B;IAC7B,YAAY;AAChB;;AAEA;IACI,eAAe;IACf,gBAAgB;AACpB;;AAEA;IACI,oBAAoB;AACxB;;AAEA,qBAAqB;AACrB;IACI,cAAc;IACd,YAAY;IACZ,eAAe;AACnB","sourcesContent":["* {\n    margin: 0;\n    padding: 0;\n}\n\n/* Declare CSS variables */\n:root {\n    --header: #47814e;\n    --content: #c9ffe2;\n    --tabBar: rgb(187, 37, 37);\n}\n\nbody {\n    box-sizing: border-box;\n    height: 100vh;\n    background-color: var(--content);\n}\n\n/* Main container div */\n#mainContainer {\n    width: 100vw;\n    height: 100vh;\n    background-color: var(--content);\n\n    display: grid;\n    grid-template-rows: 150px 1fr;\n}\n\n/* Header div */\n#header {\n    width: 100vw;\n    height: 150px;\n    border: 1px solid black;\n    background-color: var(--header);\n    position: fixed;\n    grid-row: 1 / 2;\n\n    display: grid;\n    grid-template-rows: 0.7fr 0.3fr;\n}\n\n/* Logo div */\n#logoDiv {\n    width: inherit;\n    background-color: var(--header);\n    grid-row: 1 / 2;\n\n    font-family: Arial, Helvetica, sans-serif;\n    font-size: 50px;\n    font-weight: bold;\n    color: white;\n    letter-spacing: 3px;\n\n    display: flex;\n    justify-content: center;\n    align-items: center;\n}\n\n/* Tab bar div */\n#tabDiv {\n    width: inherit;\n    background-color: var(--tabBar);\n    grid-row: 2 / 3;\n\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    gap: 20px;\n}\n\n.menu-item {\n    /* border: 1px solid black; */\n    color: white;\n}\n\na {\n    cursor: pointer;\n    transition: 0.2s;\n}\n\na:hover {\n    color: var(--header);\n}\n\n/* Main content div */\n#content {\n    width: inherit;\n    height: 100%;\n    grid-row: 2 / 3;\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -572,6 +567,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   content: () => (/* binding */ content)
 /* harmony export */ });
+/* harmony import */ var _assets_oriental_picture_jpeg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./assets/oriental_picture.jpeg */ "./src/assets/oriental_picture.jpeg");
+
+
 // Content after header
 
 const content = document.createElement('div');
@@ -579,6 +577,15 @@ content.className = 'content';
 content.id = 'content';
 
 content.textContent = 'Testing, this is a main content div';
+
+// Oriental kopi picture
+const pictureDiv = document.createElement('div');
+pictureDiv.id = 'picture';
+
+const image = document.createElement('img');
+image.src = /* non-default import from non-esm module */undefined;
+
+pictureDiv.append(image);
 
 /***/ }),
 
@@ -649,8 +656,16 @@ for(let i = 0; i < 5; i++) {
     menuBarDivs[i].append(itemLink);
 }
 
-console.log(menuBarDivs);
 
+/***/ }),
+
+/***/ "./src/assets/oriental_picture.jpeg":
+/*!******************************************!*\
+  !*** ./src/assets/oriental_picture.jpeg ***!
+  \******************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "oriental_picture.jpeg";
 
 /***/ })
 
@@ -705,6 +720,18 @@ console.log(menuBarDivs);
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/global */
+/******/ 	(() => {
+/******/ 		__webpack_require__.g = (function() {
+/******/ 			if (typeof globalThis === 'object') return globalThis;
+/******/ 			try {
+/******/ 				return this || new Function('return this')();
+/******/ 			} catch (e) {
+/******/ 				if (typeof window === 'object') return window;
+/******/ 			}
+/******/ 		})();
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
 /******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
@@ -719,6 +746,29 @@ console.log(menuBarDivs);
 /******/ 			}
 /******/ 			Object.defineProperty(exports, '__esModule', { value: true });
 /******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/publicPath */
+/******/ 	(() => {
+/******/ 		var scriptUrl;
+/******/ 		if (__webpack_require__.g.importScripts) scriptUrl = __webpack_require__.g.location + "";
+/******/ 		var document = __webpack_require__.g.document;
+/******/ 		if (!scriptUrl && document) {
+/******/ 			if (document.currentScript)
+/******/ 				scriptUrl = document.currentScript.src;
+/******/ 			if (!scriptUrl) {
+/******/ 				var scripts = document.getElementsByTagName("script");
+/******/ 				if(scripts.length) {
+/******/ 					var i = scripts.length - 1;
+/******/ 					while (i > -1 && !scriptUrl) scriptUrl = scripts[i--].src;
+/******/ 				}
+/******/ 			}
+/******/ 		}
+/******/ 		// When supporting browsers where an automatic publicPath is not supported you must specify an output.publicPath manually via configuration
+/******/ 		// or pass an empty string ("") and set the __webpack_public_path__ variable from your code to use your own logic.
+/******/ 		if (!scriptUrl) throw new Error("Automatic publicPath is not supported in this browser");
+/******/ 		scriptUrl = scriptUrl.replace(/#.*$/, "").replace(/\?.*$/, "").replace(/\/[^\/]+$/, "/");
+/******/ 		__webpack_require__.p = scriptUrl;
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/nonce */

@@ -3,7 +3,7 @@
 
 import styles from './styles.css';
 import { header, tabDiv } from './header.js';
-import { content } from './content.js';
+import { pictureDiv } from './content.js';
 import { menuBarDivs } from './menuBar.js';
 
 // Target content div
@@ -11,7 +11,7 @@ const contentDiv = document.querySelector('#mainContainer');
 
 // Append different sections to main web page.
 contentDiv.append(header);
-contentDiv.append(content);
+contentDiv.append(pictureDiv);
 
 // Append menu bar items to menu bar.
 menuBarDivs.forEach((div) => {
