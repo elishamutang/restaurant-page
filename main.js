@@ -68,11 +68,20 @@ body {
     background-color: var(--header);
     grid-row: 1 / 2;
 
-    text-align: center;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 50px;
+    font-weight: bold;
     color: white;
     letter-spacing: 3px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Company name */
+#companyName {
+    /* border: 1px solid black; */
 }
 
 /* Tab bar div */
@@ -80,6 +89,25 @@ body {
     width: inherit;
     background-color: var(--tabBar);
     grid-row: 2 / 3;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.menu-item {
+    /* border: 1px solid black; */
+    color: white;
+}
+
+a {
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+a:hover {
+    color: var(--header);
 }
 
 /* Main content div */
@@ -87,7 +115,7 @@ body {
     width: inherit;
     height: 100%;
     grid-row: 2 / 3;
-}`, "",{"version":3,"sources":["webpack://./src/styles.css"],"names":[],"mappings":"AAAA;IACI,SAAS;IACT,UAAU;AACd;;AAEA,0BAA0B;AAC1B;IACI,iBAAiB;IACjB,kBAAkB;IAClB,0BAA0B;AAC9B;;AAEA;IACI,sBAAsB;IACtB,aAAa;IACb,gCAAgC;AACpC;;AAEA,uBAAuB;AACvB;IACI,YAAY;IACZ,aAAa;IACb,gCAAgC;;IAEhC,aAAa;IACb,6BAA6B;AACjC;;AAEA,eAAe;AACf;IACI,YAAY;IACZ,aAAa;IACb,uBAAuB;IACvB,+BAA+B;IAC/B,eAAe;IACf,eAAe;;IAEf,aAAa;IACb,+BAA+B;AACnC;;AAEA,aAAa;AACb;IACI,cAAc;IACd,+BAA+B;IAC/B,eAAe;;IAEf,kBAAkB;IAClB,yCAAyC;IACzC,eAAe;IACf,YAAY;IACZ,mBAAmB;AACvB;;AAEA,gBAAgB;AAChB;IACI,cAAc;IACd,+BAA+B;IAC/B,eAAe;AACnB;;AAEA,qBAAqB;AACrB;IACI,cAAc;IACd,YAAY;IACZ,eAAe;AACnB","sourcesContent":["* {\n    margin: 0;\n    padding: 0;\n}\n\n/* Declare CSS variables */\n:root {\n    --header: #47814e;\n    --content: #c9ffe2;\n    --tabBar: rgb(187, 37, 37);\n}\n\nbody {\n    box-sizing: border-box;\n    height: 100vh;\n    background-color: var(--content);\n}\n\n/* Main container div */\n#mainContainer {\n    width: 100vw;\n    height: 100vh;\n    background-color: var(--content);\n\n    display: grid;\n    grid-template-rows: 150px 1fr;\n}\n\n/* Header div */\n#header {\n    width: 100vw;\n    height: 150px;\n    border: 1px solid black;\n    background-color: var(--header);\n    position: fixed;\n    grid-row: 1 / 2;\n\n    display: grid;\n    grid-template-rows: 0.7fr 0.3fr;\n}\n\n/* Logo div */\n#logoDiv {\n    width: inherit;\n    background-color: var(--header);\n    grid-row: 1 / 2;\n\n    text-align: center;\n    font-family: Arial, Helvetica, sans-serif;\n    font-size: 50px;\n    color: white;\n    letter-spacing: 3px;\n}\n\n/* Tab bar div */\n#tabDiv {\n    width: inherit;\n    background-color: var(--tabBar);\n    grid-row: 2 / 3;\n}\n\n/* Main content div */\n#content {\n    width: inherit;\n    height: 100%;\n    grid-row: 2 / 3;\n}"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/styles.css"],"names":[],"mappings":"AAAA;IACI,SAAS;IACT,UAAU;AACd;;AAEA,0BAA0B;AAC1B;IACI,iBAAiB;IACjB,kBAAkB;IAClB,0BAA0B;AAC9B;;AAEA;IACI,sBAAsB;IACtB,aAAa;IACb,gCAAgC;AACpC;;AAEA,uBAAuB;AACvB;IACI,YAAY;IACZ,aAAa;IACb,gCAAgC;;IAEhC,aAAa;IACb,6BAA6B;AACjC;;AAEA,eAAe;AACf;IACI,YAAY;IACZ,aAAa;IACb,uBAAuB;IACvB,+BAA+B;IAC/B,eAAe;IACf,eAAe;;IAEf,aAAa;IACb,+BAA+B;AACnC;;AAEA,aAAa;AACb;IACI,cAAc;IACd,+BAA+B;IAC/B,eAAe;;IAEf,yCAAyC;IACzC,eAAe;IACf,iBAAiB;IACjB,YAAY;IACZ,mBAAmB;;IAEnB,aAAa;IACb,uBAAuB;IACvB,mBAAmB;AACvB;;AAEA,iBAAiB;AACjB;IACI,6BAA6B;AACjC;;AAEA,gBAAgB;AAChB;IACI,cAAc;IACd,+BAA+B;IAC/B,eAAe;;IAEf,aAAa;IACb,uBAAuB;IACvB,mBAAmB;IACnB,SAAS;AACb;;AAEA;IACI,6BAA6B;IAC7B,YAAY;AAChB;;AAEA;IACI,eAAe;IACf,gBAAgB;AACpB;;AAEA;IACI,oBAAoB;AACxB;;AAEA,qBAAqB;AACrB;IACI,cAAc;IACd,YAAY;IACZ,eAAe;AACnB","sourcesContent":["* {\n    margin: 0;\n    padding: 0;\n}\n\n/* Declare CSS variables */\n:root {\n    --header: #47814e;\n    --content: #c9ffe2;\n    --tabBar: rgb(187, 37, 37);\n}\n\nbody {\n    box-sizing: border-box;\n    height: 100vh;\n    background-color: var(--content);\n}\n\n/* Main container div */\n#mainContainer {\n    width: 100vw;\n    height: 100vh;\n    background-color: var(--content);\n\n    display: grid;\n    grid-template-rows: 150px 1fr;\n}\n\n/* Header div */\n#header {\n    width: 100vw;\n    height: 150px;\n    border: 1px solid black;\n    background-color: var(--header);\n    position: fixed;\n    grid-row: 1 / 2;\n\n    display: grid;\n    grid-template-rows: 0.7fr 0.3fr;\n}\n\n/* Logo div */\n#logoDiv {\n    width: inherit;\n    background-color: var(--header);\n    grid-row: 1 / 2;\n\n    font-family: Arial, Helvetica, sans-serif;\n    font-size: 50px;\n    font-weight: bold;\n    color: white;\n    letter-spacing: 3px;\n\n    display: flex;\n    justify-content: center;\n    align-items: center;\n}\n\n/* Company name */\n#companyName {\n    /* border: 1px solid black; */\n}\n\n/* Tab bar div */\n#tabDiv {\n    width: inherit;\n    background-color: var(--tabBar);\n    grid-row: 2 / 3;\n\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    gap: 20px;\n}\n\n.menu-item {\n    /* border: 1px solid black; */\n    color: white;\n}\n\na {\n    cursor: pointer;\n    transition: 0.2s;\n}\n\na:hover {\n    color: var(--header);\n}\n\n/* Main content div */\n#content {\n    width: inherit;\n    height: 100%;\n    grid-row: 2 / 3;\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -562,7 +590,8 @@ content.textContent = 'Testing, this is a main content div';
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   header: () => (/* binding */ header)
+/* harmony export */   header: () => (/* binding */ header),
+/* harmony export */   tabDiv: () => (/* binding */ tabDiv)
 /* harmony export */ });
 // Module for generating and appending header to webpage.
 
@@ -575,9 +604,15 @@ header.id = "header";
 const logoDiv = document.createElement('div');
 logoDiv.className = 'header';
 logoDiv.id = 'logoDiv';
-logoDiv.textContent = 'Oriental Kopi';
 
 header.append(logoDiv);
+
+// Company name
+const companyName = document.createElement('div');
+companyName.id = 'companyName';
+companyName.textContent = 'Oriental Kopi';
+
+logoDiv.append(companyName);
 
 // Tabs on header div
 const tabDiv = document.createElement('div');
@@ -585,6 +620,37 @@ tabDiv.className = 'header';
 tabDiv.id = 'tabDiv';
 
 header.append(tabDiv);
+
+/***/ }),
+
+/***/ "./src/menuBar.js":
+/*!************************!*\
+  !*** ./src/menuBar.js ***!
+  \************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   menuBarDivs: () => (/* binding */ menuBarDivs)
+/* harmony export */ });
+// Menu bar for webpage.
+
+const menuBarItems = ['Pre-Order Egg Tart', 'Custom Gifts', 'Branch Address', 'Join Member', 'Contact Us' ];
+const menuBarDivs = [];
+
+for(let i = 0; i < 5; i++) {
+    const item = document.createElement('div');
+    item.dataset.index = `${i}`;
+    item.className = 'menu-item';
+    menuBarDivs.push(item);
+
+    const itemLink = document.createElement('a');
+    itemLink.textContent = `${menuBarItems[i]}`;
+    menuBarDivs[i].append(itemLink);
+}
+
+console.log(menuBarDivs);
+
 
 /***/ })
 
@@ -671,8 +737,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles.css */ "./src/styles.css");
 /* harmony import */ var _header_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./header.js */ "./src/header.js");
 /* harmony import */ var _content_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./content.js */ "./src/content.js");
+/* harmony import */ var _menuBar_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./menuBar.js */ "./src/menuBar.js");
 // This module is the main module containing of the tab switching logic and page 
 // load-up.
+
 
 
 
@@ -684,6 +752,12 @@ const contentDiv = document.querySelector('#mainContainer');
 // Append different sections to main web page.
 contentDiv.append(_header_js__WEBPACK_IMPORTED_MODULE_1__.header);
 contentDiv.append(_content_js__WEBPACK_IMPORTED_MODULE_2__.content);
+
+// Append menu bar items to menu bar.
+_menuBar_js__WEBPACK_IMPORTED_MODULE_3__.menuBarDivs.forEach((div) => {
+    _header_js__WEBPACK_IMPORTED_MODULE_1__.tabDiv.append(div);
+    console.log(div.textContent);
+})
 })();
 
 /******/ })()
