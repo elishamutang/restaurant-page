@@ -13,5 +13,3 @@ for(let i = 0; i < 5; i++) {
     itemLink.textContent = `${menuBarItems[i]}`;
     menuBarDivs[i].append(itemLink);
 }
-
-console.log(menuBarDivs);
