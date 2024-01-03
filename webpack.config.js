@@ -38,7 +38,7 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            title: 'Restaurant page',
+            title: 'Oriental Kopi Copy',
             filename: 'index.html',
             template: 'src/template.html',
         }),

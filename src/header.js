@@ -15,8 +15,11 @@ header.append(logoDiv);
 // Company name
 const companyName = document.createElement('div');
 companyName.id = 'companyName';
-companyName.textContent = 'Oriental Kopi';
 
+const companyNameLink = document.createElement('a');
+companyNameLink.textContent = 'Oriental Kopi';
+
+companyName.append(companyNameLink);
 logoDiv.append(companyName);
 
 // Tabs on header div

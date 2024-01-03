@@ -56,6 +56,10 @@ body {
     align-items: center;
 }
 
+#companyName > a {
+    cursor: pointer
+}
+
 /* Tab bar div */
 #tabDiv {
     width: inherit;
@@ -73,12 +77,12 @@ body {
     color: white;
 }
 
-a {
+.menu-item > a {
     cursor: pointer;
     transition: 0.2s;
 }
 
-a:hover {
+.menu-item > a:hover {
     color: var(--header);
 }
 
