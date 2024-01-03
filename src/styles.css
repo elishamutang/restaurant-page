@@ -56,11 +56,6 @@ body {
     align-items: center;
 }
 
-/* Company name */
-#companyName {
-    /* border: 1px solid black; */
-}
-
 /* Tab bar div */
 #tabDiv {
     width: inherit;
