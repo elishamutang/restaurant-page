@@ -1,6 +1,6 @@
 // Menu bar for webpage.
 
-const menuBarItems = ['Pre-Order Egg Tart', 'Custom Gifts', 'Branch Address', 'Join Member', 'Contact Us' ];
+const menuBarItems = ['Pre-Order Egg Tart', 'Merchandise', 'Branch Address', 'Join Member', 'Contact Us' ];
 export const menuBarDivs = [];
 
 for(let i = 0; i < 5; i++) {
