@@ -3,7 +3,7 @@
 
 import styles from './styles.css';
 import { header, tabDiv } from './header.js';
-import { pictureDiv } from './home.js';
+import { pictureDiv } from './branchAddress.js';
 import { menuBarDivs } from './menuBar.js';
 
 // Target content div
