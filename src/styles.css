@@ -95,3 +95,12 @@ body {
 #picture > img {
     width: 100vw;
 }
+
+#sliderWrapper {
+    width: inherit;
+    grid-row: 2 / 3;
+}
+
+#sliderWrapper > img {
+    width: 100%;
+}
