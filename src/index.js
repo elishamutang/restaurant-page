@@ -6,12 +6,12 @@ import { header, tabDiv } from './header.js';
 import { pictureDiv } from './branchAddress.js';
 import { menuBarDivs } from './menuBar.js';
 
-// Target content div
-const contentDiv = document.querySelector('#mainContainer');
+// Target main container div
+const mainContainer = document.querySelector('#mainContainer');
 
 // Append different sections to main web page.
-contentDiv.append(header);
-contentDiv.append(pictureDiv);
+mainContainer.append(header);
+mainContainer.append(pictureDiv);
 
 // Append menu bar items to menu bar.
 menuBarDivs.forEach((div) => {

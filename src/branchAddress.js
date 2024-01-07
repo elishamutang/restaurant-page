@@ -1,4 +1,3 @@
-// Homepage
 import orientalImg from './assets/oriental_picture.jpeg';
 
 // Oriental kopi picture
