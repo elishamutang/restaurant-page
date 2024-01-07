@@ -8,9 +8,16 @@ import orientalKopi5 from "./assets/oriental_5.webp";
 
 export function homePage() {
 
-    // Create wrapper
+    // Create sliderWrapper div
     const sliderWrapper = document.createElement('div');
     sliderWrapper.id = 'sliderWrapper';
+
+    // Create wrapper to contain all the images
+    const wrapper = document.createElement('div');
+    wrapper.id = 'wrapper';
+
+    // Append wrapper to sliderWrapper
+    sliderWrapper.append(wrapper);
 
     // Append to mainContainer div
     mainContainer.append(sliderWrapper);
@@ -24,7 +31,7 @@ export function homePage() {
     // Link image source to each img tag.
     for(let i=0; i<5; i++) {
         images[i].src = imageData[i];
-        sliderWrapper.append(images[i]);
+        wrapper.append(images[i]);
     }
 
 }
