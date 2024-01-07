@@ -7,6 +7,7 @@ import orientalKopi4 from "./assets/oriental_4.webp";
 import orientalKopi5 from "./assets/oriental_5.webp";
 import owner1 from "./assets/owner_1.jpg";
 import owner2 from "./assets/owner_2.jpg";
+import wordSectionHeader from "./assets/wordSectionHeader.png";
 
 export function homePage() {
 
@@ -81,5 +82,51 @@ function additionalDivs() {
 
     oldImg.append(oldImgWrapper);
     mainContainer.append(oldImg);
+
+    wordSectionDiv();
+
+}
+
+function wordSectionDiv() {
+
+    // Word section after old owner image
+    
+    const wordSection = document.createElement('div');
+    wordSection.id = 'wordSection';
+
+    const wordSectionTitle = document.createElement('div');
+    wordSectionTitle.id = 'wordSectionTitle';
+
+    const wordSectionTitleImg = document.createElement('img');
+    wordSectionTitleImg.src = wordSectionHeader;
+
+    wordSectionTitle.append(wordSectionTitleImg);
+
+    const wordSectionWords = document.createElement('div');
+    wordSectionWords.id = 'wordSectionWords';
+
+    const firstPara = document.createElement('div');
+    firstPara.id = 'firstPara';
+    firstPara.textContent = `Master Huayang's ancestors came from Hainan. In his early days, he "ran foreign ships" to make a living in Southeast Asia. Over the years, he has become proficient in Western cuisine by working as a chef on ships. He has combined the essence of traditional Chinese food with exquisite snacks such as pastry egg tarts and pineapple buns to form today's Huayang Nanyang cuisine, especially the pastry egg tarts and ice-fire pineapple buns.`
+
+    const secondPara = document.createElement('div');
+    secondPara.id = 'secondPara';
+    secondPara.textContent = `Huayang Teahouse carries the hometown feelings of overseas Chinese in Nanyang, and Huayang Coffee records the hard-working lives of overseas Chinese in the early days. Huayang Coffee is thick and mellow. Three kinds of high-quality coffee beans [Arabica, Robusta, and Liberica] are blended in a golden ratio and roasted at high temperatures to create a rich and mellow Huayang Coffee.`;
+
+    const thirdPara = document.createElement('div');
+    thirdPara.id = 'thirdPara';
+    thirdPara.textContent = `Huayang has always adhered to the traditional cultural essence of Chinese cuisine, pursuing the highest quality raw materials and fresh ingredients. Following the traditional craftsmanship passed down by Huayang’s master chefs, we carefully research and produce dishes that are perfect in color, aroma and taste. Nanyang style cuisine, dim sum and sweet stew.`;
+
+    // Append each paragraph to word section.
+    wordSectionWords.append(firstPara);
+    wordSectionWords.append(secondPara);
+    wordSectionWords.append(thirdPara);
+
+    // Append header and wording to section.
+    wordSection.append(wordSectionTitle);
+    wordSection.append(wordSectionWords);
+
+    // Append to DOM.
+    mainContainer.append(wordSection);
 
 }
