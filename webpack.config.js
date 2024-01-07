@@ -33,6 +33,13 @@ module.exports = {
                     'style-loader',
                     'css-loader'
                 ]
+            },
+            {
+                test: /\.webp$/,
+                type: 'asset/resource',
+                use: [
+                    'webp-loader'
+                ]
             }
         ],
     },
