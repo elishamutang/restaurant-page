@@ -5,6 +5,8 @@ import orientalKopi2 from "./assets/oriental_2.webp";
 import orientalKopi3 from "./assets/oriental_3.webp";
 import orientalKopi4 from "./assets/oriental_4.webp";
 import orientalKopi5 from "./assets/oriental_5.webp";
+import owner1 from "./assets/owner_1.jpg";
+import owner2 from "./assets/owner_2.jpg";
 
 export function homePage() {
 
@@ -34,6 +36,9 @@ export function homePage() {
         wrapper.append(images[i]);
     }
 
+    // Generate additional divs
+    additionalDivs();
+
 }
 
 function generateImg() {
@@ -51,5 +56,30 @@ function generateImg() {
     }
 
     return images;
+
+}
+
+function additionalDivs() {
+
+    // Old owner picture(?)
+    const oldImg = document.createElement('div');
+    oldImg.id = 'oldImg';
+
+    // Since there are 2 images, create a wrapper
+    const oldImgWrapper = document.createElement('div');
+    oldImgWrapper.id = 'oldImgWrapper';
+
+    // Create img tags and append inside oldImgWrapper
+    const ownerOneImg = document.createElement('img');
+    ownerOneImg.src = owner1;
+
+    const ownerTwoImg = document.createElement('img');
+    ownerTwoImg.src = owner2;
+
+    oldImgWrapper.append(ownerOneImg);
+    oldImgWrapper.append(ownerTwoImg);
+
+    oldImg.append(oldImgWrapper);
+    mainContainer.append(oldImg);
 
 }
