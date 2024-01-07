@@ -30,7 +30,6 @@ body {
 #header {
     width: 100vw;
     height: 150px;
-    border: 1px solid black;
     background-color: var(--header);
     position: fixed;
     grid-row: 1 / 2;
