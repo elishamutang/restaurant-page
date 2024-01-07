@@ -42,7 +42,7 @@ body {
 /* Main container div */
 #mainContainer {
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     background-color: var(--content);
 
     display: grid;
@@ -109,24 +109,70 @@ body {
 }
 
 /* Main content div */
-#picture {
-    width: inherit;
-    height: 100%;
-    grid-row: 2 / 3;
-}
 
-#picture > img {
-    width: 100vw;
-}
-
+/* Image slider */
 #sliderWrapper {
     width: inherit;
     grid-row: 2 / 3;
+    overflow: hidden;
 }
 
-#sliderWrapper > img {
-    width: 100%;
-}`, "",{"version":3,"sources":["webpack://./src/styles.css"],"names":[],"mappings":"AAAA;IACI,SAAS;IACT,UAAU;AACd;;AAEA,0BAA0B;AAC1B;IACI,iBAAiB;IACjB,kBAAkB;IAClB,0BAA0B;AAC9B;;AAEA;IACI,sBAAsB;IACtB,aAAa;IACb,gCAAgC;AACpC;;AAEA,uBAAuB;AACvB;IACI,YAAY;IACZ,aAAa;IACb,gCAAgC;;IAEhC,aAAa;IACb,6BAA6B;AACjC;;AAEA,eAAe;AACf;IACI,YAAY;IACZ,aAAa;IACb,+BAA+B;IAC/B,eAAe;IACf,eAAe;;IAEf,aAAa;IACb,+BAA+B;AACnC;;AAEA,aAAa;AACb;IACI,cAAc;IACd,+BAA+B;IAC/B,eAAe;;IAEf,yCAAyC;IACzC,eAAe;IACf,iBAAiB;IACjB,YAAY;IACZ,mBAAmB;;IAEnB,aAAa;IACb,uBAAuB;IACvB,mBAAmB;AACvB;;AAEA;IACI;AACJ;;AAEA,gBAAgB;AAChB;IACI,cAAc;IACd,+BAA+B;IAC/B,eAAe;;IAEf,aAAa;IACb,uBAAuB;IACvB,mBAAmB;IACnB,SAAS;AACb;;AAEA;IACI,6BAA6B;IAC7B,YAAY;AAChB;;AAEA;IACI,eAAe;IACf,gBAAgB;AACpB;;AAEA;IACI,oBAAoB;AACxB;;AAEA,qBAAqB;AACrB;IACI,cAAc;IACd,YAAY;IACZ,eAAe;AACnB;;AAEA;IACI,YAAY;AAChB;;AAEA;IACI,cAAc;IACd,eAAe;AACnB;;AAEA;IACI,WAAW;AACf","sourcesContent":["* {\n    margin: 0;\n    padding: 0;\n}\n\n/* Declare CSS variables */\n:root {\n    --header: #48694c;\n    --content: #c9ffe2;\n    --tabBar: rgb(187, 37, 37);\n}\n\nbody {\n    box-sizing: border-box;\n    height: 100vh;\n    background-color: var(--content);\n}\n\n/* Main container div */\n#mainContainer {\n    width: 100vw;\n    height: 100vh;\n    background-color: var(--content);\n\n    display: grid;\n    grid-template-rows: 150px 1fr;\n}\n\n/* Header div */\n#header {\n    width: 100vw;\n    height: 150px;\n    background-color: var(--header);\n    position: fixed;\n    grid-row: 1 / 2;\n\n    display: grid;\n    grid-template-rows: 0.7fr 0.3fr;\n}\n\n/* Logo div */\n#logoDiv {\n    width: inherit;\n    background-color: var(--header);\n    grid-row: 1 / 2;\n\n    font-family: Arial, Helvetica, sans-serif;\n    font-size: 50px;\n    font-weight: bold;\n    color: white;\n    letter-spacing: 3px;\n\n    display: flex;\n    justify-content: center;\n    align-items: center;\n}\n\n#companyName > a {\n    cursor: pointer\n}\n\n/* Tab bar div */\n#tabDiv {\n    width: inherit;\n    background-color: var(--tabBar);\n    grid-row: 2 / 3;\n\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    gap: 20px;\n}\n\n.menu-item {\n    /* border: 1px solid black; */\n    color: white;\n}\n\n.menu-item > a {\n    cursor: pointer;\n    transition: 0.2s;\n}\n\n.menu-item > a:hover {\n    color: var(--header);\n}\n\n/* Main content div */\n#picture {\n    width: inherit;\n    height: 100%;\n    grid-row: 2 / 3;\n}\n\n#picture > img {\n    width: 100vw;\n}\n\n#sliderWrapper {\n    width: inherit;\n    grid-row: 2 / 3;\n}\n\n#sliderWrapper > img {\n    width: 100%;\n}"],"sourceRoot":""}]);
+#wrapper {
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    animation: slide 16s infinite;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(0);
+    }
+
+    35% {
+        transform: translateX(-100%);
+    }
+
+    45% {
+        transform: translateX(-100%);
+    }
+
+    55% {
+        transform: translateX(-200%);
+    }
+
+    75% {
+        transform: translateX(-200%);
+    }
+
+    85% {
+        transform: translateX(-300%);
+    }
+
+    90% {
+        transform: translateX(-300%);
+    }
+
+    95% {
+        transform: translateX(-300%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+#wrapper > img {
+    width: 100vw;
+    height: 100%;
+    flex: 0;
+}
+
+/* Old image div */`, "",{"version":3,"sources":["webpack://./src/styles.css"],"names":[],"mappings":"AAAA;IACI,SAAS;IACT,UAAU;AACd;;AAEA,0BAA0B;AAC1B;IACI,iBAAiB;IACjB,kBAAkB;IAClB,0BAA0B;AAC9B;;AAEA;IACI,sBAAsB;IACtB,aAAa;IACb,gCAAgC;AACpC;;AAEA,uBAAuB;AACvB;IACI,YAAY;IACZ,YAAY;IACZ,gCAAgC;;IAEhC,aAAa;IACb,6BAA6B;AACjC;;AAEA,eAAe;AACf;IACI,YAAY;IACZ,aAAa;IACb,+BAA+B;IAC/B,eAAe;IACf,eAAe;;IAEf,aAAa;IACb,+BAA+B;AACnC;;AAEA,aAAa;AACb;IACI,cAAc;IACd,+BAA+B;IAC/B,eAAe;;IAEf,yCAAyC;IACzC,eAAe;IACf,iBAAiB;IACjB,YAAY;IACZ,mBAAmB;;IAEnB,aAAa;IACb,uBAAuB;IACvB,mBAAmB;AACvB;;AAEA;IACI;AACJ;;AAEA,gBAAgB;AAChB;IACI,cAAc;IACd,+BAA+B;IAC/B,eAAe;;IAEf,aAAa;IACb,uBAAuB;IACvB,mBAAmB;IACnB,SAAS;AACb;;AAEA;IACI,6BAA6B;IAC7B,YAAY;AAChB;;AAEA;IACI,eAAe;IACf,gBAAgB;AACpB;;AAEA;IACI,oBAAoB;AACxB;;AAEA,qBAAqB;;AAErB,iBAAiB;AACjB;IACI,cAAc;IACd,eAAe;IACf,gBAAgB;AACpB;;AAEA;IACI,YAAY;IACZ,YAAY;IACZ,aAAa;IACb,6BAA6B;AACjC;;AAEA;IACI;QACI,wBAAwB;IAC5B;;IAEA;QACI,wBAAwB;IAC5B;;IAEA;QACI,4BAA4B;IAChC;;IAEA;QACI,4BAA4B;IAChC;;IAEA;QACI,4BAA4B;IAChC;;IAEA;QACI,4BAA4B;IAChC;;IAEA;QACI,4BAA4B;IAChC;;IAEA;QACI,4BAA4B;IAChC;;IAEA;QACI,4BAA4B;IAChC;;IAEA;QACI,wBAAwB;IAC5B;AACJ;;AAEA;IACI,YAAY;IACZ,YAAY;IACZ,OAAO;AACX;;AAEA,kBAAkB","sourcesContent":["* {\n    margin: 0;\n    padding: 0;\n}\n\n/* Declare CSS variables */\n:root {\n    --header: #48694c;\n    --content: #c9ffe2;\n    --tabBar: rgb(187, 37, 37);\n}\n\nbody {\n    box-sizing: border-box;\n    height: 100vh;\n    background-color: var(--content);\n}\n\n/* Main container div */\n#mainContainer {\n    width: 100vw;\n    height: 100%;\n    background-color: var(--content);\n\n    display: grid;\n    grid-template-rows: 150px 1fr;\n}\n\n/* Header div */\n#header {\n    width: 100vw;\n    height: 150px;\n    background-color: var(--header);\n    position: fixed;\n    grid-row: 1 / 2;\n\n    display: grid;\n    grid-template-rows: 0.7fr 0.3fr;\n}\n\n/* Logo div */\n#logoDiv {\n    width: inherit;\n    background-color: var(--header);\n    grid-row: 1 / 2;\n\n    font-family: Arial, Helvetica, sans-serif;\n    font-size: 50px;\n    font-weight: bold;\n    color: white;\n    letter-spacing: 3px;\n\n    display: flex;\n    justify-content: center;\n    align-items: center;\n}\n\n#companyName > a {\n    cursor: pointer\n}\n\n/* Tab bar div */\n#tabDiv {\n    width: inherit;\n    background-color: var(--tabBar);\n    grid-row: 2 / 3;\n\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    gap: 20px;\n}\n\n.menu-item {\n    /* border: 1px solid black; */\n    color: white;\n}\n\n.menu-item > a {\n    cursor: pointer;\n    transition: 0.2s;\n}\n\n.menu-item > a:hover {\n    color: var(--header);\n}\n\n/* Main content div */\n\n/* Image slider */\n#sliderWrapper {\n    width: inherit;\n    grid-row: 2 / 3;\n    overflow: hidden;\n}\n\n#wrapper {\n    width: 100vw;\n    height: 100%;\n    display: flex;\n    animation: slide 16s infinite;\n}\n\n@keyframes slide {\n    0% {\n        transform: translateX(0);\n    }\n\n    25% {\n        transform: translateX(0);\n    }\n\n    35% {\n        transform: translateX(-100%);\n    }\n\n    45% {\n        transform: translateX(-100%);\n    }\n\n    55% {\n        transform: translateX(-200%);\n    }\n\n    75% {\n        transform: translateX(-200%);\n    }\n\n    85% {\n        transform: translateX(-300%);\n    }\n\n    90% {\n        transform: translateX(-300%);\n    }\n\n    95% {\n        transform: translateX(-300%);\n    }\n\n    100% {\n        transform: translateX(0);\n    }\n}\n\n#wrapper > img {\n    width: 100vw;\n    height: 100%;\n    flex: 0;\n}\n\n/* Old image div */"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -633,7 +679,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _assets_oriental_3_webp__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./assets/oriental_3.webp */ "./src/assets/oriental_3.webp");
 /* harmony import */ var _assets_oriental_4_webp__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./assets/oriental_4.webp */ "./src/assets/oriental_4.webp");
 /* harmony import */ var _assets_oriental_5_webp__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./assets/oriental_5.webp */ "./src/assets/oriental_5.webp");
+/* harmony import */ var _assets_owner_1_jpg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./assets/owner_1.jpg */ "./src/assets/owner_1.jpg");
+/* harmony import */ var _assets_owner_2_jpg__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./assets/owner_2.jpg */ "./src/assets/owner_2.jpg");
 // Homepage (or initial load-up page)
+
+
 
 
 
@@ -643,9 +693,16 @@ __webpack_require__.r(__webpack_exports__);
 
 function homePage() {
 
-    // Create wrapper
+    // Create sliderWrapper div
     const sliderWrapper = document.createElement('div');
     sliderWrapper.id = 'sliderWrapper';
+
+    // Create wrapper to contain all the images
+    const wrapper = document.createElement('div');
+    wrapper.id = 'wrapper';
+
+    // Append wrapper to sliderWrapper
+    sliderWrapper.append(wrapper);
 
     // Append to mainContainer div
     _index_js__WEBPACK_IMPORTED_MODULE_0__.mainContainer.append(sliderWrapper);
@@ -659,8 +716,11 @@ function homePage() {
     // Link image source to each img tag.
     for(let i=0; i<5; i++) {
         images[i].src = imageData[i];
-        sliderWrapper.append(images[i]);
+        wrapper.append(images[i]);
     }
+
+    // Generate additional divs
+    additionalDivs();
 
 }
 
@@ -679,6 +739,31 @@ function generateImg() {
     }
 
     return images;
+
+}
+
+function additionalDivs() {
+
+    // Old owner picture(?)
+    const oldImg = document.createElement('div');
+    oldImg.id = 'oldImg';
+
+    // Since there are 2 images, create a wrapper
+    const oldImgWrapper = document.createElement('div');
+    oldImgWrapper.id = 'oldImgWrapper';
+
+    // Create img tags and append inside oldImgWrapper
+    const ownerOneImg = document.createElement('img');
+    ownerOneImg.src = _assets_owner_1_jpg__WEBPACK_IMPORTED_MODULE_6__;
+
+    const ownerTwoImg = document.createElement('img');
+    ownerTwoImg.src = _assets_owner_2_jpg__WEBPACK_IMPORTED_MODULE_7__;
+
+    oldImgWrapper.append(ownerOneImg);
+    oldImgWrapper.append(ownerTwoImg);
+
+    oldImg.append(oldImgWrapper);
+    _index_js__WEBPACK_IMPORTED_MODULE_0__.mainContainer.append(oldImg);
 
 }
 
@@ -799,6 +884,26 @@ module.exports = __webpack_require__.p + "oriental_4.webp";
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 module.exports = __webpack_require__.p + "oriental_5.webp";
+
+/***/ }),
+
+/***/ "./src/assets/owner_1.jpg":
+/*!********************************!*\
+  !*** ./src/assets/owner_1.jpg ***!
+  \********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "owner_1.jpg";
+
+/***/ }),
+
+/***/ "./src/assets/owner_2.jpg":
+/*!********************************!*\
+  !*** ./src/assets/owner_2.jpg ***!
+  \********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "owner_2.jpg";
 
 /***/ })
 
