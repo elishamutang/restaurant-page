@@ -5,8 +5,8 @@
 
 /* Declare CSS variables */
 :root {
-    --header: #48694c;
-    --content: #c9ffe2;
+    --header: #3a5940;
+    --content: #f6f6e8;
     --tabBar: rgb(187, 37, 37);
 }
 
@@ -75,7 +75,6 @@ body {
 }
 
 .menu-item {
-    /* border: 1px solid black; */
     color: white;
 }
 
@@ -172,3 +171,32 @@ body {
     width: 100%;
     height: auto;
 }
+
+/* Word section */
+#wordSection {
+    width: 100vw;
+    height: 350px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px;
+}
+
+#wordSectionTitle {
+    margin-top: 10px;
+}
+
+#wordSectionWords {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin: 0 150px 0 150px;
+
+    font-size: 20px;
+    color: var(--header);
+}
+
