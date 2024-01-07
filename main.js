@@ -28,7 +28,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `* {
 
 /* Declare CSS variables */
 :root {
-    --header: #45714a;
+    --header: #48694c;
     --content: #c9ffe2;
     --tabBar: rgb(187, 37, 37);
 }
@@ -53,7 +53,6 @@ body {
 #header {
     width: 100vw;
     height: 150px;
-    border: 1px solid black;
     background-color: var(--header);
     position: fixed;
     grid-row: 1 / 2;
@@ -118,7 +117,16 @@ body {
 
 #picture > img {
     width: 100vw;
-}`, "",{"version":3,"sources":["webpack://./src/styles.css"],"names":[],"mappings":"AAAA;IACI,SAAS;IACT,UAAU;AACd;;AAEA,0BAA0B;AAC1B;IACI,iBAAiB;IACjB,kBAAkB;IAClB,0BAA0B;AAC9B;;AAEA;IACI,sBAAsB;IACtB,aAAa;IACb,gCAAgC;AACpC;;AAEA,uBAAuB;AACvB;IACI,YAAY;IACZ,aAAa;IACb,gCAAgC;;IAEhC,aAAa;IACb,6BAA6B;AACjC;;AAEA,eAAe;AACf;IACI,YAAY;IACZ,aAAa;IACb,uBAAuB;IACvB,+BAA+B;IAC/B,eAAe;IACf,eAAe;;IAEf,aAAa;IACb,+BAA+B;AACnC;;AAEA,aAAa;AACb;IACI,cAAc;IACd,+BAA+B;IAC/B,eAAe;;IAEf,yCAAyC;IACzC,eAAe;IACf,iBAAiB;IACjB,YAAY;IACZ,mBAAmB;;IAEnB,aAAa;IACb,uBAAuB;IACvB,mBAAmB;AACvB;;AAEA;IACI;AACJ;;AAEA,gBAAgB;AAChB;IACI,cAAc;IACd,+BAA+B;IAC/B,eAAe;;IAEf,aAAa;IACb,uBAAuB;IACvB,mBAAmB;IACnB,SAAS;AACb;;AAEA;IACI,6BAA6B;IAC7B,YAAY;AAChB;;AAEA;IACI,eAAe;IACf,gBAAgB;AACpB;;AAEA;IACI,oBAAoB;AACxB;;AAEA,qBAAqB;AACrB;IACI,cAAc;IACd,YAAY;IACZ,eAAe;AACnB;;AAEA;IACI,YAAY;AAChB","sourcesContent":["* {\n    margin: 0;\n    padding: 0;\n}\n\n/* Declare CSS variables */\n:root {\n    --header: #45714a;\n    --content: #c9ffe2;\n    --tabBar: rgb(187, 37, 37);\n}\n\nbody {\n    box-sizing: border-box;\n    height: 100vh;\n    background-color: var(--content);\n}\n\n/* Main container div */\n#mainContainer {\n    width: 100vw;\n    height: 100vh;\n    background-color: var(--content);\n\n    display: grid;\n    grid-template-rows: 150px 1fr;\n}\n\n/* Header div */\n#header {\n    width: 100vw;\n    height: 150px;\n    border: 1px solid black;\n    background-color: var(--header);\n    position: fixed;\n    grid-row: 1 / 2;\n\n    display: grid;\n    grid-template-rows: 0.7fr 0.3fr;\n}\n\n/* Logo div */\n#logoDiv {\n    width: inherit;\n    background-color: var(--header);\n    grid-row: 1 / 2;\n\n    font-family: Arial, Helvetica, sans-serif;\n    font-size: 50px;\n    font-weight: bold;\n    color: white;\n    letter-spacing: 3px;\n\n    display: flex;\n    justify-content: center;\n    align-items: center;\n}\n\n#companyName > a {\n    cursor: pointer\n}\n\n/* Tab bar div */\n#tabDiv {\n    width: inherit;\n    background-color: var(--tabBar);\n    grid-row: 2 / 3;\n\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    gap: 20px;\n}\n\n.menu-item {\n    /* border: 1px solid black; */\n    color: white;\n}\n\n.menu-item > a {\n    cursor: pointer;\n    transition: 0.2s;\n}\n\n.menu-item > a:hover {\n    color: var(--header);\n}\n\n/* Main content div */\n#picture {\n    width: inherit;\n    height: 100%;\n    grid-row: 2 / 3;\n}\n\n#picture > img {\n    width: 100vw;\n}"],"sourceRoot":""}]);
+}
+
+#sliderWrapper {
+    width: inherit;
+    grid-row: 2 / 3;
+}
+
+#sliderWrapper > img {
+    width: 100%;
+}`, "",{"version":3,"sources":["webpack://./src/styles.css"],"names":[],"mappings":"AAAA;IACI,SAAS;IACT,UAAU;AACd;;AAEA,0BAA0B;AAC1B;IACI,iBAAiB;IACjB,kBAAkB;IAClB,0BAA0B;AAC9B;;AAEA;IACI,sBAAsB;IACtB,aAAa;IACb,gCAAgC;AACpC;;AAEA,uBAAuB;AACvB;IACI,YAAY;IACZ,aAAa;IACb,gCAAgC;;IAEhC,aAAa;IACb,6BAA6B;AACjC;;AAEA,eAAe;AACf;IACI,YAAY;IACZ,aAAa;IACb,+BAA+B;IAC/B,eAAe;IACf,eAAe;;IAEf,aAAa;IACb,+BAA+B;AACnC;;AAEA,aAAa;AACb;IACI,cAAc;IACd,+BAA+B;IAC/B,eAAe;;IAEf,yCAAyC;IACzC,eAAe;IACf,iBAAiB;IACjB,YAAY;IACZ,mBAAmB;;IAEnB,aAAa;IACb,uBAAuB;IACvB,mBAAmB;AACvB;;AAEA;IACI;AACJ;;AAEA,gBAAgB;AAChB;IACI,cAAc;IACd,+BAA+B;IAC/B,eAAe;;IAEf,aAAa;IACb,uBAAuB;IACvB,mBAAmB;IACnB,SAAS;AACb;;AAEA;IACI,6BAA6B;IAC7B,YAAY;AAChB;;AAEA;IACI,eAAe;IACf,gBAAgB;AACpB;;AAEA;IACI,oBAAoB;AACxB;;AAEA,qBAAqB;AACrB;IACI,cAAc;IACd,YAAY;IACZ,eAAe;AACnB;;AAEA;IACI,YAAY;AAChB;;AAEA;IACI,cAAc;IACd,eAAe;AACnB;;AAEA;IACI,WAAW;AACf","sourcesContent":["* {\n    margin: 0;\n    padding: 0;\n}\n\n/* Declare CSS variables */\n:root {\n    --header: #48694c;\n    --content: #c9ffe2;\n    --tabBar: rgb(187, 37, 37);\n}\n\nbody {\n    box-sizing: border-box;\n    height: 100vh;\n    background-color: var(--content);\n}\n\n/* Main container div */\n#mainContainer {\n    width: 100vw;\n    height: 100vh;\n    background-color: var(--content);\n\n    display: grid;\n    grid-template-rows: 150px 1fr;\n}\n\n/* Header div */\n#header {\n    width: 100vw;\n    height: 150px;\n    background-color: var(--header);\n    position: fixed;\n    grid-row: 1 / 2;\n\n    display: grid;\n    grid-template-rows: 0.7fr 0.3fr;\n}\n\n/* Logo div */\n#logoDiv {\n    width: inherit;\n    background-color: var(--header);\n    grid-row: 1 / 2;\n\n    font-family: Arial, Helvetica, sans-serif;\n    font-size: 50px;\n    font-weight: bold;\n    color: white;\n    letter-spacing: 3px;\n\n    display: flex;\n    justify-content: center;\n    align-items: center;\n}\n\n#companyName > a {\n    cursor: pointer\n}\n\n/* Tab bar div */\n#tabDiv {\n    width: inherit;\n    background-color: var(--tabBar);\n    grid-row: 2 / 3;\n\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    gap: 20px;\n}\n\n.menu-item {\n    /* border: 1px solid black; */\n    color: white;\n}\n\n.menu-item > a {\n    cursor: pointer;\n    transition: 0.2s;\n}\n\n.menu-item > a:hover {\n    color: var(--header);\n}\n\n/* Main content div */\n#picture {\n    width: inherit;\n    height: 100%;\n    grid-row: 2 / 3;\n}\n\n#picture > img {\n    width: 100vw;\n}\n\n#sliderWrapper {\n    width: inherit;\n    grid-row: 2 / 3;\n}\n\n#sliderWrapper > img {\n    width: 100%;\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -565,34 +573,6 @@ module.exports = styleTagTransform;
 
 /***/ }),
 
-/***/ "./src/branchAddress.js":
-/*!******************************!*\
-  !*** ./src/branchAddress.js ***!
-  \******************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   pictureDiv: () => (/* binding */ pictureDiv)
-/* harmony export */ });
-/* harmony import */ var _assets_oriental_picture_jpeg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./assets/oriental_picture.jpeg */ "./src/assets/oriental_picture.jpeg");
-// Homepage
-
-
-// Oriental kopi picture
-const pictureDiv = document.createElement('div');
-pictureDiv.id = 'picture';
-
-const image = document.createElement('img');
-image.src = _assets_oriental_picture_jpeg__WEBPACK_IMPORTED_MODULE_0__;
-
-pictureDiv.append(image);
-
-// Branch address section
-
-
-/***/ }),
-
 /***/ "./src/header.js":
 /*!***********************!*\
   !*** ./src/header.js ***!
@@ -637,6 +617,112 @@ header.append(tabDiv);
 
 /***/ }),
 
+/***/ "./src/home.js":
+/*!*********************!*\
+  !*** ./src/home.js ***!
+  \*********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   homePage: () => (/* binding */ homePage)
+/* harmony export */ });
+/* harmony import */ var _index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.js */ "./src/index.js");
+/* harmony import */ var _assets_oriental_1_webp__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./assets/oriental_1.webp */ "./src/assets/oriental_1.webp");
+/* harmony import */ var _assets_oriental_2_webp__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./assets/oriental_2.webp */ "./src/assets/oriental_2.webp");
+/* harmony import */ var _assets_oriental_3_webp__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./assets/oriental_3.webp */ "./src/assets/oriental_3.webp");
+/* harmony import */ var _assets_oriental_4_webp__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./assets/oriental_4.webp */ "./src/assets/oriental_4.webp");
+/* harmony import */ var _assets_oriental_5_webp__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./assets/oriental_5.webp */ "./src/assets/oriental_5.webp");
+// Homepage (or initial load-up page)
+
+
+
+
+
+
+
+function homePage() {
+
+    // Create wrapper
+    const sliderWrapper = document.createElement('div');
+    sliderWrapper.id = 'sliderWrapper';
+
+    // Append to mainContainer div
+    _index_js__WEBPACK_IMPORTED_MODULE_0__.mainContainer.append(sliderWrapper);
+
+    // Generate image tags
+    const images = generateImg();
+
+    // Store images in array
+    const imageData = [_assets_oriental_1_webp__WEBPACK_IMPORTED_MODULE_1__, _assets_oriental_2_webp__WEBPACK_IMPORTED_MODULE_2__, _assets_oriental_3_webp__WEBPACK_IMPORTED_MODULE_3__, _assets_oriental_4_webp__WEBPACK_IMPORTED_MODULE_4__, _assets_oriental_5_webp__WEBPACK_IMPORTED_MODULE_5__];
+
+    // Link image source to each img tag.
+    for(let i=0; i<5; i++) {
+        images[i].src = imageData[i];
+        sliderWrapper.append(images[i]);
+    }
+
+}
+
+function generateImg() {
+
+    let images = [];
+
+    // In total, there are 5 images to show.
+    for(let i=1; i < 6; i++) {
+
+        const image = document.createElement('img');
+        image.id = `image-${i}`;
+
+        images.push(image);
+
+    }
+
+    return images;
+
+}
+
+/***/ }),
+
+/***/ "./src/index.js":
+/*!**********************!*\
+  !*** ./src/index.js ***!
+  \**********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   mainContainer: () => (/* binding */ mainContainer)
+/* harmony export */ });
+/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles.css */ "./src/styles.css");
+/* harmony import */ var _header_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./header.js */ "./src/header.js");
+/* harmony import */ var _menuBar_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./menuBar.js */ "./src/menuBar.js");
+/* harmony import */ var _home_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./home.js */ "./src/home.js");
+// This module is the main module containing of the tab switching logic.
+
+
+
+// import { pictureDiv } from './branchAddress.js';
+
+
+
+// Target main container div
+const mainContainer = document.querySelector('#mainContainer');
+
+// Append different sections to main web page.
+mainContainer.append(_header_js__WEBPACK_IMPORTED_MODULE_1__.header);
+// mainContainer.append(pictureDiv);
+
+// Append menu bar items to menu bar.
+_menuBar_js__WEBPACK_IMPORTED_MODULE_2__.menuBarDivs.forEach((div) => {
+    _header_js__WEBPACK_IMPORTED_MODULE_1__.tabDiv.append(div);
+})
+
+// Initial home page load-up
+;(0,_home_js__WEBPACK_IMPORTED_MODULE_3__.homePage)();
+
+/***/ }),
+
 /***/ "./src/menuBar.js":
 /*!************************!*\
   !*** ./src/menuBar.js ***!
@@ -649,7 +735,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 // Menu bar for webpage.
 
-const menuBarItems = ['Pre-Order Egg Tart', 'Merchandise', 'Branch Address', 'Join Member', 'Contact Us' ];
+const menuBarItems = ['Reservation for Egg Tart', 'Merchandise', 'Branch Address', 'Join Member', 'Contact Us' ];
 const menuBarDivs = [];
 
 for(let i = 0; i < 5; i++) {
@@ -666,13 +752,53 @@ for(let i = 0; i < 5; i++) {
 
 /***/ }),
 
-/***/ "./src/assets/oriental_picture.jpeg":
-/*!******************************************!*\
-  !*** ./src/assets/oriental_picture.jpeg ***!
-  \******************************************/
+/***/ "./src/assets/oriental_1.webp":
+/*!************************************!*\
+  !*** ./src/assets/oriental_1.webp ***!
+  \************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-module.exports = __webpack_require__.p + "oriental_picture.jpeg";
+module.exports = __webpack_require__.p + "oriental_1.webp";
+
+/***/ }),
+
+/***/ "./src/assets/oriental_2.webp":
+/*!************************************!*\
+  !*** ./src/assets/oriental_2.webp ***!
+  \************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "oriental_2.webp";
+
+/***/ }),
+
+/***/ "./src/assets/oriental_3.webp":
+/*!************************************!*\
+  !*** ./src/assets/oriental_3.webp ***!
+  \************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "oriental_3.webp";
+
+/***/ }),
+
+/***/ "./src/assets/oriental_4.webp":
+/*!************************************!*\
+  !*** ./src/assets/oriental_4.webp ***!
+  \************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "oriental_4.webp";
+
+/***/ }),
+
+/***/ "./src/assets/oriental_5.webp":
+/*!************************************!*\
+  !*** ./src/assets/oriental_5.webp ***!
+  \************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "oriental_5.webp";
 
 /***/ })
 
@@ -784,39 +910,12 @@ module.exports = __webpack_require__.p + "oriental_picture.jpeg";
 /******/ 	})();
 /******/ 	
 /************************************************************************/
-var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
-(() => {
-/*!**********************!*\
-  !*** ./src/index.js ***!
-  \**********************/
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles.css */ "./src/styles.css");
-/* harmony import */ var _header_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./header.js */ "./src/header.js");
-/* harmony import */ var _branchAddress_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./branchAddress.js */ "./src/branchAddress.js");
-/* harmony import */ var _menuBar_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./menuBar.js */ "./src/menuBar.js");
-// This module is the main module containing of the tab switching logic and page 
-// load-up.
-
-
-
-
-
-
-// Target content div
-const contentDiv = document.querySelector('#mainContainer');
-
-// Append different sections to main web page.
-contentDiv.append(_header_js__WEBPACK_IMPORTED_MODULE_1__.header);
-contentDiv.append(_branchAddress_js__WEBPACK_IMPORTED_MODULE_2__.pictureDiv);
-
-// Append menu bar items to menu bar.
-_menuBar_js__WEBPACK_IMPORTED_MODULE_3__.menuBarDivs.forEach((div) => {
-    _header_js__WEBPACK_IMPORTED_MODULE_1__.tabDiv.append(div);
-    console.log(div.textContent);
-})
-})();
-
+/******/ 	
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	// This entry module is referenced by other modules so it can't be inlined
+/******/ 	var __webpack_exports__ = __webpack_require__("./src/index.js");
+/******/ 	
 /******/ })()
 ;
 //# sourceMappingURL=main.js.map
