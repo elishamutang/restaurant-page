@@ -23,7 +23,7 @@ body {
     background-color: var(--content);
 
     display: grid;
-    grid-template-rows: 150px 0.5fr 1fr 500px 0.5fr;
+    grid-template-rows: 150px 0.5fr 1fr minmax(500px, auto) 0.5fr;
 }
 
 /* Header div */
@@ -156,20 +156,25 @@ body {
 #oldImg {
     grid-row: 3 / 4;
     margin-top: 5px;
-    overflow: hidden;
-    width: 100vw;
 }
 
 #oldImgWrapper {
     display: flex;
     gap: 5px;
-    flex: 0;
-    width: 100vw;
+    width: 100%;
+    height: 100%;
 }
 
-#oldImgWrapper > img {
+#wrapperOne, #wrapperTwo {
     width: 100%;
     height: auto;
+    flex: 1;
+}
+
+#wrapperOne > img,
+#wrapperTwo > img {
+    width: 100%;
+    height: 100%;
 }
 
 /* Word section */
