@@ -70,15 +70,25 @@ function additionalDivs() {
     const oldImgWrapper = document.createElement('div');
     oldImgWrapper.id = 'oldImgWrapper';
 
-    // Create img tags and append inside oldImgWrapper
+    // Create two separate divs to contain each img.
+    const wrapperOne = document.createElement('div');
+    wrapperOne.id = 'wrapperOne';
+
+    const wrapperTwo = document.createElement('div');
+    wrapperTwo.id = 'wrapperTwo';
+
+    // Create img tags and append inside respective wrappers
     const ownerOneImg = document.createElement('img');
     ownerOneImg.src = owner1;
 
     const ownerTwoImg = document.createElement('img');
     ownerTwoImg.src = owner2;
 
-    oldImgWrapper.append(ownerOneImg);
-    oldImgWrapper.append(ownerTwoImg);
+    wrapperOne.append(ownerOneImg);
+    wrapperTwo.append(ownerTwoImg);
+
+    oldImgWrapper.append(wrapperOne);
+    oldImgWrapper.append(wrapperTwo);
 
     oldImg.append(oldImgWrapper);
     mainContainer.append(oldImg);
@@ -142,5 +152,5 @@ function randomHeaderImage() {
 
     randomHeaderImg.append(randomHeaderImgTag);
     mainContainer.append(randomHeaderImg);
-    
+
 }
