@@ -28,14 +28,14 @@ ___CSS_LOADER_EXPORT___.push([module.id, `* {
 
 /* Declare CSS variables */
 :root {
-    --header: #48694c;
-    --content: #c9ffe2;
+    --header: #3a5940;
+    --content: #f6f6e8;
     --tabBar: rgb(187, 37, 37);
 }
 
 body {
     box-sizing: border-box;
-    height: 100vh;
+    height: 100%;
     background-color: var(--content);
 }
 
@@ -46,7 +46,7 @@ body {
     background-color: var(--content);
 
     display: grid;
-    grid-template-rows: 150px 1fr;
+    grid-template-rows: 150px 1fr 1fr 500px;
 }
 
 /* Header div */
@@ -54,8 +54,11 @@ body {
     width: 100vw;
     height: 150px;
     background-color: var(--header);
-    position: fixed;
+    position: sticky;
+    top: 0;
+    z-index: 1;
     grid-row: 1 / 2;
+    font-size: 20px;
 
     display: grid;
     grid-template-rows: 0.7fr 0.3fr;
@@ -68,7 +71,7 @@ body {
     grid-row: 1 / 2;
 
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 50px;
+    font-size: 60px;
     font-weight: bold;
     color: white;
     letter-spacing: 3px;
@@ -95,7 +98,6 @@ body {
 }
 
 .menu-item {
-    /* border: 1px solid black; */
     color: white;
 }
 
@@ -112,7 +114,8 @@ body {
 
 /* Image slider */
 #sliderWrapper {
-    width: inherit;
+    width: 100vw;
+    min-height: 700px;
     grid-row: 2 / 3;
     overflow: hidden;
 }
@@ -167,12 +170,62 @@ body {
 }
 
 #wrapper > img {
-    width: 100vw;
-    height: 100%;
+    min-width: 100%;
+    height: auto;
     flex: 0;
 }
 
-/* Old image div */`, "",{"version":3,"sources":["webpack://./src/styles.css"],"names":[],"mappings":"AAAA;IACI,SAAS;IACT,UAAU;AACd;;AAEA,0BAA0B;AAC1B;IACI,iBAAiB;IACjB,kBAAkB;IAClB,0BAA0B;AAC9B;;AAEA;IACI,sBAAsB;IACtB,aAAa;IACb,gCAAgC;AACpC;;AAEA,uBAAuB;AACvB;IACI,YAAY;IACZ,YAAY;IACZ,gCAAgC;;IAEhC,aAAa;IACb,6BAA6B;AACjC;;AAEA,eAAe;AACf;IACI,YAAY;IACZ,aAAa;IACb,+BAA+B;IAC/B,eAAe;IACf,eAAe;;IAEf,aAAa;IACb,+BAA+B;AACnC;;AAEA,aAAa;AACb;IACI,cAAc;IACd,+BAA+B;IAC/B,eAAe;;IAEf,yCAAyC;IACzC,eAAe;IACf,iBAAiB;IACjB,YAAY;IACZ,mBAAmB;;IAEnB,aAAa;IACb,uBAAuB;IACvB,mBAAmB;AACvB;;AAEA;IACI;AACJ;;AAEA,gBAAgB;AAChB;IACI,cAAc;IACd,+BAA+B;IAC/B,eAAe;;IAEf,aAAa;IACb,uBAAuB;IACvB,mBAAmB;IACnB,SAAS;AACb;;AAEA;IACI,6BAA6B;IAC7B,YAAY;AAChB;;AAEA;IACI,eAAe;IACf,gBAAgB;AACpB;;AAEA;IACI,oBAAoB;AACxB;;AAEA,qBAAqB;;AAErB,iBAAiB;AACjB;IACI,cAAc;IACd,eAAe;IACf,gBAAgB;AACpB;;AAEA;IACI,YAAY;IACZ,YAAY;IACZ,aAAa;IACb,6BAA6B;AACjC;;AAEA;IACI;QACI,wBAAwB;IAC5B;;IAEA;QACI,wBAAwB;IAC5B;;IAEA;QACI,4BAA4B;IAChC;;IAEA;QACI,4BAA4B;IAChC;;IAEA;QACI,4BAA4B;IAChC;;IAEA;QACI,4BAA4B;IAChC;;IAEA;QACI,4BAA4B;IAChC;;IAEA;QACI,4BAA4B;IAChC;;IAEA;QACI,4BAA4B;IAChC;;IAEA;QACI,wBAAwB;IAC5B;AACJ;;AAEA;IACI,YAAY;IACZ,YAAY;IACZ,OAAO;AACX;;AAEA,kBAAkB","sourcesContent":["* {\n    margin: 0;\n    padding: 0;\n}\n\n/* Declare CSS variables */\n:root {\n    --header: #48694c;\n    --content: #c9ffe2;\n    --tabBar: rgb(187, 37, 37);\n}\n\nbody {\n    box-sizing: border-box;\n    height: 100vh;\n    background-color: var(--content);\n}\n\n/* Main container div */\n#mainContainer {\n    width: 100vw;\n    height: 100%;\n    background-color: var(--content);\n\n    display: grid;\n    grid-template-rows: 150px 1fr;\n}\n\n/* Header div */\n#header {\n    width: 100vw;\n    height: 150px;\n    background-color: var(--header);\n    position: fixed;\n    grid-row: 1 / 2;\n\n    display: grid;\n    grid-template-rows: 0.7fr 0.3fr;\n}\n\n/* Logo div */\n#logoDiv {\n    width: inherit;\n    background-color: var(--header);\n    grid-row: 1 / 2;\n\n    font-family: Arial, Helvetica, sans-serif;\n    font-size: 50px;\n    font-weight: bold;\n    color: white;\n    letter-spacing: 3px;\n\n    display: flex;\n    justify-content: center;\n    align-items: center;\n}\n\n#companyName > a {\n    cursor: pointer\n}\n\n/* Tab bar div */\n#tabDiv {\n    width: inherit;\n    background-color: var(--tabBar);\n    grid-row: 2 / 3;\n\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    gap: 20px;\n}\n\n.menu-item {\n    /* border: 1px solid black; */\n    color: white;\n}\n\n.menu-item > a {\n    cursor: pointer;\n    transition: 0.2s;\n}\n\n.menu-item > a:hover {\n    color: var(--header);\n}\n\n/* Main content div */\n\n/* Image slider */\n#sliderWrapper {\n    width: inherit;\n    grid-row: 2 / 3;\n    overflow: hidden;\n}\n\n#wrapper {\n    width: 100vw;\n    height: 100%;\n    display: flex;\n    animation: slide 16s infinite;\n}\n\n@keyframes slide {\n    0% {\n        transform: translateX(0);\n    }\n\n    25% {\n        transform: translateX(0);\n    }\n\n    35% {\n        transform: translateX(-100%);\n    }\n\n    45% {\n        transform: translateX(-100%);\n    }\n\n    55% {\n        transform: translateX(-200%);\n    }\n\n    75% {\n        transform: translateX(-200%);\n    }\n\n    85% {\n        transform: translateX(-300%);\n    }\n\n    90% {\n        transform: translateX(-300%);\n    }\n\n    95% {\n        transform: translateX(-300%);\n    }\n\n    100% {\n        transform: translateX(0);\n    }\n}\n\n#wrapper > img {\n    width: 100vw;\n    height: 100%;\n    flex: 0;\n}\n\n/* Old image div */"],"sourceRoot":""}]);
+/* Old image div */
+#oldImg {
+    grid-row: 3 / 4;
+    margin-top: 5px;
+    overflow: hidden;
+    width: 100vw;
+}
+
+#oldImgWrapper {
+    display: flex;
+    gap: 5px;
+    flex: 0;
+    width: 100vw;
+}
+
+#oldImgWrapper > img {
+    width: 100%;
+    height: auto;
+}
+
+/* Word section */
+#wordSection {
+    width: 100vw;
+    height: 450px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px;
+
+    grid-row: 4 / 5;
+}
+
+#wordSectionTitle {
+    margin-top: 40px;
+}
+
+#wordSectionWords {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    margin: 0 350px 0 350px;
+
+    font-size: 20px;
+    color: var(--header);
+}
+
+`, "",{"version":3,"sources":["webpack://./src/styles.css"],"names":[],"mappings":"AAAA;IACI,SAAS;IACT,UAAU;AACd;;AAEA,0BAA0B;AAC1B;IACI,iBAAiB;IACjB,kBAAkB;IAClB,0BAA0B;AAC9B;;AAEA;IACI,sBAAsB;IACtB,YAAY;IACZ,gCAAgC;AACpC;;AAEA,uBAAuB;AACvB;IACI,YAAY;IACZ,YAAY;IACZ,gCAAgC;;IAEhC,aAAa;IACb,uCAAuC;AAC3C;;AAEA,eAAe;AACf;IACI,YAAY;IACZ,aAAa;IACb,+BAA+B;IAC/B,gBAAgB;IAChB,MAAM;IACN,UAAU;IACV,eAAe;IACf,eAAe;;IAEf,aAAa;IACb,+BAA+B;AACnC;;AAEA,aAAa;AACb;IACI,cAAc;IACd,+BAA+B;IAC/B,eAAe;;IAEf,yCAAyC;IACzC,eAAe;IACf,iBAAiB;IACjB,YAAY;IACZ,mBAAmB;;IAEnB,aAAa;IACb,uBAAuB;IACvB,mBAAmB;AACvB;;AAEA;IACI;AACJ;;AAEA,gBAAgB;AAChB;IACI,cAAc;IACd,+BAA+B;IAC/B,eAAe;;IAEf,aAAa;IACb,uBAAuB;IACvB,mBAAmB;IACnB,SAAS;AACb;;AAEA;IACI,YAAY;AAChB;;AAEA;IACI,eAAe;IACf,gBAAgB;AACpB;;AAEA;IACI,oBAAoB;AACxB;;AAEA,qBAAqB;;AAErB,iBAAiB;AACjB;IACI,YAAY;IACZ,iBAAiB;IACjB,eAAe;IACf,gBAAgB;AACpB;;AAEA;IACI,YAAY;IACZ,YAAY;IACZ,aAAa;IACb,6BAA6B;AACjC;;AAEA;IACI;QACI,wBAAwB;IAC5B;;IAEA;QACI,wBAAwB;IAC5B;;IAEA;QACI,4BAA4B;IAChC;;IAEA;QACI,4BAA4B;IAChC;;IAEA;QACI,4BAA4B;IAChC;;IAEA;QACI,4BAA4B;IAChC;;IAEA;QACI,4BAA4B;IAChC;;IAEA;QACI,4BAA4B;IAChC;;IAEA;QACI,4BAA4B;IAChC;;IAEA;QACI,wBAAwB;IAC5B;AACJ;;AAEA;IACI,eAAe;IACf,YAAY;IACZ,OAAO;AACX;;AAEA,kBAAkB;AAClB;IACI,eAAe;IACf,eAAe;IACf,gBAAgB;IAChB,YAAY;AAChB;;AAEA;IACI,aAAa;IACb,QAAQ;IACR,OAAO;IACP,YAAY;AAChB;;AAEA;IACI,WAAW;IACX,YAAY;AAChB;;AAEA,iBAAiB;AACjB;IACI,YAAY;IACZ,aAAa;;IAEb,aAAa;IACb,sBAAsB;IACtB,2BAA2B;IAC3B,mBAAmB;IACnB,SAAS;;IAET,eAAe;AACnB;;AAEA;IACI,gBAAgB;AACpB;;AAEA;IACI,aAAa;IACb,sBAAsB;IACtB,SAAS;IACT,uBAAuB;IACvB,mBAAmB;IACnB,uBAAuB;;IAEvB,eAAe;IACf,oBAAoB;AACxB","sourcesContent":["* {\n    margin: 0;\n    padding: 0;\n}\n\n/* Declare CSS variables */\n:root {\n    --header: #3a5940;\n    --content: #f6f6e8;\n    --tabBar: rgb(187, 37, 37);\n}\n\nbody {\n    box-sizing: border-box;\n    height: 100%;\n    background-color: var(--content);\n}\n\n/* Main container div */\n#mainContainer {\n    width: 100vw;\n    height: 100%;\n    background-color: var(--content);\n\n    display: grid;\n    grid-template-rows: 150px 1fr 1fr 500px;\n}\n\n/* Header div */\n#header {\n    width: 100vw;\n    height: 150px;\n    background-color: var(--header);\n    position: sticky;\n    top: 0;\n    z-index: 1;\n    grid-row: 1 / 2;\n    font-size: 20px;\n\n    display: grid;\n    grid-template-rows: 0.7fr 0.3fr;\n}\n\n/* Logo div */\n#logoDiv {\n    width: inherit;\n    background-color: var(--header);\n    grid-row: 1 / 2;\n\n    font-family: Arial, Helvetica, sans-serif;\n    font-size: 60px;\n    font-weight: bold;\n    color: white;\n    letter-spacing: 3px;\n\n    display: flex;\n    justify-content: center;\n    align-items: center;\n}\n\n#companyName > a {\n    cursor: pointer\n}\n\n/* Tab bar div */\n#tabDiv {\n    width: inherit;\n    background-color: var(--tabBar);\n    grid-row: 2 / 3;\n\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    gap: 20px;\n}\n\n.menu-item {\n    color: white;\n}\n\n.menu-item > a {\n    cursor: pointer;\n    transition: 0.2s;\n}\n\n.menu-item > a:hover {\n    color: var(--header);\n}\n\n/* Main content div */\n\n/* Image slider */\n#sliderWrapper {\n    width: 100vw;\n    min-height: 700px;\n    grid-row: 2 / 3;\n    overflow: hidden;\n}\n\n#wrapper {\n    width: 100vw;\n    height: 100%;\n    display: flex;\n    animation: slide 16s infinite;\n}\n\n@keyframes slide {\n    0% {\n        transform: translateX(0);\n    }\n\n    25% {\n        transform: translateX(0);\n    }\n\n    35% {\n        transform: translateX(-100%);\n    }\n\n    45% {\n        transform: translateX(-100%);\n    }\n\n    55% {\n        transform: translateX(-200%);\n    }\n\n    75% {\n        transform: translateX(-200%);\n    }\n\n    85% {\n        transform: translateX(-300%);\n    }\n\n    90% {\n        transform: translateX(-300%);\n    }\n\n    95% {\n        transform: translateX(-300%);\n    }\n\n    100% {\n        transform: translateX(0);\n    }\n}\n\n#wrapper > img {\n    min-width: 100%;\n    height: auto;\n    flex: 0;\n}\n\n/* Old image div */\n#oldImg {\n    grid-row: 3 / 4;\n    margin-top: 5px;\n    overflow: hidden;\n    width: 100vw;\n}\n\n#oldImgWrapper {\n    display: flex;\n    gap: 5px;\n    flex: 0;\n    width: 100vw;\n}\n\n#oldImgWrapper > img {\n    width: 100%;\n    height: auto;\n}\n\n/* Word section */\n#wordSection {\n    width: 100vw;\n    height: 450px;\n\n    display: flex;\n    flex-direction: column;\n    justify-content: flex-start;\n    align-items: center;\n    gap: 15px;\n\n    grid-row: 4 / 5;\n}\n\n#wordSectionTitle {\n    margin-top: 40px;\n}\n\n#wordSectionWords {\n    display: flex;\n    flex-direction: column;\n    gap: 30px;\n    justify-content: center;\n    align-items: center;\n    margin: 0 350px 0 350px;\n\n    font-size: 20px;\n    color: var(--header);\n}\n\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -681,7 +734,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _assets_oriental_5_webp__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./assets/oriental_5.webp */ "./src/assets/oriental_5.webp");
 /* harmony import */ var _assets_owner_1_jpg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./assets/owner_1.jpg */ "./src/assets/owner_1.jpg");
 /* harmony import */ var _assets_owner_2_jpg__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./assets/owner_2.jpg */ "./src/assets/owner_2.jpg");
+/* harmony import */ var _assets_wordSectionHeader_png__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./assets/wordSectionHeader.png */ "./src/assets/wordSectionHeader.png");
 // Homepage (or initial load-up page)
+
 
 
 
@@ -765,6 +820,65 @@ function additionalDivs() {
     oldImg.append(oldImgWrapper);
     _index_js__WEBPACK_IMPORTED_MODULE_0__.mainContainer.append(oldImg);
 
+    wordSectionDiv();
+
+}
+
+function wordSectionDiv() {
+
+    // Word section after old owner image
+    
+    const wordSection = document.createElement('div');
+    wordSection.id = 'wordSection';
+
+    const wordSectionTitle = document.createElement('div');
+    wordSectionTitle.id = 'wordSectionTitle';
+
+    const wordSectionTitleImg = document.createElement('img');
+    wordSectionTitleImg.src = _assets_wordSectionHeader_png__WEBPACK_IMPORTED_MODULE_8__;
+
+    wordSectionTitle.append(wordSectionTitleImg);
+
+    const wordSectionWords = document.createElement('div');
+    wordSectionWords.id = 'wordSectionWords';
+
+    const firstPara = document.createElement('div');
+    firstPara.id = 'firstPara';
+    firstPara.textContent = `Master Huayang's ancestors came from Hainan. In his early days, he "ran foreign ships" to make a living in Southeast Asia. Over the years, he has become proficient in Western cuisine by working as a chef on ships. He has combined the essence of traditional Chinese food with exquisite snacks such as pastry egg tarts and pineapple buns to form today's Huayang Nanyang cuisine, especially the pastry egg tarts and ice-fire pineapple buns.`
+
+    const secondPara = document.createElement('div');
+    secondPara.id = 'secondPara';
+    secondPara.textContent = `Huayang Teahouse carries the hometown feelings of overseas Chinese in Nanyang, and Huayang Coffee records the hard-working lives of overseas Chinese in the early days. Huayang Coffee is thick and mellow. Three kinds of high-quality coffee beans [Arabica, Robusta, and Liberica] are blended in a golden ratio and roasted at high temperatures to create a rich and mellow Huayang Coffee.`;
+
+    const thirdPara = document.createElement('div');
+    thirdPara.id = 'thirdPara';
+    thirdPara.textContent = `Huayang has always adhered to the traditional cultural essence of Chinese cuisine, pursuing the highest quality raw materials and fresh ingredients. Following the traditional craftsmanship passed down by Huayang’s master chefs, we carefully research and produce dishes that are perfect in color, aroma and taste. Nanyang style cuisine, dim sum and sweet stew.`;
+
+    // Append each paragraph to word section.
+    wordSectionWords.append(firstPara);
+    wordSectionWords.append(secondPara);
+    wordSectionWords.append(thirdPara);
+
+    // Append header and wording to section.
+    wordSection.append(wordSectionTitle);
+    wordSection.append(wordSectionWords);
+
+    // Append to DOM.
+    _index_js__WEBPACK_IMPORTED_MODULE_0__.mainContainer.append(wordSection);
+
+}
+
+function randomHeaderImg() {
+
+    const randomHeaderImg = document.createElement('div');
+    randomHeaderImg.id = 'randomHeaderImg';
+
+    const randomHeaderImgTag = document.createElement('img');
+    randomHeaderImgTag.src = _assets_oriental_1_webp__WEBPACK_IMPORTED_MODULE_1__;
+
+    randomHeaderImg.append(randomHeaderImgTag);
+
+    _index_js__WEBPACK_IMPORTED_MODULE_0__.mainContainer.append(randomHeaderImg);
 }
 
 /***/ }),
@@ -904,6 +1018,16 @@ module.exports = __webpack_require__.p + "owner_1.jpg";
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 module.exports = __webpack_require__.p + "owner_2.jpg";
+
+/***/ }),
+
+/***/ "./src/assets/wordSectionHeader.png":
+/*!******************************************!*\
+  !*** ./src/assets/wordSectionHeader.png ***!
+  \******************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "wordSectionHeader.png";
 
 /***/ })
 
