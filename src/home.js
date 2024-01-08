@@ -84,6 +84,7 @@ function additionalDivs() {
     mainContainer.append(oldImg);
 
     wordSectionDiv();
+    randomHeaderImage();
 
 }
 
@@ -129,4 +130,17 @@ function wordSectionDiv() {
     // Append to DOM.
     mainContainer.append(wordSection);
 
+}
+
+function randomHeaderImage() {
+
+    const randomHeaderImg = document.createElement('div');
+    randomHeaderImg.id = 'randomHeaderImg';
+
+    const randomHeaderImgTag = document.createElement('img');
+    randomHeaderImgTag.src = orientalKopi1;
+
+    randomHeaderImg.append(randomHeaderImgTag);
+    mainContainer.append(randomHeaderImg);
+    
 }
