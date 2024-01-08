@@ -23,7 +23,7 @@ body {
     background-color: var(--content);
 
     display: grid;
-    grid-template-rows: 150px 0.5fr 1fr 500px minmax(0.5fr, auto);
+    grid-template-rows: 150px 0.5fr 1fr 500px minmax(0.5fr, auto) 0.5fr 0.5fr 0.5fr;
 }
 
 /* Header div */
@@ -220,6 +220,24 @@ body {
 }
 
 #randomHeaderImg > img {
+    width: 100%;
+    height: 100%;
+}
+
+/* Repetitive divs */
+#repeatDiv1 {
+    grid-row: 6 / 7;
+}
+
+#repeatDiv2 {
+    grid-row: 7 / 8;
+}
+
+#repeatDiv3 {
+    grid-row: 8 / 9;
+}
+
+.repeatDivs {
     width: 100%;
     height: 100%;
 }
