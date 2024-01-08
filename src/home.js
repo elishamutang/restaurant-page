@@ -31,13 +31,15 @@ export function homePage() {
     mainContainer.append(sliderWrapper);
 
     // Generate image tags for slider.
-    const numOfImgs = 5;
-
     // Store images in array
     const imageData = [orientalKopi1, orientalKopi2, orientalKopi3, orientalKopi4, orientalKopi5];
 
     // Call function.
-    generateImg(numOfImgs, imageData);
+    let images = generateImg(5, imageData);
+
+    images.forEach((image) => {
+        wrapper.append(image);
+    })
     
     // Generate additional divs
     additionalDivs();
@@ -54,16 +56,12 @@ function generateImg(numOfImgs, imageData) {
 
         const image = document.createElement('img');
         image.id = `image-${i+1}`;
-
         images.push(image);
-
-    }
-
-    // Link image source to each img tag.
-    for(let i=0; i < numOfImgs; i++) {
         images[i].src = imageData[i];
-        wrapper.append(images[i]);
+
     }
+
+    return images;
 
 }
 
@@ -100,8 +98,10 @@ function additionalDivs() {
     oldImg.append(oldImgWrapper);
     mainContainer.append(oldImg);
 
+    // Other sections of homepage.
     wordSectionDiv();
     randomHeaderImage();
+    repetitiveDivs();
 
 }
 
@@ -164,18 +164,33 @@ function randomHeaderImage() {
 
 function repetitiveDivs() {
 
-    // Generate 3 similar divs.
     // Each div will contain a word section and image section, so generate 3 img tags.
-    let repeatDivArr = [];
+    const imageData = [coffeePic, eggTart, bunPic];
 
+    // Images is an array of the images from imageData
+    const images = generateImg(3, imageData);
 
-    for(let i=1; i<4; i++) {
-        const div = document.createElement('div');
-        div.id = `repeatDiv${i}`;
+    // Generate 3 similar divs with 2 divs in each parent div.
+    for(let i=0; i < 3; i++) {
 
-        const divImg = document.createElement('img');
+        // Parent div
+        const repeatDiv = document.createElement('div');
+        repeatDiv.className = `repeatDivs`;
+        repeatDiv.id = `repeatDiv${i+1}`;
+        mainContainer.append(repeatDiv);
 
-        repeatDivArr.push(div);
+        // Word div
+        const wordDiv = document.createElement('div');
+        wordDiv.id = `wordDiv${i+1}`;
+
+        repeatDiv.append(wordDiv);
+
+        // Image div
+        const imgDiv = document.createElement('div');
+        imgDiv.id = `imgDiv${i+1}`;
+        imgDiv.append(images[i]);
+
+        repeatDiv.append(imgDiv);
     }
 
 }
