@@ -248,12 +248,24 @@ body {
 }
 
 /* Repetitive divs */
+#imgDiv1 > img,
+#imgDiv2 > img,
+#imgDiv3 > img {
+    width: 100%;
+    height: 100%;
+}
+
 #repeatDiv1 {
     grid-row: 6 / 7;
 }
 
 #repeatDiv2 {
     grid-row: 7 / 8;
+}
+
+#imgDiv2 {
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
 }
 
 #repeatDiv3 {
@@ -263,9 +275,13 @@ body {
 .repeatDivs {
     width: 100%;
     height: 100%;
+
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 50% 50%;
 }
 
-`, "",{"version":3,"sources":["webpack://./src/styles.css"],"names":[],"mappings":"AAAA;IACI,SAAS;IACT,UAAU;AACd;;AAEA,0BAA0B;AAC1B;IACI,iBAAiB;IACjB,kBAAkB;IAClB,0BAA0B;AAC9B;;AAEA;IACI,sBAAsB;IACtB,YAAY;IACZ,gCAAgC;AACpC;;AAEA,uBAAuB;AACvB;IACI,YAAY;IACZ,YAAY;IACZ,gCAAgC;;IAEhC,aAAa;IACb,+EAA+E;AACnF;;AAEA,eAAe;AACf;IACI,YAAY;IACZ,aAAa;IACb,+BAA+B;IAC/B,gBAAgB;IAChB,MAAM;IACN,UAAU;IACV,eAAe;IACf,eAAe;;IAEf,aAAa;IACb,+BAA+B;AACnC;;AAEA,aAAa;AACb;IACI,cAAc;IACd,+BAA+B;IAC/B,eAAe;;IAEf,yCAAyC;IACzC,eAAe;IACf,iBAAiB;IACjB,YAAY;IACZ,mBAAmB;;IAEnB,aAAa;IACb,uBAAuB;IACvB,mBAAmB;AACvB;;AAEA;IACI;AACJ;;AAEA,gBAAgB;AAChB;IACI,cAAc;IACd,+BAA+B;IAC/B,eAAe;;IAEf,aAAa;IACb,uBAAuB;IACvB,mBAAmB;IACnB,SAAS;AACb;;AAEA;IACI,YAAY;AAChB;;AAEA;IACI,eAAe;IACf,gBAAgB;AACpB;;AAEA;IACI,oBAAoB;AACxB;;AAEA,qBAAqB;;AAErB,iBAAiB;AACjB;IACI,YAAY;IACZ,iBAAiB;IACjB,eAAe;IACf,gBAAgB;AACpB;;AAEA;IACI,YAAY;IACZ,YAAY;IACZ,aAAa;IACb,6BAA6B;AACjC;;AAEA;IACI;QACI,wBAAwB;IAC5B;;IAEA;QACI,wBAAwB;IAC5B;;IAEA;QACI,4BAA4B;IAChC;;IAEA;QACI,4BAA4B;IAChC;;IAEA;QACI,4BAA4B;IAChC;;IAEA;QACI,4BAA4B;IAChC;;IAEA;QACI,4BAA4B;IAChC;;IAEA;QACI,4BAA4B;IAChC;;IAEA;QACI,4BAA4B;IAChC;;IAEA;QACI,wBAAwB;IAC5B;AACJ;;AAEA;IACI,eAAe;IACf,YAAY;IACZ,OAAO;AACX;;AAEA,kBAAkB;AAClB;IACI,eAAe;IACf,eAAe;AACnB;;AAEA;IACI,aAAa;IACb,QAAQ;IACR,WAAW;IACX,YAAY;AAChB;;AAEA;IACI,WAAW;IACX,YAAY;IACZ,OAAO;AACX;;AAEA;;IAEI,WAAW;IACX,YAAY;AAChB;;AAEA,iBAAiB;AACjB;IACI,WAAW;IACX,YAAY;IACZ,mBAAmB;;IAEnB,aAAa;IACb,sBAAsB;IACtB,2BAA2B;IAC3B,mBAAmB;IACnB,SAAS;;IAET,eAAe;AACnB;;AAEA;IACI,gBAAgB;AACpB;;AAEA;IACI,aAAa;IACb,sBAAsB;IACtB,SAAS;IACT,uBAAuB;IACvB,mBAAmB;;IAEnB,eAAe;IACf,oBAAoB;AACxB;;AAEA;IACI,UAAU;IACV,OAAO;AACX;;AAEA,sBAAsB;AACtB;IACI,eAAe;IACf,eAAe;IACf,YAAY;AAChB;;AAEA;IACI,WAAW;IACX,YAAY;AAChB;;AAEA,oBAAoB;AACpB;IACI,eAAe;AACnB;;AAEA;IACI,eAAe;AACnB;;AAEA;IACI,eAAe;AACnB;;AAEA;IACI,WAAW;IACX,YAAY;AAChB","sourcesContent":["* {\n    margin: 0;\n    padding: 0;\n}\n\n/* Declare CSS variables */\n:root {\n    --header: #3a5940;\n    --content: #f6f6e8;\n    --tabBar: rgb(187, 37, 37);\n}\n\nbody {\n    box-sizing: border-box;\n    height: 100%;\n    background-color: var(--content);\n}\n\n/* Main container div */\n#mainContainer {\n    width: 100vw;\n    height: 100%;\n    background-color: var(--content);\n\n    display: grid;\n    grid-template-rows: 150px 0.5fr 1fr 500px minmax(0.5fr, auto) 0.5fr 0.5fr 0.5fr;\n}\n\n/* Header div */\n#header {\n    width: 100vw;\n    height: 150px;\n    background-color: var(--header);\n    position: sticky;\n    top: 0;\n    z-index: 1;\n    grid-row: 1 / 2;\n    font-size: 20px;\n\n    display: grid;\n    grid-template-rows: 0.7fr 0.3fr;\n}\n\n/* Logo div */\n#logoDiv {\n    width: inherit;\n    background-color: var(--header);\n    grid-row: 1 / 2;\n\n    font-family: Arial, Helvetica, sans-serif;\n    font-size: 60px;\n    font-weight: bold;\n    color: white;\n    letter-spacing: 3px;\n\n    display: flex;\n    justify-content: center;\n    align-items: center;\n}\n\n#companyName > a {\n    cursor: pointer\n}\n\n/* Tab bar div */\n#tabDiv {\n    width: inherit;\n    background-color: var(--tabBar);\n    grid-row: 2 / 3;\n\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    gap: 20px;\n}\n\n.menu-item {\n    color: white;\n}\n\n.menu-item > a {\n    cursor: pointer;\n    transition: 0.2s;\n}\n\n.menu-item > a:hover {\n    color: var(--header);\n}\n\n/* Main content div */\n\n/* Image slider */\n#sliderWrapper {\n    width: 100vw;\n    min-height: 700px;\n    grid-row: 2 / 3;\n    overflow: hidden;\n}\n\n#wrapper {\n    width: 100vw;\n    height: 100%;\n    display: flex;\n    animation: slide 16s infinite;\n}\n\n@keyframes slide {\n    0% {\n        transform: translateX(0);\n    }\n\n    25% {\n        transform: translateX(0);\n    }\n\n    35% {\n        transform: translateX(-100%);\n    }\n\n    45% {\n        transform: translateX(-100%);\n    }\n\n    55% {\n        transform: translateX(-200%);\n    }\n\n    75% {\n        transform: translateX(-200%);\n    }\n\n    85% {\n        transform: translateX(-300%);\n    }\n\n    90% {\n        transform: translateX(-300%);\n    }\n\n    95% {\n        transform: translateX(-300%);\n    }\n\n    100% {\n        transform: translateX(0);\n    }\n}\n\n#wrapper > img {\n    min-width: 100%;\n    height: auto;\n    flex: 0;\n}\n\n/* Old image div */\n#oldImg {\n    grid-row: 3 / 4;\n    margin-top: 5px;\n}\n\n#oldImgWrapper {\n    display: flex;\n    gap: 5px;\n    width: 100%;\n    height: 100%;\n}\n\n#wrapperOne, #wrapperTwo {\n    width: 100%;\n    height: auto;\n    flex: 1;\n}\n\n#wrapperOne > img,\n#wrapperTwo > img {\n    width: 100%;\n    height: 100%;\n}\n\n/* Word section */\n#wordSection {\n    width: 100%;\n    height: 100%;\n    margin-bottom: 50px;\n\n    display: flex;\n    flex-direction: column;\n    justify-content: flex-start;\n    align-items: center;\n    gap: 15px;\n\n    grid-row: 4 / 5;\n}\n\n#wordSectionTitle {\n    margin-top: 30px;\n}\n\n#wordSectionWords {\n    display: flex;\n    flex-direction: column;\n    gap: 35px;\n    justify-content: center;\n    align-items: center;\n\n    font-size: 20px;\n    color: var(--header);\n}\n\n#wordSectionWords > div {\n    width: 75%;\n    flex: 1;\n}\n\n/* Random header div */\n#randomHeaderImg {\n    grid-row: 5 / 6;\n    min-width: 100%;\n    height: 100%;\n}\n\n#randomHeaderImg > img {\n    width: 100%;\n    height: 100%;\n}\n\n/* Repetitive divs */\n#repeatDiv1 {\n    grid-row: 6 / 7;\n}\n\n#repeatDiv2 {\n    grid-row: 7 / 8;\n}\n\n#repeatDiv3 {\n    grid-row: 8 / 9;\n}\n\n.repeatDivs {\n    width: 100%;\n    height: 100%;\n}\n\n"],"sourceRoot":""}]);
+`, "",{"version":3,"sources":["webpack://./src/styles.css"],"names":[],"mappings":"AAAA;IACI,SAAS;IACT,UAAU;AACd;;AAEA,0BAA0B;AAC1B;IACI,iBAAiB;IACjB,kBAAkB;IAClB,0BAA0B;AAC9B;;AAEA;IACI,sBAAsB;IACtB,YAAY;IACZ,gCAAgC;AACpC;;AAEA,uBAAuB;AACvB;IACI,YAAY;IACZ,YAAY;IACZ,gCAAgC;;IAEhC,aAAa;IACb,+EAA+E;AACnF;;AAEA,eAAe;AACf;IACI,YAAY;IACZ,aAAa;IACb,+BAA+B;IAC/B,gBAAgB;IAChB,MAAM;IACN,UAAU;IACV,eAAe;IACf,eAAe;;IAEf,aAAa;IACb,+BAA+B;AACnC;;AAEA,aAAa;AACb;IACI,cAAc;IACd,+BAA+B;IAC/B,eAAe;;IAEf,yCAAyC;IACzC,eAAe;IACf,iBAAiB;IACjB,YAAY;IACZ,mBAAmB;;IAEnB,aAAa;IACb,uBAAuB;IACvB,mBAAmB;AACvB;;AAEA;IACI;AACJ;;AAEA,gBAAgB;AAChB;IACI,cAAc;IACd,+BAA+B;IAC/B,eAAe;;IAEf,aAAa;IACb,uBAAuB;IACvB,mBAAmB;IACnB,SAAS;AACb;;AAEA;IACI,YAAY;AAChB;;AAEA;IACI,eAAe;IACf,gBAAgB;AACpB;;AAEA;IACI,oBAAoB;AACxB;;AAEA,qBAAqB;;AAErB,iBAAiB;AACjB;IACI,YAAY;IACZ,iBAAiB;IACjB,eAAe;IACf,gBAAgB;AACpB;;AAEA;IACI,YAAY;IACZ,YAAY;IACZ,aAAa;IACb,6BAA6B;AACjC;;AAEA;IACI;QACI,wBAAwB;IAC5B;;IAEA;QACI,wBAAwB;IAC5B;;IAEA;QACI,4BAA4B;IAChC;;IAEA;QACI,4BAA4B;IAChC;;IAEA;QACI,4BAA4B;IAChC;;IAEA;QACI,4BAA4B;IAChC;;IAEA;QACI,4BAA4B;IAChC;;IAEA;QACI,4BAA4B;IAChC;;IAEA;QACI,4BAA4B;IAChC;;IAEA;QACI,wBAAwB;IAC5B;AACJ;;AAEA;IACI,eAAe;IACf,YAAY;IACZ,OAAO;AACX;;AAEA,kBAAkB;AAClB;IACI,eAAe;IACf,eAAe;AACnB;;AAEA;IACI,aAAa;IACb,QAAQ;IACR,WAAW;IACX,YAAY;AAChB;;AAEA;IACI,WAAW;IACX,YAAY;IACZ,OAAO;AACX;;AAEA;;IAEI,WAAW;IACX,YAAY;AAChB;;AAEA,iBAAiB;AACjB;IACI,WAAW;IACX,YAAY;IACZ,mBAAmB;;IAEnB,aAAa;IACb,sBAAsB;IACtB,2BAA2B;IAC3B,mBAAmB;IACnB,SAAS;;IAET,eAAe;AACnB;;AAEA;IACI,gBAAgB;AACpB;;AAEA;IACI,aAAa;IACb,sBAAsB;IACtB,SAAS;IACT,uBAAuB;IACvB,mBAAmB;;IAEnB,eAAe;IACf,oBAAoB;AACxB;;AAEA;IACI,UAAU;IACV,OAAO;AACX;;AAEA,sBAAsB;AACtB;IACI,eAAe;IACf,eAAe;IACf,YAAY;AAChB;;AAEA;IACI,WAAW;IACX,YAAY;AAChB;;AAEA,oBAAoB;AACpB;;;IAGI,WAAW;IACX,YAAY;AAChB;;AAEA;IACI,eAAe;AACnB;;AAEA;IACI,eAAe;AACnB;;AAEA;IACI,eAAe;IACf,kBAAkB;AACtB;;AAEA;IACI,eAAe;AACnB;;AAEA;IACI,WAAW;IACX,YAAY;;IAEZ,aAAa;IACb,uBAAuB;IACvB,8BAA8B;AAClC","sourcesContent":["* {\n    margin: 0;\n    padding: 0;\n}\n\n/* Declare CSS variables */\n:root {\n    --header: #3a5940;\n    --content: #f6f6e8;\n    --tabBar: rgb(187, 37, 37);\n}\n\nbody {\n    box-sizing: border-box;\n    height: 100%;\n    background-color: var(--content);\n}\n\n/* Main container div */\n#mainContainer {\n    width: 100vw;\n    height: 100%;\n    background-color: var(--content);\n\n    display: grid;\n    grid-template-rows: 150px 0.5fr 1fr 500px minmax(0.5fr, auto) 0.5fr 0.5fr 0.5fr;\n}\n\n/* Header div */\n#header {\n    width: 100vw;\n    height: 150px;\n    background-color: var(--header);\n    position: sticky;\n    top: 0;\n    z-index: 1;\n    grid-row: 1 / 2;\n    font-size: 20px;\n\n    display: grid;\n    grid-template-rows: 0.7fr 0.3fr;\n}\n\n/* Logo div */\n#logoDiv {\n    width: inherit;\n    background-color: var(--header);\n    grid-row: 1 / 2;\n\n    font-family: Arial, Helvetica, sans-serif;\n    font-size: 60px;\n    font-weight: bold;\n    color: white;\n    letter-spacing: 3px;\n\n    display: flex;\n    justify-content: center;\n    align-items: center;\n}\n\n#companyName > a {\n    cursor: pointer\n}\n\n/* Tab bar div */\n#tabDiv {\n    width: inherit;\n    background-color: var(--tabBar);\n    grid-row: 2 / 3;\n\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    gap: 20px;\n}\n\n.menu-item {\n    color: white;\n}\n\n.menu-item > a {\n    cursor: pointer;\n    transition: 0.2s;\n}\n\n.menu-item > a:hover {\n    color: var(--header);\n}\n\n/* Main content div */\n\n/* Image slider */\n#sliderWrapper {\n    width: 100vw;\n    min-height: 700px;\n    grid-row: 2 / 3;\n    overflow: hidden;\n}\n\n#wrapper {\n    width: 100vw;\n    height: 100%;\n    display: flex;\n    animation: slide 16s infinite;\n}\n\n@keyframes slide {\n    0% {\n        transform: translateX(0);\n    }\n\n    25% {\n        transform: translateX(0);\n    }\n\n    35% {\n        transform: translateX(-100%);\n    }\n\n    45% {\n        transform: translateX(-100%);\n    }\n\n    55% {\n        transform: translateX(-200%);\n    }\n\n    75% {\n        transform: translateX(-200%);\n    }\n\n    85% {\n        transform: translateX(-300%);\n    }\n\n    90% {\n        transform: translateX(-300%);\n    }\n\n    95% {\n        transform: translateX(-300%);\n    }\n\n    100% {\n        transform: translateX(0);\n    }\n}\n\n#wrapper > img {\n    min-width: 100%;\n    height: auto;\n    flex: 0;\n}\n\n/* Old image div */\n#oldImg {\n    grid-row: 3 / 4;\n    margin-top: 5px;\n}\n\n#oldImgWrapper {\n    display: flex;\n    gap: 5px;\n    width: 100%;\n    height: 100%;\n}\n\n#wrapperOne, #wrapperTwo {\n    width: 100%;\n    height: auto;\n    flex: 1;\n}\n\n#wrapperOne > img,\n#wrapperTwo > img {\n    width: 100%;\n    height: 100%;\n}\n\n/* Word section */\n#wordSection {\n    width: 100%;\n    height: 100%;\n    margin-bottom: 50px;\n\n    display: flex;\n    flex-direction: column;\n    justify-content: flex-start;\n    align-items: center;\n    gap: 15px;\n\n    grid-row: 4 / 5;\n}\n\n#wordSectionTitle {\n    margin-top: 30px;\n}\n\n#wordSectionWords {\n    display: flex;\n    flex-direction: column;\n    gap: 35px;\n    justify-content: center;\n    align-items: center;\n\n    font-size: 20px;\n    color: var(--header);\n}\n\n#wordSectionWords > div {\n    width: 75%;\n    flex: 1;\n}\n\n/* Random header div */\n#randomHeaderImg {\n    grid-row: 5 / 6;\n    min-width: 100%;\n    height: 100%;\n}\n\n#randomHeaderImg > img {\n    width: 100%;\n    height: 100%;\n}\n\n/* Repetitive divs */\n#imgDiv1 > img,\n#imgDiv2 > img,\n#imgDiv3 > img {\n    width: 100%;\n    height: 100%;\n}\n\n#repeatDiv1 {\n    grid-row: 6 / 7;\n}\n\n#repeatDiv2 {\n    grid-row: 7 / 8;\n}\n\n#imgDiv2 {\n    grid-row: 1 / 2;\n    grid-column: 1 / 2;\n}\n\n#repeatDiv3 {\n    grid-row: 8 / 9;\n}\n\n.repeatDivs {\n    width: 100%;\n    height: 100%;\n\n    display: grid;\n    grid-template-rows: 1fr;\n    grid-template-columns: 50% 50%;\n}\n\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -778,7 +794,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _assets_bun_pic_jpg__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./assets/bun_pic.jpg */ "./src/assets/bun_pic.jpg");
 /* harmony import */ var _assets_coffee_pic_jpg__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./assets/coffee_pic.jpg */ "./src/assets/coffee_pic.jpg");
 /* harmony import */ var _assets_egg_tart_jpg__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./assets/egg_tart.jpg */ "./src/assets/egg_tart.jpg");
+/* harmony import */ var _assets_coffee_pic_word_png__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./assets/coffee_pic_word.png */ "./src/assets/coffee_pic_word.png");
 // Homepage (or initial load-up page)
+
+
 
 
 
@@ -944,6 +963,11 @@ function randomHeaderImage() {
 
 function repetitiveDivs() {
 
+    let repeatDiv;
+    let wordDiv;
+    let imgDiv;
+    let wordChildDiv;
+
     // Each div will contain a word section and image section, so generate 3 img tags.
     const imageData = [_assets_coffee_pic_jpg__WEBPACK_IMPORTED_MODULE_10__, _assets_egg_tart_jpg__WEBPACK_IMPORTED_MODULE_11__, _assets_bun_pic_jpg__WEBPACK_IMPORTED_MODULE_9__];
 
@@ -954,24 +978,43 @@ function repetitiveDivs() {
     for(let i=0; i < 3; i++) {
 
         // Parent div
-        const repeatDiv = document.createElement('div');
+        repeatDiv = document.createElement('div');
         repeatDiv.className = `repeatDivs`;
         repeatDiv.id = `repeatDiv${i+1}`;
         _index_js__WEBPACK_IMPORTED_MODULE_0__.mainContainer.append(repeatDiv);
 
         // Word div
-        const wordDiv = document.createElement('div');
+        wordDiv = document.createElement('div');
         wordDiv.id = `wordDiv${i+1}`;
+
+        // Word child divs
+        for(let j=0; j < 3; j++) {
+
+            wordChildDiv = document.createElement('div');
+            wordChildDiv.id = `wordChildDiv${j+1}`;
+            wordDiv.append(wordChildDiv);
+            
+            if(j < 2) {
+                const wordChildImg = document.createElement('img');
+                wordChildImg.id = `wordChildImg${j+1}`;
+                wordChildDiv.append(wordChildImg);
+            }
+
+        }
 
         repeatDiv.append(wordDiv);
 
         // Image div
-        const imgDiv = document.createElement('div');
+        imgDiv = document.createElement('div');
         imgDiv.id = `imgDiv${i+1}`;
         imgDiv.append(images[i]);
 
         repeatDiv.append(imgDiv);
+
     }
+
+
+    // Insert images to word section.
 
 }
 
@@ -1112,6 +1155,16 @@ module.exports = __webpack_require__.p + "bun_pic.jpg";
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 module.exports = __webpack_require__.p + "coffee_pic.jpg";
+
+/***/ }),
+
+/***/ "./src/assets/coffee_pic_word.png":
+/*!****************************************!*\
+  !*** ./src/assets/coffee_pic_word.png ***!
+  \****************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "coffee_pic_word.png";
 
 /***/ }),
 
