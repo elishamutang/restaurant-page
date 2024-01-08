@@ -258,3 +258,18 @@ body {
     grid-template-columns: 50% 50%;
 }
 
+.wordDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.repeatDivs > div > div {
+    width: 300px;
+}
+
+.repeatDivs > div > div > img {
+    width: 100%;
+}
+

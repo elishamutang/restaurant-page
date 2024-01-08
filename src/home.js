@@ -12,6 +12,11 @@ import bunPic from "./assets/bun_pic.jpg";
 import coffeePic from "./assets/coffee_pic.jpg";
 import eggTart from "./assets/egg_tart.jpg";
 import coffeePicWord from "./assets/coffee_pic_word.png";
+import coffeePicWord2 from "./assets/coffee_pic_word_2.png";
+import eggTartWord from "./assets/egg_tart_word.png";
+import eggTartWord2 from './assets/egg_tart_word_2.png';
+import bunWord from "./assets/bun_word.png";
+import bunWord2 from "./assets/bun_word_2.png";
 
 
 
@@ -189,6 +194,7 @@ function repetitiveDivs() {
         // Word div
         wordDiv = document.createElement('div');
         wordDiv.id = `wordDiv${i+1}`;
+        wordDiv.className = 'wordDiv';
 
         // Word child divs
         for(let j=0; j < 3; j++) {
@@ -216,7 +222,17 @@ function repetitiveDivs() {
 
     }
 
-
     // Insert images to word section.
+    const wordImgTags = Array.from(document.querySelectorAll('.repeatDivs > div > div > img'));
+    console.log(wordImgTags);
+
+    const wordImgArr = [coffeePicWord, coffeePicWord2, eggTartWord, eggTartWord2, bunWord, bunWord2];
+
+    for(let idx=0; idx < wordImgTags.length; idx++) {
+
+        wordImgTags[idx].src = wordImgArr[idx];
+
+    }
+
 
 }
