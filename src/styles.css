@@ -23,7 +23,7 @@ body {
     background-color: var(--content);
 
     display: grid;
-    grid-template-rows: 150px 0.5fr 1fr minmax(500px, auto) 0.5fr;
+    grid-template-rows: 150px 0.5fr 1fr 500px minmax(0.5fr, auto);
 }
 
 /* Header div */
@@ -179,8 +179,9 @@ body {
 
 /* Word section */
 #wordSection {
-    width: 100vw;
-    height: 450px;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 40px;
 
     display: flex;
     flex-direction: column;
@@ -198,13 +199,17 @@ body {
 #wordSectionWords {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 35px;
     justify-content: center;
     align-items: center;
-    margin: 0 350px 0 350px;
 
     font-size: 20px;
     color: var(--header);
+}
+
+#wordSectionWords > div {
+    width: 75%;
+    flex: 1;
 }
 
 /* Random header div */
