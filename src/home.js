@@ -11,6 +11,8 @@ import wordSectionHeader from "./assets/wordSectionHeader.png";
 import bunPic from "./assets/bun_pic.jpg";
 import coffeePic from "./assets/coffee_pic.jpg";
 import eggTart from "./assets/egg_tart.jpg";
+import coffeePicWord from "./assets/coffee_pic_word.png";
+
 
 
 
@@ -164,6 +166,11 @@ function randomHeaderImage() {
 
 function repetitiveDivs() {
 
+    let repeatDiv;
+    let wordDiv;
+    let imgDiv;
+    let wordChildDiv;
+
     // Each div will contain a word section and image section, so generate 3 img tags.
     const imageData = [coffeePic, eggTart, bunPic];
 
@@ -174,23 +181,42 @@ function repetitiveDivs() {
     for(let i=0; i < 3; i++) {
 
         // Parent div
-        const repeatDiv = document.createElement('div');
+        repeatDiv = document.createElement('div');
         repeatDiv.className = `repeatDivs`;
         repeatDiv.id = `repeatDiv${i+1}`;
         mainContainer.append(repeatDiv);
 
         // Word div
-        const wordDiv = document.createElement('div');
+        wordDiv = document.createElement('div');
         wordDiv.id = `wordDiv${i+1}`;
+
+        // Word child divs
+        for(let j=0; j < 3; j++) {
+
+            wordChildDiv = document.createElement('div');
+            wordChildDiv.id = `wordChildDiv${j+1}`;
+            wordDiv.append(wordChildDiv);
+            
+            if(j < 2) {
+                const wordChildImg = document.createElement('img');
+                wordChildImg.id = `wordChildImg${j+1}`;
+                wordChildDiv.append(wordChildImg);
+            }
+
+        }
 
         repeatDiv.append(wordDiv);
 
         // Image div
-        const imgDiv = document.createElement('div');
+        imgDiv = document.createElement('div');
         imgDiv.id = `imgDiv${i+1}`;
         imgDiv.append(images[i]);
 
         repeatDiv.append(imgDiv);
+
     }
+
+
+    // Insert images to word section.
 
 }
