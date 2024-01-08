@@ -23,7 +23,7 @@ body {
     background-color: var(--content);
 
     display: grid;
-    grid-template-rows: 150px 1fr;
+    grid-template-rows: 150px 1fr 1fr 500px;
 }
 
 /* Header div */
@@ -175,26 +175,28 @@ body {
 /* Word section */
 #wordSection {
     width: 100vw;
-    height: 350px;
+    height: 450px;
 
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     gap: 15px;
+
+    grid-row: 4 / 5;
 }
 
 #wordSectionTitle {
-    margin-top: 10px;
+    margin-top: 40px;
 }
 
 #wordSectionWords {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 30px;
     justify-content: center;
     align-items: center;
-    margin: 0 150px 0 150px;
+    margin: 0 350px 0 350px;
 
     font-size: 20px;
     color: var(--header);
