@@ -23,7 +23,7 @@ body {
     background-color: var(--content);
 
     display: grid;
-    grid-template-rows: 150px 700px 0.5fr 500px 0.5fr 0.5fr 0.5fr 0.5fr;
+    grid-template-rows: 150px 700px 0.5fr repeat(5, auto);
 }
 
 /* Header div */
@@ -271,5 +271,13 @@ body {
 
 .repeatDivs > div > div > img {
     width: 100%;
+}
+
+.wordDiv > div:last-child {
+    /* border: 2px solid black; */
+    margin-top: 15px;
+    text-align: center;
+    width: 100%;
+    color: var(--header);
 }
 
