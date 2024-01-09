@@ -200,7 +200,7 @@ function repetitiveDivs() {
         for(let j=0; j < 3; j++) {
 
             wordChildDiv = document.createElement('div');
-            wordChildDiv.id = `wordChildDiv${j+1}`;
+            wordChildDiv.id = `wordChildDiv-${i+1}-${j+1}`;
             wordDiv.append(wordChildDiv);
             
             if(j < 2) {
@@ -224,7 +224,6 @@ function repetitiveDivs() {
 
     // Insert images to word section.
     const wordImgTags = Array.from(document.querySelectorAll('.repeatDivs > div > div > img'));
-    console.log(wordImgTags);
 
     const wordImgArr = [coffeePicWord, coffeePicWord2, eggTartWord, eggTartWord2, bunWord, bunWord2];
 
@@ -233,6 +232,11 @@ function repetitiveDivs() {
         wordImgTags[idx].src = wordImgArr[idx];
 
     }
+
+    // Insert wording to word section div.
+    const wordChildDiv3rd = Array.from(document.querySelectorAll('.wordDiv > div:last-child'));
+
+    wordChildDiv3rd[0].textContent = `Huayang adheres to the spirit of traditional Nanyang coffee culture, insists on selecting high-quality coffee beans, and mixes three types of high-quality coffee beans [Arabica, Robusta, and Liberica] in golden proportions. The brewed coffee is full of fragrance, thick and mellow.`;
 
 
 }
