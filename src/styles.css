@@ -23,7 +23,7 @@ body {
     background-color: var(--content);
 
     display: grid;
-    grid-template-rows: 150px 700px 0.5fr repeat(5, auto);
+    grid-template-rows: 150px 700px 0.5fr repeat(6, auto);
 }
 
 /* Header div */
@@ -281,3 +281,22 @@ body {
     color: var(--header);
 }
 
+/* Video section */
+#videoSection {
+    width: 100%;
+    height: 100%;
+    grid-row: 9 / 10;
+    
+    display: flex;
+}
+
+#videoSection > div {
+    width: 100%;
+    height: 600px;
+    border: 1px solid black;
+}
+
+#videoSection > div > iframe {
+    width: 100%;
+    height: 100%;
+}
