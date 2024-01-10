@@ -61,7 +61,6 @@ function generateImg(numOfImgs, imageData) {
 
     let images = [];
 
-    // In total, there are 5 images to show.
     for(let i=0; i < numOfImgs; i++) {
 
         const image = document.createElement('img');
