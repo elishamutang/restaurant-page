@@ -46,7 +46,7 @@ body {
     background-color: var(--content);
 
     display: grid;
-    grid-template-rows: 150px 0.5fr 1fr 500px minmax(0.5fr, auto) 0.5fr 0.5fr 0.5fr;
+    grid-template-rows: 150px 700px 0.5fr repeat(6, auto);
 }
 
 /* Header div */
@@ -115,7 +115,7 @@ body {
 /* Image slider */
 #sliderWrapper {
     width: 100%;
-    min-height: 700px;
+    height: 100%;
     grid-row: 2 / 3;
     overflow: hidden;
 }
@@ -289,14 +289,28 @@ body {
 }
 
 .repeatDivs > div > div {
-    width: 300px;
+    width: 350px;
 }
 
 .repeatDivs > div > div > img {
     width: 100%;
 }
 
-`, "",{"version":3,"sources":["webpack://./src/styles.css"],"names":[],"mappings":"AAAA;IACI,SAAS;IACT,UAAU;AACd;;AAEA,0BAA0B;AAC1B;IACI,iBAAiB;IACjB,kBAAkB;IAClB,0BAA0B;AAC9B;;AAEA;IACI,sBAAsB;IACtB,YAAY;IACZ,gCAAgC;AACpC;;AAEA,uBAAuB;AACvB;IACI,YAAY;IACZ,YAAY;IACZ,gCAAgC;;IAEhC,aAAa;IACb,+EAA+E;AACnF;;AAEA,eAAe;AACf;IACI,YAAY;IACZ,aAAa;IACb,+BAA+B;IAC/B,gBAAgB;IAChB,MAAM;IACN,UAAU;IACV,eAAe;IACf,eAAe;;IAEf,aAAa;IACb,+BAA+B;AACnC;;AAEA,aAAa;AACb;IACI,cAAc;IACd,+BAA+B;IAC/B,eAAe;;IAEf,yCAAyC;IACzC,eAAe;IACf,iBAAiB;IACjB,YAAY;IACZ,mBAAmB;;IAEnB,aAAa;IACb,uBAAuB;IACvB,mBAAmB;AACvB;;AAEA;IACI;AACJ;;AAEA,gBAAgB;AAChB;IACI,cAAc;IACd,+BAA+B;IAC/B,eAAe;;IAEf,aAAa;IACb,uBAAuB;IACvB,mBAAmB;IACnB,SAAS;AACb;;AAEA;IACI,YAAY;AAChB;;AAEA;IACI,eAAe;IACf,gBAAgB;AACpB;;AAEA;IACI,oBAAoB;AACxB;;AAEA,qBAAqB;;AAErB,iBAAiB;AACjB;IACI,WAAW;IACX,iBAAiB;IACjB,eAAe;IACf,gBAAgB;AACpB;;AAEA;IACI,WAAW;IACX,YAAY;IACZ,aAAa;IACb,6BAA6B;AACjC;;AAEA;IACI;QACI,wBAAwB;IAC5B;;IAEA;QACI,wBAAwB;IAC5B;;IAEA;QACI,4BAA4B;IAChC;;IAEA;QACI,4BAA4B;IAChC;;IAEA;QACI,4BAA4B;IAChC;;IAEA;QACI,4BAA4B;IAChC;;IAEA;QACI,4BAA4B;IAChC;;IAEA;QACI,4BAA4B;IAChC;;IAEA;QACI,4BAA4B;IAChC;;IAEA;QACI,wBAAwB;IAC5B;AACJ;;AAEA;IACI,eAAe;IACf,YAAY;IACZ,OAAO;AACX;;AAEA,kBAAkB;AAClB;IACI,eAAe;IACf,eAAe;AACnB;;AAEA;IACI,aAAa;IACb,QAAQ;IACR,WAAW;IACX,YAAY;AAChB;;AAEA;IACI,WAAW;IACX,YAAY;IACZ,OAAO;AACX;;AAEA;;IAEI,WAAW;IACX,YAAY;AAChB;;AAEA,iBAAiB;AACjB;IACI,WAAW;IACX,YAAY;IACZ,mBAAmB;;IAEnB,aAAa;IACb,sBAAsB;IACtB,2BAA2B;IAC3B,mBAAmB;IACnB,SAAS;;IAET,eAAe;AACnB;;AAEA;IACI,gBAAgB;AACpB;;AAEA;IACI,aAAa;IACb,sBAAsB;IACtB,SAAS;IACT,uBAAuB;IACvB,mBAAmB;;IAEnB,eAAe;IACf,oBAAoB;AACxB;;AAEA;IACI,UAAU;IACV,OAAO;AACX;;AAEA,sBAAsB;AACtB;IACI,eAAe;IACf,eAAe;IACf,YAAY;AAChB;;AAEA;IACI,WAAW;IACX,YAAY;AAChB;;AAEA,oBAAoB;AACpB;;;IAGI,WAAW;IACX,YAAY;AAChB;;AAEA;IACI,eAAe;AACnB;;AAEA;IACI,eAAe;AACnB;;AAEA;IACI,eAAe;IACf,kBAAkB;AACtB;;AAEA;IACI,eAAe;AACnB;;AAEA;IACI,WAAW;IACX,YAAY;;IAEZ,aAAa;IACb,uBAAuB;IACvB,8BAA8B;AAClC;;AAEA;IACI,aAAa;IACb,sBAAsB;IACtB,uBAAuB;IACvB,mBAAmB;AACvB;;AAEA;IACI,YAAY;AAChB;;AAEA;IACI,WAAW;AACf","sourcesContent":["* {\n    margin: 0;\n    padding: 0;\n}\n\n/* Declare CSS variables */\n:root {\n    --header: #3a5940;\n    --content: #f6f6e8;\n    --tabBar: rgb(187, 37, 37);\n}\n\nbody {\n    box-sizing: border-box;\n    height: 100%;\n    background-color: var(--content);\n}\n\n/* Main container div */\n#mainContainer {\n    width: 100vw;\n    height: 100%;\n    background-color: var(--content);\n\n    display: grid;\n    grid-template-rows: 150px 0.5fr 1fr 500px minmax(0.5fr, auto) 0.5fr 0.5fr 0.5fr;\n}\n\n/* Header div */\n#header {\n    width: 100vw;\n    height: 150px;\n    background-color: var(--header);\n    position: sticky;\n    top: 0;\n    z-index: 1;\n    grid-row: 1 / 2;\n    font-size: 20px;\n\n    display: grid;\n    grid-template-rows: 0.7fr 0.3fr;\n}\n\n/* Logo div */\n#logoDiv {\n    width: inherit;\n    background-color: var(--header);\n    grid-row: 1 / 2;\n\n    font-family: Arial, Helvetica, sans-serif;\n    font-size: 60px;\n    font-weight: bold;\n    color: white;\n    letter-spacing: 3px;\n\n    display: flex;\n    justify-content: center;\n    align-items: center;\n}\n\n#companyName > a {\n    cursor: pointer\n}\n\n/* Tab bar div */\n#tabDiv {\n    width: inherit;\n    background-color: var(--tabBar);\n    grid-row: 2 / 3;\n\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    gap: 20px;\n}\n\n.menu-item {\n    color: white;\n}\n\n.menu-item > a {\n    cursor: pointer;\n    transition: 0.2s;\n}\n\n.menu-item > a:hover {\n    color: var(--header);\n}\n\n/* Main content div */\n\n/* Image slider */\n#sliderWrapper {\n    width: 100%;\n    min-height: 700px;\n    grid-row: 2 / 3;\n    overflow: hidden;\n}\n\n#wrapper {\n    width: 100%;\n    height: 100%;\n    display: flex;\n    animation: slide 16s infinite;\n}\n\n@keyframes slide {\n    0% {\n        transform: translateX(0);\n    }\n\n    25% {\n        transform: translateX(0);\n    }\n\n    35% {\n        transform: translateX(-100%);\n    }\n\n    45% {\n        transform: translateX(-100%);\n    }\n\n    55% {\n        transform: translateX(-200%);\n    }\n\n    75% {\n        transform: translateX(-200%);\n    }\n\n    85% {\n        transform: translateX(-300%);\n    }\n\n    90% {\n        transform: translateX(-300%);\n    }\n\n    95% {\n        transform: translateX(-300%);\n    }\n\n    100% {\n        transform: translateX(0);\n    }\n}\n\n#wrapper > img {\n    min-width: 100%;\n    height: auto;\n    flex: 0;\n}\n\n/* Old image div */\n#oldImg {\n    grid-row: 3 / 4;\n    margin-top: 5px;\n}\n\n#oldImgWrapper {\n    display: flex;\n    gap: 5px;\n    width: 100%;\n    height: 100%;\n}\n\n#wrapperOne, #wrapperTwo {\n    width: 100%;\n    height: auto;\n    flex: 1;\n}\n\n#wrapperOne > img,\n#wrapperTwo > img {\n    width: 100%;\n    height: 100%;\n}\n\n/* Word section */\n#wordSection {\n    width: 100%;\n    height: 100%;\n    margin-bottom: 50px;\n\n    display: flex;\n    flex-direction: column;\n    justify-content: flex-start;\n    align-items: center;\n    gap: 15px;\n\n    grid-row: 4 / 5;\n}\n\n#wordSectionTitle {\n    margin-top: 30px;\n}\n\n#wordSectionWords {\n    display: flex;\n    flex-direction: column;\n    gap: 35px;\n    justify-content: center;\n    align-items: center;\n\n    font-size: 20px;\n    color: var(--header);\n}\n\n#wordSectionWords > div {\n    width: 75%;\n    flex: 1;\n}\n\n/* Random header div */\n#randomHeaderImg {\n    grid-row: 5 / 6;\n    min-width: 100%;\n    height: 100%;\n}\n\n#randomHeaderImg > img {\n    width: 100%;\n    height: 100%;\n}\n\n/* Repetitive divs */\n#imgDiv1 > img,\n#imgDiv2 > img,\n#imgDiv3 > img {\n    width: 100%;\n    height: 100%;\n}\n\n#repeatDiv1 {\n    grid-row: 6 / 7;\n}\n\n#repeatDiv2 {\n    grid-row: 7 / 8;\n}\n\n#imgDiv2 {\n    grid-row: 1 / 2;\n    grid-column: 1 / 2;\n}\n\n#repeatDiv3 {\n    grid-row: 8 / 9;\n}\n\n.repeatDivs {\n    width: 100%;\n    height: 100%;\n\n    display: grid;\n    grid-template-rows: 1fr;\n    grid-template-columns: 50% 50%;\n}\n\n.wordDiv {\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n}\n\n.repeatDivs > div > div {\n    width: 300px;\n}\n\n.repeatDivs > div > div > img {\n    width: 100%;\n}\n\n"],"sourceRoot":""}]);
+.wordDiv > div:last-child {
+    margin-top: 10px;
+    text-align: center;
+    width: 80%;
+    line-height: 2;
+    color: var(--header);
+}
+
+/* Video section */
+#videoSection {
+    width: 100%;
+    height: 100%;
+    grid-row: 7 / 8;
+}
+`, "",{"version":3,"sources":["webpack://./src/styles.css"],"names":[],"mappings":"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","sourcesContent":["* {\n    margin: 0;\n    padding: 0;\n}\n\n/* Declare CSS variables */\n:root {\n    --header: #3a5940;\n    --content: #f6f6e8;\n    --tabBar: rgb(187, 37, 37);\n}\n\nbody {\n    box-sizing: border-box;\n    height: 100%;\n    background-color: var(--content);\n}\n\n/* Main container div */\n#mainContainer {\n    width: 100vw;\n    height: 100%;\n    background-color: var(--content);\n\n    display: grid;\n    grid-template-rows: 150px 700px 0.5fr repeat(6, auto);\n}\n\n/* Header div */\n#header {\n    width: 100vw;\n    height: 150px;\n    background-color: var(--header);\n    position: sticky;\n    top: 0;\n    z-index: 1;\n    grid-row: 1 / 2;\n    font-size: 20px;\n\n    display: grid;\n    grid-template-rows: 0.7fr 0.3fr;\n}\n\n/* Logo div */\n#logoDiv {\n    width: inherit;\n    background-color: var(--header);\n    grid-row: 1 / 2;\n\n    font-family: Arial, Helvetica, sans-serif;\n    font-size: 60px;\n    font-weight: bold;\n    color: white;\n    letter-spacing: 3px;\n\n    display: flex;\n    justify-content: center;\n    align-items: center;\n}\n\n#companyName > a {\n    cursor: pointer\n}\n\n/* Tab bar div */\n#tabDiv {\n    width: inherit;\n    background-color: var(--tabBar);\n    grid-row: 2 / 3;\n\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    gap: 20px;\n}\n\n.menu-item {\n    color: white;\n}\n\n.menu-item > a {\n    cursor: pointer;\n    transition: 0.2s;\n}\n\n.menu-item > a:hover {\n    color: var(--header);\n}\n\n/* Main content div */\n\n/* Image slider */\n#sliderWrapper {\n    width: 100%;\n    height: 100%;\n    grid-row: 2 / 3;\n    overflow: hidden;\n}\n\n#wrapper {\n    width: 100%;\n    height: 100%;\n    display: flex;\n    animation: slide 16s infinite;\n}\n\n@keyframes slide {\n    0% {\n        transform: translateX(0);\n    }\n\n    25% {\n        transform: translateX(0);\n    }\n\n    35% {\n        transform: translateX(-100%);\n    }\n\n    45% {\n        transform: translateX(-100%);\n    }\n\n    55% {\n        transform: translateX(-200%);\n    }\n\n    75% {\n        transform: translateX(-200%);\n    }\n\n    85% {\n        transform: translateX(-300%);\n    }\n\n    90% {\n        transform: translateX(-300%);\n    }\n\n    95% {\n        transform: translateX(-300%);\n    }\n\n    100% {\n        transform: translateX(0);\n    }\n}\n\n#wrapper > img {\n    min-width: 100%;\n    height: auto;\n    flex: 0;\n}\n\n/* Old image div */\n#oldImg {\n    grid-row: 3 / 4;\n    margin-top: 5px;\n}\n\n#oldImgWrapper {\n    display: flex;\n    gap: 5px;\n    width: 100%;\n    height: 100%;\n}\n\n#wrapperOne, #wrapperTwo {\n    width: 100%;\n    height: auto;\n    flex: 1;\n}\n\n#wrapperOne > img,\n#wrapperTwo > img {\n    width: 100%;\n    height: 100%;\n}\n\n/* Word section */\n#wordSection {\n    width: 100%;\n    height: 100%;\n    margin-bottom: 50px;\n\n    display: flex;\n    flex-direction: column;\n    justify-content: flex-start;\n    align-items: center;\n    gap: 15px;\n\n    grid-row: 4 / 5;\n}\n\n#wordSectionTitle {\n    margin-top: 30px;\n}\n\n#wordSectionWords {\n    display: flex;\n    flex-direction: column;\n    gap: 35px;\n    justify-content: center;\n    align-items: center;\n\n    font-size: 20px;\n    color: var(--header);\n}\n\n#wordSectionWords > div {\n    width: 75%;\n    flex: 1;\n}\n\n/* Random header div */\n#randomHeaderImg {\n    grid-row: 5 / 6;\n    min-width: 100%;\n    height: 100%;\n}\n\n#randomHeaderImg > img {\n    width: 100%;\n    height: 100%;\n}\n\n/* Repetitive divs */\n#imgDiv1 > img,\n#imgDiv2 > img,\n#imgDiv3 > img {\n    width: 100%;\n    height: 100%;\n}\n\n#repeatDiv1 {\n    grid-row: 6 / 7;\n}\n\n#repeatDiv2 {\n    grid-row: 7 / 8;\n}\n\n#imgDiv2 {\n    grid-row: 1 / 2;\n    grid-column: 1 / 2;\n}\n\n#repeatDiv3 {\n    grid-row: 8 / 9;\n}\n\n.repeatDivs {\n    width: 100%;\n    height: 100%;\n\n    display: grid;\n    grid-template-rows: 1fr;\n    grid-template-columns: 50% 50%;\n}\n\n.wordDiv {\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n}\n\n.repeatDivs > div > div {\n    width: 350px;\n}\n\n.repeatDivs > div > div > img {\n    width: 100%;\n}\n\n.wordDiv > div:last-child {\n    margin-top: 10px;\n    text-align: center;\n    width: 80%;\n    line-height: 2;\n    color: var(--header);\n}\n\n/* Video section */\n#videoSection {\n    width: 100%;\n    height: 100%;\n    grid-row: 7 / 8;\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -866,7 +880,11 @@ function homePage() {
     })
     
     // Generate additional divs
-    additionalDivs();
+    oldManDiv();
+    wordSectionDiv();
+    randomHeaderImage();
+    repetitiveDivs();
+    videoDiv();
 
 }
 
@@ -875,7 +893,6 @@ function generateImg(numOfImgs, imageData) {
 
     let images = [];
 
-    // In total, there are 5 images to show.
     for(let i=0; i < numOfImgs; i++) {
 
         const image = document.createElement('img');
@@ -889,7 +906,7 @@ function generateImg(numOfImgs, imageData) {
 
 }
 
-function additionalDivs() {
+function oldManDiv() {
 
     // Old owner picture(?)
     const oldImg = document.createElement('div');
@@ -921,11 +938,6 @@ function additionalDivs() {
 
     oldImg.append(oldImgWrapper);
     _index_js__WEBPACK_IMPORTED_MODULE_0__.mainContainer.append(oldImg);
-
-    // Other sections of homepage.
-    wordSectionDiv();
-    randomHeaderImage();
-    repetitiveDivs();
 
 }
 
@@ -1017,7 +1029,7 @@ function repetitiveDivs() {
         for(let j=0; j < 3; j++) {
 
             wordChildDiv = document.createElement('div');
-            wordChildDiv.id = `wordChildDiv${j+1}`;
+            wordChildDiv.id = `wordChildDiv-${i+1}-${j+1}`;
             wordDiv.append(wordChildDiv);
             
             if(j < 2) {
@@ -1041,7 +1053,6 @@ function repetitiveDivs() {
 
     // Insert images to word section.
     const wordImgTags = Array.from(document.querySelectorAll('.repeatDivs > div > div > img'));
-    console.log(wordImgTags);
 
     const wordImgArr = [_assets_coffee_pic_word_png__WEBPACK_IMPORTED_MODULE_12__, _assets_coffee_pic_word_2_png__WEBPACK_IMPORTED_MODULE_13__, _assets_egg_tart_word_png__WEBPACK_IMPORTED_MODULE_14__, _assets_egg_tart_word_2_png__WEBPACK_IMPORTED_MODULE_15__, _assets_bun_word_png__WEBPACK_IMPORTED_MODULE_16__, _assets_bun_word_2_png__WEBPACK_IMPORTED_MODULE_17__];
 
@@ -1050,6 +1061,39 @@ function repetitiveDivs() {
         wordImgTags[idx].src = wordImgArr[idx];
 
     }
+
+    // Insert wording to word section div.
+    const wordChildDiv3rd = Array.from(document.querySelectorAll('.wordDiv > div:last-child'));
+
+    wordChildDiv3rd[0].textContent = `Huayang adheres to the spirit of traditional Nanyang coffee culture, insists on selecting high-quality coffee beans, and mixes three types of high-quality coffee beans [Arabica, Robusta, and Liberica] in golden proportions. The brewed coffee is full of fragrance, thick and mellow.`;
+    wordChildDiv3rd[1].textContent = `Huayang uses traditional craftsmanship to make egg tarts. After years of careful research and improvement, it uses an exclusive formula to produce the "Huayang Crispy Egg Tart" with "color, aroma and taste"! Huayang Egg Tarts are hand-made one by one, and each layer of dense tart crust is folded repeatedly. It tastes like Huayang Egg Tarts are hand-made one by one, with each dense layer of tart crust folded repeatedly. Every bite is filled with rich egg fragrance, with a tinge of flavor. Sweet but not greasy, crispy and rich taste!`;
+    wordChildDiv3rd[2].textContent = `Huayang uses ancient techniques to make pineapple buns. An exclusive recipe produces golden, crispy and delicious traditional pineapple buns. Each pineapple bun is hand-made. The outer layer is baked at high temperature to become golden and crispy, while the bottom is It will be crispy and soft. Paired with cool butter, honey or condensed milk, the blend of hot and cold will elevate the entire taste of pineapple buns to another level.`;
+
+}
+
+function videoDiv() {
+
+    const videoSection = document.createElement('div');
+    videoSection.id = `videoSection`;
+
+    _index_js__WEBPACK_IMPORTED_MODULE_0__.mainContainer.append(videoSection);
+
+    // const videoLinks = [<iframe width="560" height="315" src="https://www.youtube.com/embed/jaRBPZtMnI8?si=hYWkZAs7-kbKJKK9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>, 
+    //                     <iframe width="560" height="315" src="https://www.youtube.com/embed/KhzpxCoyTkw?si=eOcI_NTy21bRf2Lk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>,
+    //                     <iframe width="560" height="315" src="https://www.youtube.com/embed/3tIc4aTF3Wo?si=gKHwQDauMJDreOXU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>]
+
+    // Generate 3 video wrapper divs.
+    for(let i=0; i < 3; i++) {
+
+        const videoWrapperDiv = document.createElement('div');
+        videoWrapperDiv.id = `videoSection${i+1}`;
+
+
+        videoSection.append(videoWrapperDiv);
+
+    }
+
+    document.querySelector('videoSection1').innerHTML = `iframe width="560" height="315" src="https://www.youtube.com/embed/jaRBPZtMnI8?si=hYWkZAs7-kbKJKK9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
 
 
 }
