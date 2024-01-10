@@ -258,7 +258,6 @@ function videoDiv() {
         videoWrapperDiv.id = `videoSection${i+1}`;
         videoWrapperDiv.innerHTML = videoLinks[i];
 
-
         videoSection.append(videoWrapperDiv);
 
     }
