@@ -49,7 +49,10 @@ export function homePage() {
     })
     
     // Generate additional divs
-    additionalDivs();
+    oldManDiv();
+    wordSectionDiv();
+    randomHeaderImage();
+    repetitiveDivs();
 
 }
 
@@ -72,7 +75,7 @@ function generateImg(numOfImgs, imageData) {
 
 }
 
-function additionalDivs() {
+function oldManDiv() {
 
     // Old owner picture(?)
     const oldImg = document.createElement('div');
@@ -104,11 +107,6 @@ function additionalDivs() {
 
     oldImg.append(oldImgWrapper);
     mainContainer.append(oldImg);
-
-    // Other sections of homepage.
-    wordSectionDiv();
-    randomHeaderImage();
-    repetitiveDivs();
 
 }
 
