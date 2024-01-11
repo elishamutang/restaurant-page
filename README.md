@@ -7,7 +7,6 @@ The project mainly emphasizes on the application of NPM, webpack and building th
 # To run, please do the following
 
 - Since the page is incomplete, run `npm run dev` to have a look at the website.
-- Link to reference `https://www.orientalkopi.asia/`
 
 
 ## Note-to-self
@@ -17,3 +16,6 @@ The project mainly emphasizes on the application of NPM, webpack and building th
 ### Future Improvements
 
 - Use 2 columns instead of just 1, for accessibility purposes.
+
+### Link to website reference
+- `- Link to reference `https://www.orientalkopi.asia/``
