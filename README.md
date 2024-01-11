@@ -18,4 +18,4 @@ The project mainly emphasizes on the application of NPM, webpack and building th
 - Use 2 columns instead of just 1, for accessibility purposes.
 
 ### Link to website reference
-- `- Link to reference `https://www.orientalkopi.asia/``
+- `https://www.orientalkopi.asia/`
