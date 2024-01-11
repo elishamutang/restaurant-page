@@ -7,7 +7,7 @@ import orientalKopi4 from "./assets/oriental_4.webp";
 import orientalKopi5 from "./assets/oriental_5.webp";
 import owner1 from "./assets/owner_1.jpg";
 import owner2 from "./assets/owner_2.jpg";
-import wordSectionHeader from "./assets/wordSectionHeader.png";
+import historySectionHeader from "./assets/wordSectionHeader.png";
 import bunPic from "./assets/bun_pic.jpg";
 import coffeePic from "./assets/coffee_pic.jpg";
 import eggTart from "./assets/egg_tart.jpg";
@@ -50,7 +50,7 @@ export function homePage() {
     
     // Generate additional divs
     oldManDiv();
-    wordSectionDiv();
+    historyDiv();
     randomHeaderImage();
     repetitiveDivs();
     videoDiv();
@@ -110,23 +110,24 @@ function oldManDiv() {
 
 }
 
-function wordSectionDiv() {
+// History section
+function historyDiv() {
 
     // Word section after old owner image
     
-    const wordSection = document.createElement('div');
-    wordSection.id = 'wordSection';
+    const historySection = document.createElement('div');
+    historySection.id = 'historySection';
 
-    const wordSectionTitle = document.createElement('div');
-    wordSectionTitle.id = 'wordSectionTitle';
+    const historySectionTitle = document.createElement('div');
+    historySectionTitle.id = 'historySectionTitle';
 
-    const wordSectionTitleImg = document.createElement('img');
-    wordSectionTitleImg.src = wordSectionHeader;
+    const historySectionTitleImg = document.createElement('img');
+    historySectionTitleImg.src = historySectionHeader;
 
-    wordSectionTitle.append(wordSectionTitleImg);
+    historySectionTitle.append(historySectionTitleImg);
 
-    const wordSectionWords = document.createElement('div');
-    wordSectionWords.id = 'wordSectionWords';
+    const historySectionWords = document.createElement('div');
+    historySectionWords.id = 'historySectionWords';
 
     const firstPara = document.createElement('div');
     firstPara.id = 'firstPara';
@@ -141,19 +142,20 @@ function wordSectionDiv() {
     thirdPara.textContent = `Huayang has always adhered to the traditional cultural essence of Chinese cuisine, pursuing the highest quality raw materials and fresh ingredients. Following the traditional craftsmanship passed down by Huayang’s master chefs, we carefully research and produce dishes that are perfect in color, aroma and taste. Nanyang style cuisine, dim sum and sweet stew.`;
 
     // Append each paragraph to word section.
-    wordSectionWords.append(firstPara);
-    wordSectionWords.append(secondPara);
-    wordSectionWords.append(thirdPara);
+    historySectionWords.append(firstPara);
+    historySectionWords.append(secondPara);
+    historySectionWords.append(thirdPara);
 
     // Append header and wording to section.
-    wordSection.append(wordSectionTitle);
-    wordSection.append(wordSectionWords);
+    historySection.append(historySectionTitle);
+    historySection.append(historySectionWords);
 
     // Append to DOM.
-    mainContainer.append(wordSection);
+    mainContainer.append(historySection);
 
 }
 
+// A random (probably not random) image section.
 function randomHeaderImage() {
 
     const randomHeaderImg = document.createElement('div');
@@ -167,6 +169,7 @@ function randomHeaderImage() {
 
 }
 
+// Section where there are 3 images with words next to them.
 function repetitiveDivs() {
 
     let repeatDiv;
@@ -240,6 +243,7 @@ function repetitiveDivs() {
 
 }
 
+// Video section of homepage.
 function videoDiv() {
 
     const videoSection = document.createElement('div');
