@@ -2,9 +2,10 @@
 
 import styles from './styles.css';
 import { header, tabDiv } from './header.js';
-// import { pictureDiv } from './branchAddress.js';
 import { menuBarDivs } from './menuBar.js';
-import { homePage } from './home.js';
+import homePage from './home.js';
+
+// Code below will need to be re-factored
 
 // Target main container div
 export const mainContainer = document.querySelector('#mainContainer');
