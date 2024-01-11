@@ -49,7 +49,7 @@ export default function homePage() {
     
     // Load additional divs
     oldManDiv();
-    historyDiv();
+    history();
     randomHeaderImage();
     repetitiveDivs();
     videoDiv();
@@ -111,7 +111,7 @@ function oldManDiv() {
 }
 
 // History section
-function historyDiv() {
+function history() {
 
     // Word section after old owner image
     
