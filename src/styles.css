@@ -178,7 +178,7 @@ body {
 }
 
 /* Word section */
-#wordSection {
+#historySection {
     width: 100%;
     height: 100%;
     margin-bottom: 50px;
@@ -192,11 +192,11 @@ body {
     grid-row: 4 / 5;
 }
 
-#wordSectionTitle {
+#historySectionTitle {
     margin-top: 30px;
 }
 
-#wordSectionWords {
+#historySectionWords {
     display: flex;
     flex-direction: column;
     gap: 35px;
@@ -207,7 +207,7 @@ body {
     color: var(--header);
 }
 
-#wordSectionWords > div {
+#historySectionWords > div {
     width: 75%;
     flex: 1;
 }
