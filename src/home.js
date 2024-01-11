@@ -21,7 +21,32 @@ import huayangClassicHeader from "./assets/huayangClassicHeader.png";
 
 
 
+// Use this function to load homepage
 export default function homePage() {
+
+    // Append in order
+    mainContainer.append(slider());
+    mainContainer.append(oldManDiv());
+    mainContainer.append(history().historySection);
+    mainContainer.append(randomHeaderImage());
+    
+    // Append repetitive divs
+    const repeatedDivs = Array.from(repetitiveDivs().repeatedDivs);
+    
+    repeatedDivs.forEach((div) => {
+        mainContainer.append(div);
+    })
+    
+    repetitiveDivs().insertWords();
+
+    mainContainer.append(videoDiv());
+    mainContainer.append(history().huayangDiv());
+
+}
+
+
+// Slider for homepage.
+export function slider() {
 
     // Create sliderWrapper div
     const sliderWrapper = document.createElement('div');
@@ -34,9 +59,6 @@ export default function homePage() {
     // Append wrapper to sliderWrapper
     sliderWrapper.append(wrapper);
 
-    // Append to mainContainer div
-    mainContainer.append(sliderWrapper);
-
     // Generate image tags for slider.
     // Store images in array
     const imageData = [orientalKopi1, orientalKopi2, orientalKopi3, orientalKopi4, orientalKopi5];
@@ -44,17 +66,12 @@ export default function homePage() {
     // Call function.
     let images = generateImg(5, imageData);
 
+    // Append each image
     images.forEach((image) => {
         wrapper.append(image);
     })
-    
-    // Load additional divs
-    oldManDiv();
-    history();
-    randomHeaderImage();
-    repetitiveDivs();
-    videoDiv();
-    huayangDiv();
+
+    return sliderWrapper;
 
 }
 
@@ -108,7 +125,8 @@ function oldManDiv() {
     oldImgWrapper.append(wrapperTwo);
 
     oldImg.append(oldImgWrapper);
-    mainContainer.append(oldImg);
+
+    return oldImg;
 
 }
 
@@ -156,8 +174,45 @@ function history() {
     historySection.append(historySectionTitle);
     historySection.append(historySectionWords);
 
-    // Append to DOM.
-    mainContainer.append(historySection);
+    function huayangDiv() {
+
+        // Huayang Classic section
+        const huayangClassic = document.createElement('div');
+        huayangClassic.id = 'huayangClassic';
+        huayangClassic.className = 'historySection';
+    
+        const huayangHeader = document.createElement('img');
+        huayangHeader.src = huayangClassicHeader;
+        huayangHeader.className = 'historySectionTitle';
+    
+        const huayangWords = document.createElement('div');
+        huayangWords.id = 'huayangWords';
+        huayangWords.className = 'historySectionWords';
+    
+        const huayangPara1 = document.createElement('p');
+        huayangPara1.id = 'huayangPara1';
+        huayangPara1.textContent = 'Huayang adheres to the cultural essence of traditional Nanyang cuisine, pursues the highest quality raw materials and fresh ingredients, and follows the traditional craftsmanship passed down by Huayang’s old masters, carefully researching and producing Nanyang dishes that are perfect in color, aroma and taste. Flavored dishes, snacks and stewed sugar water.';
+    
+        const huayangPara2 = document.createElement('p');
+        huayangPara2.id = 'huayangPara2';
+        huayangPara2.textContent = 'Huayang is committed to delivering delicious traditional Nanyang cuisine. Famous signature delicacies include Huayang coffee, pastry egg tarts, classic nasi lemak, rice siam, curry chicken rice, shredded chicken rice noodles, etc. Each representative food carries The hometown feelings and the essence of food culture of early Nanyang overseas Chinese.';
+    
+        // Append huayang paragraphs to div
+        huayangWords.append(huayangPara1);
+        huayangWords.append(huayangPara2);
+    
+        // Append huayang header and words div to huayang classic.
+        huayangClassic.append(huayangHeader);
+        huayangClassic.append(huayangWords);
+
+        return huayangClassic;
+    
+    }
+
+    return {
+        huayangDiv,
+        historySection
+    };
 
 }
 
@@ -171,8 +226,8 @@ function randomHeaderImage() {
     randomHeaderImgTag.src = orientalKopi1;
 
     randomHeaderImg.append(randomHeaderImgTag);
-    mainContainer.append(randomHeaderImg);
 
+    return randomHeaderImg;
 }
 
 // Section where there are 3 images with words next to them.
@@ -182,6 +237,7 @@ function repetitiveDivs() {
     let wordDiv;
     let imgDiv;
     let wordChildDiv;
+    let repeatedDivs = [];
 
     // Each div will contain a word section and image section, so generate 3 img tags.
     const imageData = [coffeePic, eggTart, bunPic];
@@ -196,7 +252,7 @@ function repetitiveDivs() {
         repeatDiv = document.createElement('div');
         repeatDiv.className = `repeatDivs`;
         repeatDiv.id = `repeatDiv${i+1}`;
-        mainContainer.append(repeatDiv);
+        repeatedDivs.push(repeatDiv);
 
         // Word div
         wordDiv = document.createElement('div');
@@ -218,34 +274,51 @@ function repetitiveDivs() {
 
         }
 
-        repeatDiv.append(wordDiv);
+        repeatedDivs[i].append(wordDiv);
 
         // Image div
         imgDiv = document.createElement('div');
         imgDiv.id = `imgDiv${i+1}`;
         imgDiv.append(images[i]);
 
-        repeatDiv.append(imgDiv);
+        repeatedDivs[i].append(imgDiv);
 
     }
 
     // Insert images to word section.
-    const wordImgTags = Array.from(document.querySelectorAll('.repeatDivs > div > div > img'));
+    function insertImg() {
 
-    const wordImgArr = [coffeePicWord, coffeePicWord2, eggTartWord, eggTartWord2, bunWord, bunWord2];
+        const wordImgTags = Array.from(document.querySelectorAll('.repeatDivs > div > div > img'));
 
-    for(let idx=0; idx < wordImgTags.length; idx++) {
+        const wordImgArr = [coffeePicWord, coffeePicWord2, eggTartWord, eggTartWord2, bunWord, bunWord2];
 
-        wordImgTags[idx].src = wordImgArr[idx];
+        for(let idx=0; idx < wordImgTags.length; idx++) {
+
+            wordImgTags[idx].src = wordImgArr[idx];
+
+        }
 
     }
 
-    // Insert wording to word section div.
-    const lastWordChildDiv = Array.from(document.querySelectorAll('.wordDiv > div:last-child'));
+    insertImg();
 
-    lastWordChildDiv[0].textContent = `Huayang adheres to the spirit of traditional Nanyang coffee culture, insists on selecting high-quality coffee beans, and mixes three types of high-quality coffee beans [Arabica, Robusta, and Liberica] in golden proportions. The brewed coffee is full of fragrance, thick and mellow.`;
-    lastWordChildDiv[1].textContent = `Huayang uses traditional craftsmanship to make egg tarts. After years of careful research and improvement, it uses an exclusive formula to produce the "Huayang Crispy Egg Tart" with "color, aroma and taste"! Huayang Egg Tarts are hand-made one by one, and each layer of dense tart crust is folded repeatedly. It tastes like Huayang Egg Tarts are hand-made one by one, with each dense layer of tart crust folded repeatedly. Every bite is filled with rich egg fragrance, with a tinge of flavor. Sweet but not greasy, crispy and rich taste!`;
-    lastWordChildDiv[2].textContent = `Huayang uses ancient techniques to make pineapple buns. An exclusive recipe produces golden, crispy and delicious traditional pineapple buns. Each pineapple bun is hand-made. The outer layer is baked at high temperature to become golden and crispy, while the bottom is It will be crispy and soft. Paired with cool butter, honey or condensed milk, the blend of hot and cold will elevate the entire taste of pineapple buns to another level.`;
+
+    // Insert wording to word section div.
+
+    function insertWords() {
+
+        const lastWordChildDiv = Array.from(document.querySelectorAll('.wordDiv > div:last-child'));
+
+        lastWordChildDiv[0].textContent = `Huayang adheres to the spirit of traditional Nanyang coffee culture, insists on selecting high-quality coffee beans, and mixes three types of high-quality coffee beans [Arabica, Robusta, and Liberica] in golden proportions. The brewed coffee is full of fragrance, thick and mellow.`;
+        lastWordChildDiv[1].textContent = `Huayang uses traditional craftsmanship to make egg tarts. After years of careful research and improvement, it uses an exclusive formula to produce the "Huayang Crispy Egg Tart" with "color, aroma and taste"! Huayang Egg Tarts are hand-made one by one, and each layer of dense tart crust is folded repeatedly. It tastes like Huayang Egg Tarts are hand-made one by one, with each dense layer of tart crust folded repeatedly. Every bite is filled with rich egg fragrance, with a tinge of flavor. Sweet but not greasy, crispy and rich taste!`;
+        lastWordChildDiv[2].textContent = `Huayang uses ancient techniques to make pineapple buns. An exclusive recipe produces golden, crispy and delicious traditional pineapple buns. Each pineapple bun is hand-made. The outer layer is baked at high temperature to become golden and crispy, while the bottom is It will be crispy and soft. Paired with cool butter, honey or condensed milk, the blend of hot and cold will elevate the entire taste of pineapple buns to another level.`;
+
+    }
+
+    return {
+        repeatedDivs,
+        insertWords
+    };
 
 }
 
@@ -254,8 +327,6 @@ function videoDiv() {
 
     const videoSection = document.createElement('div');
     videoSection.id = `videoSection`;
-
-    mainContainer.append(videoSection);
 
     const videoLinks = [`<iframe width="560" height="315" src="https://www.youtube.com/embed/jaRBPZtMnI8?si=hYWkZAs7-kbKJKK9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; " allowfullscreen></iframe>`, 
                         `<iframe width="560" height="315" src="https://www.youtube.com/embed/KhzpxCoyTkw?si=eOcI_NTy21bRf2Lk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; " allowfullscreen></iframe>`,
@@ -272,40 +343,6 @@ function videoDiv() {
 
     }
 
-}
-
-function huayangDiv() {
-
-    // Huayang Classic section
-    const huayangClassic = document.createElement('div');
-    huayangClassic.id = 'huayangClassic';
-    huayangClassic.className = 'historySection';
-
-    const huayangHeader = document.createElement('img');
-    huayangHeader.src = huayangClassicHeader;
-    huayangHeader.className = 'historySectionTitle';
-
-    const huayangWords = document.createElement('div');
-    huayangWords.id = 'huayangWords';
-    huayangWords.className = 'historySectionWords';
-
-    const huayangPara1 = document.createElement('p');
-    huayangPara1.id = 'huayangPara1';
-    huayangPara1.textContent = 'Huayang adheres to the cultural essence of traditional Nanyang cuisine, pursues the highest quality raw materials and fresh ingredients, and follows the traditional craftsmanship passed down by Huayang’s old masters, carefully researching and producing Nanyang dishes that are perfect in color, aroma and taste. Flavored dishes, snacks and stewed sugar water.';
-
-    const huayangPara2 = document.createElement('p');
-    huayangPara2.id = 'huayangPara2';
-    huayangPara2.textContent = 'Huayang is committed to delivering delicious traditional Nanyang cuisine. Famous signature delicacies include Huayang coffee, pastry egg tarts, classic nasi lemak, rice siam, curry chicken rice, shredded chicken rice noodles, etc. Each representative food carries The hometown feelings and the essence of food culture of early Nanyang overseas Chinese.';
-
-    // Append huayang paragraphs to div
-    huayangWords.append(huayangPara1);
-    huayangWords.append(huayangPara2);
-
-    // Append huayang header and words div to huayang classic.
-    huayangClassic.append(huayangHeader);
-    huayangClassic.append(huayangWords);
-
-    // Append whole section to DOM.
-    mainContainer.append(huayangClassic);
+    return videoSection;
 
 }
