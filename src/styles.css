@@ -178,7 +178,7 @@ body {
 }
 
 /* Word section */
-#historySection {
+.historySection {
     width: 100%;
     height: 100%;
     margin-bottom: 50px;
@@ -188,15 +188,18 @@ body {
     justify-content: flex-start;
     align-items: center;
     gap: 15px;
+}
 
+
+#historySection {
     grid-row: 4 / 5;
 }
 
-#historySectionTitle {
+.historySectionTitle {
     margin-top: 30px;
 }
 
-#historySectionWords {
+.historySectionWords {
     display: flex;
     flex-direction: column;
     gap: 35px;
@@ -207,7 +210,8 @@ body {
     color: var(--header);
 }
 
-#historySectionWords > div {
+.historySectionWords > div,
+.historySectionWords > p {
     width: 75%;
     flex: 1;
 }
