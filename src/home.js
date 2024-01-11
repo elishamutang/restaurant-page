@@ -20,8 +20,7 @@ import bunWord2 from "./assets/bun_word_2.png";
 
 
 
-
-export function homePage() {
+export default function homePage() {
 
     // Create sliderWrapper div
     const sliderWrapper = document.createElement('div');
@@ -48,7 +47,7 @@ export function homePage() {
         wrapper.append(image);
     })
     
-    // Generate additional divs
+    // Load additional divs
     oldManDiv();
     historyDiv();
     randomHeaderImage();
@@ -75,6 +74,7 @@ function generateImg(numOfImgs, imageData) {
 
 }
 
+// Picture of old owner.
 function oldManDiv() {
 
     // Old owner picture(?)
