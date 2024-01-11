@@ -18,7 +18,7 @@ import eggTartWord2 from './assets/egg_tart_word_2.png';
 import bunWord from "./assets/bun_word.png";
 import bunWord2 from "./assets/bun_word_2.png";
 import huayangClassicHeader from "./assets/huayangClassicHeader.png";
-
+import headerImgTwo from "./assets/randomHeaderImgTwo.jpg";
 
 
 // Use this function to load homepage
@@ -28,7 +28,7 @@ export default function homePage() {
     mainContainer.append(slider());
     mainContainer.append(oldManDiv());
     mainContainer.append(history().historySection);
-    mainContainer.append(randomHeaderImage());
+    mainContainer.append(randomHeaderImage().randomHeaderImg);
     
     // Append repetitive divs
     const repeatedDivs = Array.from(repetitiveDivs().repeatedDivs);
@@ -41,7 +41,7 @@ export default function homePage() {
 
     mainContainer.append(videoDiv());
     mainContainer.append(history().huayangDiv());
-
+    mainContainer.append(randomHeaderImage().secondImg());
 }
 
 
@@ -221,13 +221,33 @@ function randomHeaderImage() {
 
     const randomHeaderImg = document.createElement('div');
     randomHeaderImg.id = 'randomHeaderImg';
+    randomHeaderImg.className = 'headerImg';
 
     const randomHeaderImgTag = document.createElement('img');
     randomHeaderImgTag.src = orientalKopi1;
 
     randomHeaderImg.append(randomHeaderImgTag);
 
-    return randomHeaderImg;
+    function secondImg() {
+
+        const randomHeaderImgTwo = document.createElement('div');
+        randomHeaderImgTwo.id = 'randomHeaderImgTwo';
+        randomHeaderImgTwo.className = 'headerImg';
+
+        const randomHeaderImgTagTwo = document.createElement('img');
+        randomHeaderImgTagTwo.src = headerImgTwo;
+
+        randomHeaderImgTwo.append(randomHeaderImgTagTwo);
+
+        return randomHeaderImgTwo;
+
+    }
+
+    return {
+        secondImg,
+        randomHeaderImg
+    };
+
 }
 
 // Section where there are 3 images with words next to them.
