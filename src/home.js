@@ -17,6 +17,7 @@ import eggTartWord from "./assets/egg_tart_word.png";
 import eggTartWord2 from './assets/egg_tart_word_2.png';
 import bunWord from "./assets/bun_word.png";
 import bunWord2 from "./assets/bun_word_2.png";
+import huayangClassicHeader from "./assets/huayangClassicHeader.png";
 
 
 
@@ -53,6 +54,7 @@ export default function homePage() {
     randomHeaderImage();
     repetitiveDivs();
     videoDiv();
+    huayangDiv();
 
 }
 
@@ -117,27 +119,31 @@ function history() {
     
     const historySection = document.createElement('div');
     historySection.id = 'historySection';
+    historySection.className = 'historySection';
 
     const historySectionTitle = document.createElement('div');
     historySectionTitle.id = 'historySectionTitle';
+    historySectionTitle.className = 'historySectionTitle';
 
     const historySectionTitleImg = document.createElement('img');
     historySectionTitleImg.src = historySectionHeader;
+    historySectionTitleImg.className = 'historyHeader';
 
     historySectionTitle.append(historySectionTitleImg);
 
     const historySectionWords = document.createElement('div');
     historySectionWords.id = 'historySectionWords';
+    historySectionWords.className = 'historySectionWords';
 
-    const firstPara = document.createElement('div');
+    const firstPara = document.createElement('p');
     firstPara.id = 'firstPara';
     firstPara.textContent = `Master Huayang's ancestors came from Hainan. In his early days, he "ran foreign ships" to make a living in Southeast Asia. Over the years, he has become proficient in Western cuisine by working as a chef on ships. He has combined the essence of traditional Chinese food with exquisite snacks such as pastry egg tarts and pineapple buns to form today's Huayang Nanyang cuisine, especially the pastry egg tarts and ice-fire pineapple buns.`
 
-    const secondPara = document.createElement('div');
+    const secondPara = document.createElement('p');
     secondPara.id = 'secondPara';
     secondPara.textContent = `Huayang Teahouse carries the hometown feelings of overseas Chinese in Nanyang, and Huayang Coffee records the hard-working lives of overseas Chinese in the early days. Huayang Coffee is thick and mellow. Three kinds of high-quality coffee beans [Arabica, Robusta, and Liberica] are blended in a golden ratio and roasted at high temperatures to create a rich and mellow Huayang Coffee.`;
 
-    const thirdPara = document.createElement('div');
+    const thirdPara = document.createElement('p');
     thirdPara.id = 'thirdPara';
     thirdPara.textContent = `Huayang has always adhered to the traditional cultural essence of Chinese cuisine, pursuing the highest quality raw materials and fresh ingredients. Following the traditional craftsmanship passed down by Huayang’s master chefs, we carefully research and produce dishes that are perfect in color, aroma and taste. Nanyang style cuisine, dim sum and sweet stew.`;
 
@@ -265,5 +271,41 @@ function videoDiv() {
         videoSection.append(videoWrapperDiv);
 
     }
+
+}
+
+function huayangDiv() {
+
+    // Huayang Classic section
+    const huayangClassic = document.createElement('div');
+    huayangClassic.id = 'huayangClassic';
+    huayangClassic.className = 'historySection';
+
+    const huayangHeader = document.createElement('img');
+    huayangHeader.src = huayangClassicHeader;
+    huayangHeader.className = 'historySectionTitle';
+
+    const huayangWords = document.createElement('div');
+    huayangWords.id = 'huayangWords';
+    huayangWords.className = 'historySectionWords';
+
+    const huayangPara1 = document.createElement('p');
+    huayangPara1.id = 'huayangPara1';
+    huayangPara1.textContent = 'Huayang adheres to the cultural essence of traditional Nanyang cuisine, pursues the highest quality raw materials and fresh ingredients, and follows the traditional craftsmanship passed down by Huayang’s old masters, carefully researching and producing Nanyang dishes that are perfect in color, aroma and taste. Flavored dishes, snacks and stewed sugar water.';
+
+    const huayangPara2 = document.createElement('p');
+    huayangPara2.id = 'huayangPara2';
+    huayangPara2.textContent = 'Huayang is committed to delivering delicious traditional Nanyang cuisine. Famous signature delicacies include Huayang coffee, pastry egg tarts, classic nasi lemak, rice siam, curry chicken rice, shredded chicken rice noodles, etc. Each representative food carries The hometown feelings and the essence of food culture of early Nanyang overseas Chinese.';
+
+    // Append huayang paragraphs to div
+    huayangWords.append(huayangPara1);
+    huayangWords.append(huayangPara2);
+
+    // Append huayang header and words div to huayang classic.
+    huayangClassic.append(huayangHeader);
+    huayangClassic.append(huayangWords);
+
+    // Append whole section to DOM.
+    mainContainer.append(huayangClassic);
 
 }
