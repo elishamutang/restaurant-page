@@ -69,7 +69,7 @@ export function slider() {
     const imageData = [orientalKopi1, orientalKopi2, orientalKopi3, orientalKopi4, orientalKopi5];
 
     // Call function.
-    let images = generateImg(5, imageData);
+    let images = linkImgs(5, imageData);
 
     // Append each image
     images.forEach((image) => {
@@ -81,7 +81,7 @@ export function slider() {
 }
 
 // General function to link images.
-function generateImg(numOfImgs, imageData) {
+function linkImgs(numOfImgs, imageData) {
 
     let images = [];
 
@@ -292,7 +292,7 @@ function repetitiveDivs() {
     const imageData = [coffeePic, eggTart, bunPic];
 
     // Images is an array of the images from imageData
-    const images = generateImg(3, imageData);
+    const images = linkImgs(3, imageData);
 
     // Generate 3 similar divs with 2 divs in each parent div.
     for(let i=0; i < 3; i++) {
