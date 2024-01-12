@@ -19,6 +19,8 @@ import bunWord from "./assets/bun_word.png";
 import bunWord2 from "./assets/bun_word_2.png";
 import huayangClassicHeader from "./assets/huayangClassicHeader.png";
 import headerImgTwo from "./assets/randomHeaderImgTwo.jpg";
+import handmadeBreadPic  from "./assets/handmadeBreadImg.png";
+
 
 
 // Use this function to load homepage
@@ -42,6 +44,7 @@ export default function homePage() {
     mainContainer.append(videoDiv());
     mainContainer.append(history().huayangDiv());
     mainContainer.append(randomHeaderImage().secondImg());
+    mainContainer.append(history().handmadeBread());
 }
 
 
@@ -209,9 +212,43 @@ function history() {
     
     }
 
+    // Handmade bread section
+    function handmadeBread() {
+
+        const handmadeBreadDiv = document.createElement('div');
+        handmadeBreadDiv.id = 'handmadeBreadDiv';
+        handmadeBreadDiv.className = 'historySection';
+
+        const handmadeBreadHeader = document.createElement('div');
+        handmadeBreadHeader.id = 'handmadeBreadHeader';
+        handmadeBreadHeader.className = 'historySectionTitle';
+
+        const handmadeBreadImg = document.createElement('img');
+        handmadeBreadImg.src = handmadeBreadPic;
+
+        handmadeBreadHeader.append(handmadeBreadImg);
+
+        const handmadeBreadWords = document.createElement('div');
+        handmadeBreadWords.id = 'handmadeBreadWords';
+        handmadeBreadWords.className = 'historySectionWords';
+
+        const handmadeBreadPara = document.createElement('p');
+        handmadeBreadPara.id = 'handmadeBreadPara';
+        handmadeBreadPara.textContent = `The homemade thick bread is baked over medium heat, flipping it from front to back so that both sides of the bread are evenly heated and baked until golden and crispy! Paired with a variety of delicious ingredients with different flavors, you will feel the rich, crispy and fragrant taste with every bite!`;
+        handmadeBreadWords.append(handmadeBreadPara);
+
+        handmadeBreadDiv.append(handmadeBreadHeader);
+        handmadeBreadDiv.append(handmadeBreadWords);
+
+        return handmadeBreadDiv;
+
+    }
+
+
     return {
         huayangDiv,
-        historySection
+        historySection,
+        handmadeBread
     };
 
 }
