@@ -243,7 +243,11 @@ img {
 
 .historySectionTitle {
     margin-top: 30px;
-    width: fit-content;
+}
+
+.historySectionTitle > img {
+    width: 100%;
+    height: auto;
 }
 
 .historySectionWords {
@@ -264,7 +268,7 @@ img {
 }
 
 #handmadeBreadDiv {
-    grid-row: 12 / 13;
+    grid-area: history3;
 }
 
 /* Random header div */
@@ -294,7 +298,7 @@ img {
 #imgDiv2 > img,
 #imgDiv3 > img {
     width: 100%;
-    height: auto;
+    height: 100%;
 }
 
 #repeatDiv1 {
@@ -369,6 +373,23 @@ img {
             "title2"
             "title3"
         ;
+    }
+
+    .repeatDivs {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: 
+            "left"
+            "right"
+        ;
+    }
+
+    #imgDiv2 {
+        grid-area: right;
+    }
+
+    #videoSection {
+        flex-direction: column;
     }
 
 }
