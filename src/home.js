@@ -197,10 +197,16 @@ function history() {
         const huayangClassic = document.createElement('div');
         huayangClassic.id = 'huayangClassic';
         huayangClassic.className = 'historySection';
+
+        const huayangTitleDiv = document.createElement('div');
+        huayangTitleDiv.id = 'huayangTitleDiv';
+        huayangTitleDiv.className = 'historySectionTitle';
     
         const huayangHeader = document.createElement('img');
         huayangHeader.src = huayangClassicHeader;
-        huayangHeader.className = 'historySectionTitle';
+        huayangHeader.className = 'historyHeader';
+
+        huayangTitleDiv.append(huayangHeader);
     
         const huayangWords = document.createElement('div');
         huayangWords.id = 'huayangWords';
@@ -219,7 +225,7 @@ function history() {
         huayangWords.append(huayangPara2);
     
         // Append huayang header and words div to huayang classic.
-        huayangClassic.append(huayangHeader);
+        huayangClassic.append(huayangTitleDiv);
         huayangClassic.append(huayangWords);
 
         return huayangClassic;
@@ -239,6 +245,7 @@ function history() {
 
         const handmadeBreadImg = document.createElement('img');
         handmadeBreadImg.src = handmadeBreadPic;
+        handmadeBreadImg.className = 'historyHeader';
 
         handmadeBreadHeader.append(handmadeBreadImg);
 
