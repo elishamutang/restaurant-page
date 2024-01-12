@@ -36,12 +36,6 @@ body {
     max-width: 100%;
 }
 
-/* All imgs */
-img {
-    width: 100%;
-    height: auto;
-}
-
 /* Main container div */
 #mainContainer {
     height: 100%;
