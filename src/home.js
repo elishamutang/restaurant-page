@@ -20,6 +20,7 @@ import bunWord2 from "./assets/bun_word_2.png";
 import huayangClassicHeader from "./assets/huayangClassicHeader.png";
 import headerImgTwo from "./assets/randomHeaderImgTwo.jpg";
 import handmadeBreadPic  from "./assets/handmadeBreadImg.png";
+import randomHeaderImg3 from "./assets/randomHeaderImg3.jpg";
 
 
 
@@ -30,7 +31,7 @@ export default function homePage() {
     mainContainer.append(slider());
     mainContainer.append(oldManDiv());
     mainContainer.append(history().historySection);
-    mainContainer.append(randomHeaderImage().randomHeaderImg);
+    mainContainer.append(randomHeaderImage().generateHeaderImg('firstHeader', orientalKopi1));
     
     // Append repetitive divs
     const repeatedDivs = Array.from(repetitiveDivs().repeatedDivs);
@@ -43,8 +44,9 @@ export default function homePage() {
 
     mainContainer.append(videoDiv());
     mainContainer.append(history().huayangDiv());
-    mainContainer.append(randomHeaderImage().secondImg());
+    mainContainer.append(randomHeaderImage().generateHeaderImg('secondHeader', headerImgTwo));
     mainContainer.append(history().handmadeBread());
+    mainContainer.append(randomHeaderImage().generateHeaderImg('thirdHeader', randomHeaderImg3));
 }
 
 
@@ -256,33 +258,23 @@ function history() {
 // A random (probably not random) image section.
 function randomHeaderImage() {
 
-    const randomHeaderImg = document.createElement('div');
-    randomHeaderImg.id = 'randomHeaderImg';
-    randomHeaderImg.className = 'headerImg';
+    function generateHeaderImg(elemId, imgSrc) {
 
-    const randomHeaderImgTag = document.createElement('img');
-    randomHeaderImgTag.src = orientalKopi1;
+        const randomHeaderDiv = document.createElement('div');
+        randomHeaderDiv.id = elemId;
+        randomHeaderDiv.className = 'headerImg';
 
-    randomHeaderImg.append(randomHeaderImgTag);
+        const randomHeaderImg = document.createElement('img');
+        randomHeaderImg.src = imgSrc;
 
-    function secondImg() {
+        randomHeaderDiv.append(randomHeaderImg);
 
-        const randomHeaderImgTwo = document.createElement('div');
-        randomHeaderImgTwo.id = 'randomHeaderImgTwo';
-        randomHeaderImgTwo.className = 'headerImg';
-
-        const randomHeaderImgTagTwo = document.createElement('img');
-        randomHeaderImgTagTwo.src = headerImgTwo;
-
-        randomHeaderImgTwo.append(randomHeaderImgTagTwo);
-
-        return randomHeaderImgTwo;
+        return randomHeaderDiv;
 
     }
 
     return {
-        secondImg,
-        randomHeaderImg
+        generateHeaderImg
     };
 
 }
