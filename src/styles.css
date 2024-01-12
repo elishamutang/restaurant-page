@@ -23,7 +23,7 @@ body {
     background-color: var(--content);
 
     display: grid;
-    grid-template-rows: 150px 700px 0.5fr repeat(8, auto);
+    grid-template-rows: 150px 700px 0.5fr repeat(10, auto);
 }
 
 /* Header div */
