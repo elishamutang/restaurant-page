@@ -21,6 +21,12 @@ import huayangClassicHeader from "./assets/huayangClassicHeader.png";
 import headerImgTwo from "./assets/randomHeaderImgTwo.jpg";
 import handmadeBreadPic  from "./assets/handmadeBreadImg.png";
 import randomHeaderImg3 from "./assets/randomHeaderImg3.jpg";
+import title1 from "./assets/title1.png";
+import title2 from "./assets/title2.png";
+import title3 from "./assets/title3.png";
+import titledImg1 from "./assets/titledImg1.jpeg";
+import titledImg2 from "./assets/titledImg2.jpeg";
+
 
 
 
@@ -33,7 +39,6 @@ export default function homePage() {
     mainContainer.append(history().historySection);
     mainContainer.append(randomHeaderImage().generateHeaderImg('firstHeader', orientalKopi1));
     
-    // Append repetitive divs
     const repeatedDivs = Array.from(repetitiveDivs().repeatedDivs);
     
     repeatedDivs.forEach((div) => {
@@ -47,6 +52,13 @@ export default function homePage() {
     mainContainer.append(randomHeaderImage().generateHeaderImg('secondHeader', headerImgTwo));
     mainContainer.append(history().handmadeBread());
     mainContainer.append(randomHeaderImage().generateHeaderImg('thirdHeader', randomHeaderImg3));
+    
+    const titledSection = titledSect();
+
+    titledSection.forEach((sect) => {
+        mainContainer.append(sect);
+    })
+
 }
 
 
@@ -294,7 +306,7 @@ function repetitiveDivs() {
     // Images is an array of the images from imageData
     const images = linkImgs(3, imageData);
 
-    // Generate 3 similar divs with 2 divs in each parent div.
+    // Generate 3 similar divs with 2 div in each parent div.
     for(let i=0; i < 3; i++) {
 
         // Parent div
@@ -393,5 +405,47 @@ function videoDiv() {
     }
 
     return videoSection;
+
+}
+
+// Titled sections
+function titledSect() {
+
+    const returnedSecs = [];
+    const titleImages = [title1, title2, title3];
+
+    for(let i=0; i < titleImages.length; i++) {
+
+        // Main div wrapping both title and section below title.
+        const titleMainDiv = document.createElement('div');
+        titleMainDiv.id = `titleMainDiv${i+1}`;
+        titleMainDiv.className = 'titleMainDiv';
+
+        // Div after title
+        const titleDiv = document.createElement('div');
+        titleDiv.id = `titleDiv${i+1}`;
+        titleDiv.className = 'titleDiv';
+
+        const titleImgDiv = document.createElement('div');
+        titleImgDiv.id = `titleImgDiv${i+1}`;
+        titleImgDiv.className = 'titleImgDiv';
+
+        const titleImg = document.createElement('img');
+        titleImg.src = titleImages[i];
+
+        // Append each titled section
+        titleImgDiv.append(titleImg);
+        titleMainDiv.append(titleImgDiv);
+        titleMainDiv.append(titleDiv);
+
+        returnedSecs.push(titleMainDiv);
+
+    }
+
+    // Target second titled main div
+    const secondDiv = document.getElementById('titledMainDiv2');
+
+
+    return returnedSecs;
 
 }
