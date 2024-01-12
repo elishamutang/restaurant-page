@@ -16,36 +16,71 @@ body {
     background-color: var(--content);
 }
 
+/* Make all headings 100vw */
+#mainContainer,
+#header,
+#sliderWrapper,
+#oldImg,
+.historySection,
+.headerImg,
+#repeatDiv1,
+#repeatDiv2,
+#repeatDiv3,
+#videoSection,
+.titleMainDiv {
+    width: 100vw;
+    max-width: 100%;
+}
+
 /* Main container div */
 #mainContainer {
-    width: 100vw;
     height: 100%;
     background-color: var(--content);
 
     display: grid;
     grid-template-rows: 150px 700px 0.5fr repeat(13, auto);
+    grid-template-areas: 
+        "header"
+        "slider"
+        "oldMan"
+        "history1"
+        "image1"
+        "div1"
+        "div2"
+        "div3"
+        "video"
+        "history2"
+        "image2"
+        "history3"
+        "image3"
+        "title1"
+        "title2"
+        "title3"
+    ;
 }
 
 /* Header div */
 #header {
-    width: 100vw;
-    height: 150px;
     background-color: var(--header);
     position: sticky;
     top: 0;
     z-index: 1;
-    grid-row: 1 / 2;
+    grid-area: header;
     font-size: 20px;
 
     display: grid;
     grid-template-rows: 0.7fr 0.3fr;
+    grid-template-areas: 
+        "logo"
+        "navBar"
+    ;
 }
 
 /* Logo div */
 #logoDiv {
     width: inherit;
     background-color: var(--header);
-    grid-row: 1 / 2;
+    grid-area: logo;
 
     font-family: Arial, Helvetica, sans-serif;
     font-size: 60px;
@@ -66,7 +101,7 @@ body {
 #tabDiv {
     width: inherit;
     background-color: var(--tabBar);
-    grid-row: 2 / 3;
+    grid-area: navBar;
 
     display: flex;
     justify-content: center;
@@ -91,9 +126,8 @@ body {
 
 /* Image slider */
 #sliderWrapper {
-    width: 100%;
     height: 100%;
-    grid-row: 2 / 3;
+    grid-area: slider;
     overflow: hidden;
 }
 
@@ -147,14 +181,14 @@ body {
 }
 
 #wrapper > img {
-    min-width: 100%;
+    width: 100%;
     height: auto;
     flex: 0;
 }
 
 /* Old image div */
 #oldImg {
-    grid-row: 3 / 4;
+    grid-area: oldMan;
     margin-top: 5px;
 }
 
@@ -174,12 +208,11 @@ body {
 #wrapperOne > img,
 #wrapperTwo > img {
     width: 100%;
-    height: 100%;
+    height: auto;
 }
 
 /* History section */
 .historySection {
-    width: 100%;
     height: 100%;
     margin-bottom: 50px;
 
@@ -191,15 +224,16 @@ body {
 }
 
 #huayangClassic {
-    grid-row: 10 / 11;
+    grid-area: history2;
 }
 
 #historySection {
-    grid-row: 4 / 5;
+    grid-area: history1;
 }
 
 .historySectionTitle {
     margin-top: 30px;
+    width: fit-content;
 }
 
 .historySectionWords {
@@ -225,20 +259,19 @@ body {
 
 /* Random header div */
 .headerImg {
-    min-width: 100%;
     height: 100%;
 }
 
 #firstHeader {
-    grid-row: 5 / 6;
+    grid-area: image1;
 }
 
 #secondHeader {
-    grid-row: 11 / 12;
+    grid-area: image2;
 }
 
 #thirdHeader {
-    grid-row: 13 / 14;
+    grid-area: image3;
 }
 
 .headerImg > img {
@@ -255,19 +288,19 @@ body {
 }
 
 #repeatDiv1 {
-    grid-row: 6 / 7;
+    grid-area: div1;
 }
 
 #repeatDiv2 {
-    grid-row: 7 / 8;
+    grid-area: div2;
 }
 
 #imgDiv2 {
-    grid-row: 1 / 2;
+    grid-area: left;
 }
 
 #repeatDiv3 {
-    grid-row: 8 / 9;
+    grid-area: div3;
 }
 
 .repeatDivs {
@@ -275,7 +308,8 @@ body {
     height: 100%;
 
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "left right";
 }
 
 .wordDiv {
@@ -301,11 +335,37 @@ body {
     color: var(--header);
 }
 
+@media only screen and (max-width: 900px) {
+
+    #mainContainer {
+        grid-template-columns: 1fr;
+        grid-template-rows: 200px;
+        grid-template-areas: 
+            "header"
+            "slider"
+            "oldMan"
+            "history1"
+            "image1"
+            "div1"
+            "div2"
+            "div3"
+            "video"
+            "history2"
+            "image2"
+            "history3"
+            "image3"
+            "title1"
+            "title2"
+            "title3"
+        ;
+    }
+
+}
+
 /* Video section */
 #videoSection {
-    width: 100%;
     height: 100%;
-    grid-row: 9 / 10;
+    grid-area: video;
     margin-top: 5px;
     
     display: flex;
@@ -324,13 +384,18 @@ body {
 
 /* Titled Sections */
 #titleMainDiv1 {
-    grid-row: 14 / 15;
+    grid-area: title1;
 }
 
 #titleMainDiv2 {
-    grid-row: 15 / 16;
+    grid-area: title2;
 }
 
 #titleMainDiv3 {
-    grid-row: 16 / 17;
+    grid-area: title3;
+}
+
+.titleMainDiv > div > img {
+    width: 100%;
+    height: auto;
 }
