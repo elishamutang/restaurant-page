@@ -10,9 +10,13 @@
     --tabBar: rgb(212, 39, 39);
 }
 
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
 body {
     box-sizing: border-box;
-    height: 100%;
     background-color: var(--content);
 }
 
@@ -30,6 +34,12 @@ body {
 .titleMainDiv {
     width: 100vw;
     max-width: 100%;
+}
+
+/* All imgs */
+img {
+    width: 100%;
+    height: auto;
 }
 
 /* Main container div */
@@ -284,7 +294,7 @@ body {
 #imgDiv2 > img,
 #imgDiv3 > img {
     width: 100%;
-    height: 100%;
+    height: auto;
 }
 
 #repeatDiv1 {
@@ -325,6 +335,7 @@ body {
 
 .repeatDivs > div > div > img {
     width: 100%;
+    height: auto;
 }
 
 .wordDiv > div:last-child {
