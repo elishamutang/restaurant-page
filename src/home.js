@@ -69,44 +69,67 @@ export function slider() {
     const sliderWrapper = document.createElement('div');
     sliderWrapper.id = 'sliderWrapper';
 
-    // Create wrapper to contain all the images
-    const wrapper = document.createElement('div');
-    wrapper.id = 'wrapper';
-
-    // Append wrapper to sliderWrapper
-    sliderWrapper.append(wrapper);
+    
 
     // Generate image tags for slider.
     // Store images in array
     const imageData = [orientalKopi1, orientalKopi2, orientalKopi3, orientalKopi4, orientalKopi5];
 
     // Call function.
-    let images = linkImgs(5, imageData);
+    let images = linkImgs(5, imageData, 1, 'wrapper');
 
-    // Append each image
-    images.forEach((image) => {
-        wrapper.append(image);
-    })
+    // Append wrapper to sliderWrapper
+    sliderWrapper.append(images[0]);
 
     return sliderWrapper;
 
 }
 
 // General function to link images.
-function linkImgs(numOfImgs, imageData) {
+function linkImgs(numOfImgs, imageData, numOfDivs, divID, imgID) {
 
-    let images = [];
+    let imageDivArr = []
 
-    for(let i=0; i < numOfImgs; i++) {
+    for(let i=0; i < numOfDivs; i++) {
 
-        const image = document.createElement('img');
-        image.id = `image-${i+1}`;
-        images.push(image);
-        images[i].src = imageData[i];
+        const imageDiv = document.createElement('div');
+
+        if(numOfDivs == 1) {
+
+            imageDiv.id = divID;
+
+        } else {
+
+            imageDiv.id = `${divID}-${i+1}`;
+
+        }
+
+
+        for(let j=0; j < numOfImgs; j++) {
+
+            const image = document.createElement('img');
+
+            if(numOfImgs == 1) {
+
+                image.id = imgID;
+
+            } else {
+
+                image.id = `${imgID}-${j+1}`;
+
+            }
+
+            image.src = imageData[j];
+
+            imageDiv.append(image);
+
+        }
+
+        imageDivArr.push(imageDiv);
 
     }
 
-    return images;
+    return imageDivArr;
 
 }
 
