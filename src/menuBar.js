@@ -1,9 +1,9 @@
 // Menu bar for webpage.
 
-const menuBarItems = ['Reservation for Egg Tart', 'Merchandise', 'Branch Address', 'Join Member', 'Contact Us' ];
+const menuBarItems = ['Home', 'Menu', 'Products', 'Egg Tarts', 'Outlets', 'Contact Us'];
 export const menuBarDivs = [];
 
-for(let i = 0; i < 5; i++) {
+for(let i = 0; i < menuBarItems.length; i++) {
     const item = document.createElement('div');
     item.dataset.index = `${i}`;
     item.className = 'menu-item';
