@@ -53,11 +53,6 @@ export default function homePage() {
     mainContainer.append(history().handmadeBread());
     mainContainer.append(randomHeaderImage().generateHeaderImg('thirdHeader', randomHeaderImg3));
     
-    const titledSection = titledSect();
-
-    titledSection.forEach((sect) => {
-        mainContainer.append(sect);
-    })
 
 }
 
@@ -422,47 +417,5 @@ function videoDiv() {
     }
 
     return videoSection;
-
-}
-
-// Titled sections
-function titledSect() {
-
-    const returnedSecs = [];
-    const titleImages = [title1, title2, title3];
-
-    for(let i=0; i < titleImages.length; i++) {
-
-        // Main div wrapping both title and section below title.
-        const titleMainDiv = document.createElement('div');
-        titleMainDiv.id = `titleMainDiv${i+1}`;
-        titleMainDiv.className = 'titleMainDiv';
-
-        // Div after title
-        const titleDiv = document.createElement('div');
-        titleDiv.id = `titleDiv${i+1}`;
-        titleDiv.className = 'titleDiv';
-
-        const titleImgDiv = document.createElement('div');
-        titleImgDiv.id = `titleImgDiv${i+1}`;
-        titleImgDiv.className = 'titleImgDiv';
-
-        const titleImg = document.createElement('img');
-        titleImg.src = titleImages[i];
-
-        // Append each titled section
-        titleImgDiv.append(titleImg);
-        titleMainDiv.append(titleImgDiv);
-        titleMainDiv.append(titleDiv);
-
-        returnedSecs.push(titleMainDiv);
-
-    }
-
-    // Target second titled main div
-    const secondDiv = document.getElementById('titledMainDiv2');
-
-
-    return returnedSecs;
 
 }
