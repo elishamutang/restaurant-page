@@ -22,6 +22,7 @@ import headerImgTwo from "./assets/randomHeaderImgTwo.jpg";
 import handmadeBreadPic  from "./assets/handmadeBreadImg.png";
 import randomHeaderImg3 from "./assets/randomHeaderImg3.jpg";
 import headerImg1 from "./assets/headerImg1.jpg";
+import headingFlower from "./assets/heading-flower.png";
 
 
 
@@ -48,7 +49,7 @@ export default function homePage() {
     mainContainer.append(randomHeaderImage('secondHeader', headerImgTwo));
     mainContainer.append(history().handmadeBread());
     mainContainer.append(randomHeaderImage('thirdHeader', randomHeaderImg3));
-    
+    mainContainer.append(history().signatureMerchandise());
 
 }
 
@@ -271,11 +272,68 @@ function history() {
 
     }
 
+    function signatureMerchandise() {
+
+        let headerImgArr = [];
+        let signatureTextArr = ['Oriental Kopi adheres to the philosophy of blending tradition with innovation while preserving heritage. We made our own specialties with meticulous craftsmanship and premium ingredients, continuing the legacy of Malaysia’s authentic flavours!',
+                                'Each Oriental Kopi specialty embodies the fusion of traditional and modern tastes, meticulously developed with dedication. Our goal is to present the highest quality and deliciousness, ensuring that every bite is a delightful experience. Whether for personal enjoyment or as a thoughtful gift, Oriental Kopi specialties are definitely the best choice!']; 
+
+        // Signature section
+        const signatureSect = document.createElement('div');
+        signatureSect.id = 'signatureSect';
+        signatureSect.className = 'historySection';
+
+        // Header container
+        const signatureHeader = document.createElement('div');
+        signatureHeader.id = 'signatureHeader';
+        
+        const headerTitle = document.createElement('h1');
+        headerTitle.textContent = 'Signature Merchandise';
+        headerTitle.className = 'headerTitle';
+
+        // Text content
+        const signatureText = document.createElement('div');
+        signatureText.id = 'signatureText';
+        signatureText.className = 'historySectionWords';
+
+        for(let i=0; i < 2; i++) {
+
+            // Header
+            const headerDivs = document.createElement('div');
+            headerDivs.className = 'headerDivs';
+            headerDivs.id = `headerDivs${i+1}`;
+
+            const headerImgs = document.createElement('img');
+            headerImgs.src = headingFlower;
+
+            headerDivs.append(headerImgs);
+
+            headerImgArr.push(headerDivs);
+
+            // Paragraphs
+            const signaturePara = document.createElement('p');
+            signaturePara.textContent = `${signatureTextArr[i]}`;
+            signatureText.append(signaturePara);
+
+        }
+
+        signatureHeader.append(headerImgArr[0]);
+        signatureHeader.append(headerTitle);
+        signatureHeader.append(headerImgArr[1]);
+        signatureSect.append(signatureHeader);
+        signatureSect.append(signatureText);
+
+
+
+        return signatureSect;
+    }
+
 
     return {
         huayangDiv,
         historySection,
-        handmadeBread
+        handmadeBread,
+        signatureMerchandise
     };
 
 }
