@@ -69,8 +69,6 @@ export function slider() {
     const sliderWrapper = document.createElement('div');
     sliderWrapper.id = 'sliderWrapper';
 
-    
-
     // Generate image tags for slider.
     // Store images in array
     const imageData = [orientalKopi1, orientalKopi2, orientalKopi3, orientalKopi4, orientalKopi5];
