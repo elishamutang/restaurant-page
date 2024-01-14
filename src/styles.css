@@ -201,8 +201,46 @@ body {
     }
 }
 
-#sliderTwo > .wrapper {
+#sliderTwo {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+}
+
+#sliderTwo > div {
+    width: 100%;
+}
+
+#sliderTwo > div > img {
+    width: 100%;
+    height: auto;
+}
+
+#sliderTwo > div {
     animation: sliderTwo 16s infinite;
+}
+
+@keyframes sliderTwo {
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-100%);
+    }
+
+    50% {
+        transform: translateX(-200%);
+    }
+
+    75% {
+        transform: translateX(-300%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+
 }
 
 /* Old image div */
