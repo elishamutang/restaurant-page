@@ -147,10 +147,19 @@ body {
     width: 100%;
     height: 100%;
     display: flex;
-    animation: slide 16s infinite;
 }
 
-@keyframes slide {
+#sliderOne > .wrapper {
+    animation: sliderOne 16s infinite;
+}
+
+.wrapper > img {
+    width: 100%;
+    height: auto;
+    flex: 0;
+}
+
+@keyframes sliderOne {
     0% {
         transform: translateX(0);
     }
@@ -192,10 +201,8 @@ body {
     }
 }
 
-.wrapper > img {
-    width: 100%;
-    height: auto;
-    flex: 0;
+#sliderTwo > .wrapper {
+    animation: sliderTwo 16s infinite;
 }
 
 /* Old image div */
