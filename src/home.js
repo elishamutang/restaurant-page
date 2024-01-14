@@ -34,7 +34,7 @@ import tehTarik from "./assets/teh-tarik.jpg";
 export default function homePage() {
 
     // Append in order
-    mainContainer.append(slider(5, [orientalKopi1, orientalKopi2, orientalKopi3, orientalKopi4, orientalKopi5], 'sliderOne'));
+    mainContainer.append(slider(5, [orientalKopi1, orientalKopi2, orientalKopi3, orientalKopi4, orientalKopi5], 1, 'sliderOne'));
     mainContainer.append(oldManDiv());
     mainContainer.append(history().historySection);
     mainContainer.append(randomHeaderImage('firstHeader', headerImg1));
@@ -53,23 +53,25 @@ export default function homePage() {
     mainContainer.append(history().handmadeBread());
     mainContainer.append(randomHeaderImage('thirdHeader', randomHeaderImg3));
     mainContainer.append(history().signatureMerchandise());
-    mainContainer.append(slider(4, [sambalRojak, malaPanMee, soupPanMee, tehTarik], 'sliderTwo'));
+    mainContainer.append(slider(4, [sambalRojak, malaPanMee, soupPanMee, tehTarik], 4, 'sliderTwo'));
 
 }
 
 
 // Slider for homepage.
-export function slider(numOfImgs, imageData, sliderID) {
+function slider(numOfImgs, imageData, numOfDivs, sliderID) {
 
     // Create sliderWrapper div
     const sliderWrapper = document.createElement('div');
     sliderWrapper.id = sliderID;
 
     // Call function.
-    let images = linkImgs(numOfImgs, imageData, 1, '', 'wrapper');
+    let images = linkImgs(numOfImgs, imageData, numOfDivs, 'wrapper', 'wrapper');
 
     // Append wrapper to sliderWrapper
-    sliderWrapper.append(images[0]);
+    images.forEach((image) => {
+        sliderWrapper.append(image);
+    })
 
     return sliderWrapper;
 
@@ -84,13 +86,15 @@ function linkImgs(numOfImgs, imageData, numOfDivs, divID, divClass) {
 
         const imageDiv = document.createElement('div');
 
+        if(divID === '') {
+            imageDiv.removeAttribute('id');
+        } else {
+            imageDiv.id = `${divID}${i+1}`;
+        }
+
         if(numOfDivs == 1) {
 
-            if(divID === '') {
-                imageDiv.removeAttribute('id');
-            } else {
-                imageDiv.id = divID;
-            }
+            imageDiv.id = divID;
             
             imageDiv.className = divClass;
 
@@ -105,8 +109,6 @@ function linkImgs(numOfImgs, imageData, numOfDivs, divID, divClass) {
             }
 
         } else {
-
-            imageDiv.id = `${divID}${i+1}`;
 
             const image = document.createElement('img');
             image.src = imageData[i];
