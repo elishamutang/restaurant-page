@@ -23,7 +23,10 @@ import handmadeBreadPic  from "./assets/handmadeBreadImg.png";
 import randomHeaderImg3 from "./assets/randomHeaderImg3.jpg";
 import headerImg1 from "./assets/headerImg1.jpg";
 import headingFlower from "./assets/heading-flower.png";
-
+import malaPanMee from "./assets/mala-pan-mee.jpg";
+import sambalRojak from "./assets/sambal-rojak.jpg";
+import soupPanMee from "./assets/soup-pan-mee.jpg";
+import tehTarik from "./assets/teh-tarik.jpg";
 
 
 
@@ -31,7 +34,7 @@ import headingFlower from "./assets/heading-flower.png";
 export default function homePage() {
 
     // Append in order
-    mainContainer.append(slider());
+    mainContainer.append(slider(5, [orientalKopi1, orientalKopi2, orientalKopi3, orientalKopi4, orientalKopi5], 'sliderOne'));
     mainContainer.append(oldManDiv());
     mainContainer.append(history().historySection);
     mainContainer.append(randomHeaderImage('firstHeader', headerImg1));
@@ -50,23 +53,20 @@ export default function homePage() {
     mainContainer.append(history().handmadeBread());
     mainContainer.append(randomHeaderImage('thirdHeader', randomHeaderImg3));
     mainContainer.append(history().signatureMerchandise());
+    mainContainer.append(slider(4, [sambalRojak, malaPanMee, soupPanMee, tehTarik], 'sliderTwo'));
 
 }
 
 
 // Slider for homepage.
-export function slider() {
+export function slider(numOfImgs, imageData, sliderID) {
 
     // Create sliderWrapper div
     const sliderWrapper = document.createElement('div');
-    sliderWrapper.id = 'sliderWrapper';
-
-    // Generate image tags for slider.
-    // Store images in array
-    const imageData = [orientalKopi1, orientalKopi2, orientalKopi3, orientalKopi4, orientalKopi5];
+    sliderWrapper.id = sliderID;
 
     // Call function.
-    let images = linkImgs(5, imageData, 1, 'wrapper');
+    let images = linkImgs(numOfImgs, imageData, 1, '', 'wrapper');
 
     // Append wrapper to sliderWrapper
     sliderWrapper.append(images[0]);
@@ -76,7 +76,7 @@ export function slider() {
 }
 
 // General function to link image tag to div (wrapper).
-function linkImgs(numOfImgs, imageData, numOfDivs, divID) {
+function linkImgs(numOfImgs, imageData, numOfDivs, divID, divClass) {
 
     let imageDivArr = []
 
@@ -86,7 +86,13 @@ function linkImgs(numOfImgs, imageData, numOfDivs, divID) {
 
         if(numOfDivs == 1) {
 
-            imageDiv.id = divID;
+            if(divID === '') {
+                imageDiv.removeAttribute('id');
+            } else {
+                imageDiv.id = divID;
+            }
+            
+            imageDiv.className = divClass;
 
             for(let j=0; j < numOfImgs; j++) {
 
