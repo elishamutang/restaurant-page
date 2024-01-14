@@ -83,8 +83,8 @@ export function slider() {
 
 }
 
-// General function to link images.
-function linkImgs(numOfImgs, imageData, numOfDivs, divID, imgID) {
+// General function to link image tag to div (wrapper).
+function linkImgs(numOfImgs, imageData, numOfDivs, divID) {
 
     let imageDivArr = []
 
@@ -96,28 +96,22 @@ function linkImgs(numOfImgs, imageData, numOfDivs, divID, imgID) {
 
             imageDiv.id = divID;
 
-        } else {
+            for(let j=0; j < numOfImgs; j++) {
 
-            imageDiv.id = `${divID}-${i+1}`;
-
-        }
-
-
-        for(let j=0; j < numOfImgs; j++) {
-
-            const image = document.createElement('img');
-
-            if(numOfImgs == 1) {
-
-                image.id = imgID;
-
-            } else {
-
-                image.id = `${imgID}-${j+1}`;
-
+                const image = document.createElement('img');
+    
+                image.src = imageData[j];
+    
+                imageDiv.append(image);
+    
             }
 
-            image.src = imageData[j];
+        } else {
+
+            imageDiv.id = `${divID}${i+1}`;
+
+            const image = document.createElement('img');
+            image.src = imageData[i];
 
             imageDiv.append(image);
 
@@ -324,7 +318,6 @@ function repetitiveDivs() {
 
     let repeatDiv;
     let wordDiv;
-    let imgDiv;
     let wordChildDiv;
     let repeatedDivs = [];
 
@@ -332,7 +325,7 @@ function repetitiveDivs() {
     const imageData = [coffeePic, eggTart, bunPic];
 
     // Images is an array of the images from imageData
-    const images = linkImgs(3, imageData);
+    const images = linkImgs(3, imageData, 3, 'imgDiv');
 
     // Generate 3 similar divs with 2 div in each parent div.
     for(let i=0; i < 3; i++) {
@@ -365,12 +358,8 @@ function repetitiveDivs() {
 
         repeatedDivs[i].append(wordDiv);
 
-        // Image div
-        imgDiv = document.createElement('div');
-        imgDiv.id = `imgDiv${i+1}`;
-        imgDiv.append(images[i]);
-
-        repeatedDivs[i].append(imgDiv);
+        // Append image divs
+        repeatDiv.append(images[i]);
 
     }
 
