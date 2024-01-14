@@ -348,7 +348,7 @@ body {
 
     #mainContainer {
         grid-template-columns: 1fr;
-        grid-template-rows: 200px;
+        grid-template-rows: 200px repeat(15, auto);
         grid-template-areas: 
             "header"
             "slider"
