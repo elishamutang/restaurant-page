@@ -33,7 +33,7 @@ export default function homePage() {
     mainContainer.append(slider());
     mainContainer.append(oldManDiv());
     mainContainer.append(history().historySection);
-    mainContainer.append(randomHeaderImage().generateHeaderImg('firstHeader', headerImg1));
+    mainContainer.append(randomHeaderImage('firstHeader', headerImg1));
     
     const repeatedDivs = Array.from(repetitiveDivs().repeatedDivs);
     
@@ -45,9 +45,9 @@ export default function homePage() {
 
     mainContainer.append(videoDiv());
     mainContainer.append(history().huayangDiv());
-    mainContainer.append(randomHeaderImage().generateHeaderImg('secondHeader', headerImgTwo));
+    mainContainer.append(randomHeaderImage('secondHeader', headerImgTwo));
     mainContainer.append(history().handmadeBread());
-    mainContainer.append(randomHeaderImage().generateHeaderImg('thirdHeader', randomHeaderImg3));
+    mainContainer.append(randomHeaderImage('thirdHeader', randomHeaderImg3));
     
 
 }
@@ -281,26 +281,18 @@ function history() {
 }
 
 // A random (probably not random) image section.
-function randomHeaderImage() {
+function randomHeaderImage(elemId, imgSrc) {
 
-    function generateHeaderImg(elemId, imgSrc) {
+    const randomHeaderDiv = document.createElement('div');
+    randomHeaderDiv.id = elemId;
+    randomHeaderDiv.className = 'headerImg';
 
-        const randomHeaderDiv = document.createElement('div');
-        randomHeaderDiv.id = elemId;
-        randomHeaderDiv.className = 'headerImg';
+    const randomHeaderImg = document.createElement('img');
+    randomHeaderImg.src = imgSrc;
 
-        const randomHeaderImg = document.createElement('img');
-        randomHeaderImg.src = imgSrc;
+    randomHeaderDiv.append(randomHeaderImg);
 
-        randomHeaderDiv.append(randomHeaderImg);
-
-        return randomHeaderDiv;
-
-    }
-
-    return {
-        generateHeaderImg
-    };
+    return randomHeaderDiv;
 
 }
 
