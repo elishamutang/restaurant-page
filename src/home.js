@@ -21,11 +21,7 @@ import huayangClassicHeader from "./assets/huayangClassicHeader.png";
 import headerImgTwo from "./assets/randomHeaderImgTwo.jpg";
 import handmadeBreadPic  from "./assets/handmadeBreadImg.png";
 import randomHeaderImg3 from "./assets/randomHeaderImg3.jpg";
-import title1 from "./assets/title1.png";
-import title2 from "./assets/title2.png";
-import title3 from "./assets/title3.png";
-import titledImg1 from "./assets/titledImg1.jpeg";
-import titledImg2 from "./assets/titledImg2.jpeg";
+import headerImg1 from "./assets/headerImg1.jpg";
 
 
 
@@ -37,7 +33,7 @@ export default function homePage() {
     mainContainer.append(slider());
     mainContainer.append(oldManDiv());
     mainContainer.append(history().historySection);
-    mainContainer.append(randomHeaderImage().generateHeaderImg('firstHeader', orientalKopi1));
+    mainContainer.append(randomHeaderImage().generateHeaderImg('firstHeader', headerImg1));
     
     const repeatedDivs = Array.from(repetitiveDivs().repeatedDivs);
     
