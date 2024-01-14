@@ -20,7 +20,7 @@ body {
     background-color: var(--content);
 }
 
-/* Make all headings 100vw */
+/* Make each section 100vw */
 #mainContainer,
 #header,
 #sliderWrapper,
