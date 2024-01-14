@@ -45,7 +45,7 @@ body {
     grid-template-rows: 150px 700px 0.5fr repeat(13, auto);
     grid-template-areas: 
         "header"
-        "slider"
+        "slider1"
         "oldMan"
         "history1"
         "image1"
@@ -58,7 +58,7 @@ body {
         "history3"
         "image3"
         "history4"
-        "title2"
+        "slider2"
         "title3"
     ;
 }
@@ -129,13 +129,21 @@ body {
 /* Main content div */
 
 /* Image slider */
-#sliderWrapper {
+#sliderOne {
+    grid-area: slider1;
+}
+
+#sliderTwo {
+    grid-area: slider2;
+}
+
+#sliderOne,
+#sliderTwo {
     height: 100%;
-    grid-area: slider;
     overflow: hidden;
 }
 
-#wrapper {
+.wrapper {
     width: 100%;
     height: 100%;
     display: flex;
@@ -184,7 +192,7 @@ body {
     }
 }
 
-#wrapper > img {
+.wrapper > img {
     width: 100%;
     height: auto;
     flex: 0;
