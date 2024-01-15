@@ -27,6 +27,7 @@ import malaPanMee from "./assets/mala-pan-mee.jpg";
 import sambalRojak from "./assets/sambal-rojak.jpg";
 import soupPanMee from "./assets/soup-pan-mee.jpg";
 import tehTarik from "./assets/teh-tarik.jpg";
+import branchImg from "./assets/branch.jpg";
 
 
 
@@ -85,12 +86,17 @@ function linkImgs(numOfImgs, imageData, numOfDivs, divID, divClass) {
     for(let i=0; i < numOfDivs; i++) {
 
         const imageDiv = document.createElement('div');
-        imageDiv.className = divClass;
 
         if(divID === '') {
             imageDiv.removeAttribute('id');
         } else {
             imageDiv.id = `${divID}${i+1}`;
+        }
+
+        if(divClass === '') {
+            imageDiv.removeAttribute('class');
+        } else {
+            imageDiv.className = divClass;
         }
 
         if(numOfDivs == 1) {
@@ -355,12 +361,15 @@ function history() {
         // Link imgs
         const images = linkImgs(2, imageData, 2, 'outletDivs', 'headerDivs');
 
-        console.log(images);
+        // Content div (image only);
+        const contentImg = linkImgs(1, [branchImg], 1, 'outlet', 'headerImg');
+
 
         outletHeader.append(images[0]);
         outletHeader.append(outletTitle);
         outletHeader.append(images[1]);
         outletDiv.append(outletHeader);
+        outletDiv.append(contentImg[0]);
 
         return outletDiv;
 
