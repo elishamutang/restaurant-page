@@ -56,6 +56,7 @@ export default function homePage() {
     mainContainer.append(history().signatureMerchandise());
     mainContainer.append(slider(4, [sambalRojak, malaPanMee, soupPanMee, tehTarik], 4, 'sliderTwo'));
     mainContainer.append(history().outlets());
+    mainContainer.append(footerSect());
 }
 
 
@@ -511,5 +512,25 @@ function videoDiv() {
     }
 
     return videoSection;
+
+}
+
+function footerSect() {
+
+    // Footer section
+    const footerSection = document.createElement('footer');
+    
+    // Generate 3 divs inside footer section.
+    for(let i=0; i < 3; i++) {
+
+        const footerDiv = document.createElement('div');
+        footerDiv.id = `footerDiv${i+1}`;
+        footerDiv.className = 'footer';
+
+        footerSection.append(footerDiv);
+
+    }
+
+    return footerSection;
 
 }
