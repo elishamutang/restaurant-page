@@ -563,6 +563,7 @@ function footerSect() {
         for(let linkTag=0; linkTag < 2; linkTag++) {
 
             const footerLink = document.createElement('a');
+            footerLink.target = '_blank';
 
             if(linkTag == 0) {
                 footerLink.textContent = 'Facebook';
