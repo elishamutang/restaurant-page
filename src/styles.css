@@ -59,7 +59,7 @@ body {
         "image3"
         "history4"
         "slider2"
-        "title3"
+        "outlet"
         "footer"
     ;
 }
@@ -340,7 +340,7 @@ body {
 }
 
 #outletDiv {
-    grid-area: title3;
+    grid-area: outlet;
 }
 
 
@@ -427,10 +427,10 @@ body {
 
     #mainContainer {
         grid-template-columns: 1fr;
-        grid-template-rows: 200px repeat(16, auto);
+        grid-template-rows: 200px repeat(15, auto);
         grid-template-areas: 
             "header"
-            "slider"
+            "slider1"
             "oldMan"
             "history1"
             "image1"
@@ -443,8 +443,8 @@ body {
             "history3"
             "image3"
             "history4"
-            "title2"
-            "title3"
+            "slider2"
+            "outlet"
             "footer"
         ;
     }
@@ -517,11 +517,11 @@ footer {
     align-items: center;
 }
 
-
 #footerDiv1 {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    justify-content: center;
+    gap: 15px;
     margin-left: 40px;
 }
 
@@ -531,4 +531,17 @@ footer {
 
 #footerLogoDiv > img {
     width: 100%;
+}
+
+#footerChildDiv2 {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly
+}
+
+#footerChildDiv2 > a {
+    text-decoration: none;
+    color: var(--content);
+    font-weight: bold;
+    font-size: 18px;
 }
