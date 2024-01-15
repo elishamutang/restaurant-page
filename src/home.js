@@ -54,7 +54,7 @@ export default function homePage() {
     mainContainer.append(randomHeaderImage('thirdHeader', randomHeaderImg3));
     mainContainer.append(history().signatureMerchandise());
     mainContainer.append(slider(4, [sambalRojak, malaPanMee, soupPanMee, tehTarik], 4, 'sliderTwo'));
-
+    mainContainer.append(history().outlets());
 }
 
 
@@ -85,6 +85,7 @@ function linkImgs(numOfImgs, imageData, numOfDivs, divID, divClass) {
     for(let i=0; i < numOfDivs; i++) {
 
         const imageDiv = document.createElement('div');
+        imageDiv.className = divClass;
 
         if(divID === '') {
             imageDiv.removeAttribute('id');
@@ -95,8 +96,6 @@ function linkImgs(numOfImgs, imageData, numOfDivs, divID, divClass) {
         if(numOfDivs == 1) {
 
             imageDiv.id = divID;
-            
-            imageDiv.className = divClass;
 
             for(let j=0; j < numOfImgs; j++) {
 
@@ -289,7 +288,7 @@ function history() {
         // Signature section
         const signatureSect = document.createElement('div');
         signatureSect.id = 'signatureSect';
-        signatureSect.className = 'historySection';
+        signatureSect.className = 'historySection non-img';
 
         // Header container
         const signatureHeader = document.createElement('div');
@@ -336,12 +335,44 @@ function history() {
         return signatureSect;
     }
 
+    function outlets() {
+
+        // Outlet section
+        const outletDiv = document.createElement('div');
+        outletDiv.id = 'outletDiv';
+        outletDiv.className = 'historySection non-img';
+
+        // Header div
+        const outletHeader = document.createElement('div');
+        outletHeader.id = 'outletHeader';
+
+        const outletTitle = document.createElement('h1');
+        outletTitle.textContent = 'Outlets';
+        outletTitle.className = 'headerTitle';
+
+        const imageData = [headingFlower, headingFlower];
+
+        // Link imgs
+        const images = linkImgs(2, imageData, 2, 'outletDivs', 'headerDivs');
+
+        console.log(images);
+
+        outletHeader.append(images[0]);
+        outletHeader.append(outletTitle);
+        outletHeader.append(images[1]);
+        outletDiv.append(outletHeader);
+
+        return outletDiv;
+
+    }
+
 
     return {
         huayangDiv,
         historySection,
         handmadeBread,
-        signatureMerchandise
+        signatureMerchandise,
+        outlets
     };
 
 }
