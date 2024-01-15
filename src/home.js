@@ -28,6 +28,7 @@ import sambalRojak from "./assets/sambal-rojak.jpg";
 import soupPanMee from "./assets/soup-pan-mee.jpg";
 import tehTarik from "./assets/teh-tarik.jpg";
 import branchImg from "./assets/branch.jpg";
+import footerLogo from "./assets/footer-logo.png";
 
 
 
@@ -519,7 +520,7 @@ function footerSect() {
 
     // Footer section
     const footerSection = document.createElement('footer');
-    
+
     // Generate 3 divs inside footer section.
     for(let i=0; i < 3; i++) {
 
@@ -527,9 +528,55 @@ function footerSect() {
         footerDiv.id = `footerDiv${i+1}`;
         footerDiv.className = 'footer';
 
+        if(i==0) {
+            for(let j=0; j < 2; j++) {
+
+                const footerChildDivs = document.createElement('div');
+                footerChildDivs.id = `footerChildDiv${j+1}`;
+                footerChildDivs.className = 'footerChildDivs';
+
+                footerDiv.append(footerChildDivs);
+
+            }
+            
+        }
+
         footerSection.append(footerDiv);
 
     }
+
+    // Footer logo
+    const footerLogoDiv = linkImgs(1, [footerLogo], 1, 'footerLogoDiv', '');
+
+    // Potential solution to target footer child divs
+    document.addEventListener('DOMContentLoaded', () => {
+
+        // Footer child div one.
+        const footerChildDivOne = document.querySelector('#footerChildDiv1');
+
+        // Append to footer child div one.
+        footerChildDivOne.append(footerLogoDiv[0]);
+
+        // Footer child div two (oriental kopi links)
+        const footerChildDivTwo = document.querySelector('#footerChildDiv2');
+        
+        for(let linkTag=0; linkTag < 2; linkTag++) {
+
+            const footerLink = document.createElement('a');
+
+            if(linkTag == 0) {
+                footerLink.textContent = 'Facebook';
+                footerLink.href = 'https://www.facebook.com/orientalkopi';
+            } else {
+                footerLink.textContent = 'Instagram';
+                footerLink.href = 'https://www.instagram.com/orientalkopi.asia/';
+            }
+
+            footerChildDivTwo.append(footerLink);
+
+        }
+
+    })
 
     return footerSection;
 
