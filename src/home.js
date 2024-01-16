@@ -522,7 +522,7 @@ function footerSect() {
     const footerSection = document.createElement('footer');
 
     // Generate 3 divs inside footer section.
-    for(let i=0; i < 3; i++) {
+    for(let i=0; i < 2; i++) {
 
         const footerDiv = document.createElement('div');
         footerDiv.id = `footerDiv${i+1}`;
@@ -548,7 +548,7 @@ function footerSect() {
     // Footer logo
     const footerLogoDiv = linkImgs(1, [footerLogo], 1, 'footerLogoDiv', '');
 
-    // Potential solution to target footer child divs
+    // Wait until DOM is parsed and loaded, and then target footer child divs.
     document.addEventListener('DOMContentLoaded', () => {
 
         // Footer child div one.
