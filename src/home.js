@@ -29,6 +29,7 @@ import soupPanMee from "./assets/soup-pan-mee.jpg";
 import tehTarik from "./assets/teh-tarik.jpg";
 import branchImg from "./assets/branch.jpg";
 import footerLogo from "./assets/footer-logo.png";
+import githubLogo from "./assets/github-mark-white.svg";
 
 
 
@@ -550,13 +551,15 @@ function footerSect() {
     document.addEventListener('DOMContentLoaded', () => {
 
         // Target first child of #footerDiv1
-        const footerChildDivOne = document.querySelector('#footerDiv1 > div:first-child');
+        const footerDivOneChildOne = document.querySelector('#footerDiv1 > div:first-child');
+        footerDivOneChildOne.id = 'footerDivOneChildOne';
 
         // Append to first child div.
-        footerChildDivOne.append(footerLogoDiv[0]);
+        footerDivOneChildOne.append(footerLogoDiv[0]);
 
         // Target second (or last) child of #footerDiv2 - (oriental kopi links)
-        const footerChildDivTwo = document.querySelector('#footerDiv1 > div:last-child');
+        const footerDivOneChildTwo = document.querySelector('#footerDiv1 > div:last-child');
+        footerDivOneChildTwo.id = 'footerDivOneChildTwo';
         
         for(let linkTag=0; linkTag < 2; linkTag++) {
 
@@ -571,11 +574,26 @@ function footerSect() {
                 footerLink.href = 'https://www.instagram.com/orientalkopi.asia/';
             }
 
-            footerChildDivTwo.append(footerLink);
+            footerDivOneChildTwo.append(footerLink);
 
         }
 
-        // #footerDiv2
+        // Target first child of #footerDiv2 element.
+        const footerDivTwoChildOne = document.querySelector('#footerDiv2 > div:first-child');
+        footerDivTwoChildOne.id = 'footerDivTwoChildOne';
+
+        footerDivTwoChildOne.textContent = 'Created by elishamutang';
+
+        // Target second child of #footerDiv2 element.
+        const footerDivTwoChildTwo = document.querySelector('#footerDiv2 > div:last-child');
+        footerDivTwoChildTwo.id = 'footerDivTwoChildTwo';
+
+        // Create link to GitHub profile
+        const githubLink = document.createElement('a');
+        githubLink.href = 'https://github.com/elishamutang';
+        githubLink.target = '_blank';
+        githubLink.innerHTML = `<img src=${githubLogo}>`;
+        footerDivTwoChildTwo.append(githubLink);
 
     })
 
