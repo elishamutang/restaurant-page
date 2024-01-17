@@ -514,7 +514,7 @@ footer {
     background-color: var(--header);
 
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
 }
 
 .footer > div {
@@ -525,6 +525,7 @@ footer {
     display: flex;
     align-items: center;
     gap: 2rem;
+    margin-left: 2em;
 }
 
 #footerLogoDiv > img {
@@ -548,12 +549,19 @@ footer {
     font-weight: bold;
     font-size: 1.5em;
     flex: 0;
+
+    transition: transform 0.3s;
+}
+
+#footerDivOneChildTwo > a:hover {
+    transform: scale(1.1);
 }
 
 #footerDiv2 {
     display: flex;
     align-items: center;
     gap: 1em;
+    margin-right: 2em;
 }
 
 #footerDivTwoChildOne {
@@ -564,7 +572,11 @@ footer {
     white-space: nowrap;
 }
 
-#footerDivTwoChildTwo > a,
 #footerDivTwoChildTwo > a > img {
-    width: 30%;
+    width: 2em;
+    transition: all 0.3s;
+}
+
+#footerDivTwoChildTwo > a > img:hover {
+    transform: rotate(360deg) scale(1.2);
 }
