@@ -549,13 +549,13 @@ function footerSect() {
     // Wait until DOM is parsed and loaded, and then target footer children.
     document.addEventListener('DOMContentLoaded', () => {
 
-        // #footerChildDiv1
+        // Target first child of #footerDiv1
         const footerChildDivOne = document.querySelector('#footerDiv1 > div:first-child');
 
         // Append to first child div.
         footerChildDivOne.append(footerLogoDiv[0]);
 
-        // #footerChildDiv2 (oriental kopi links)
+        // Target second (or last) child of #footerDiv2 - (oriental kopi links)
         const footerChildDivTwo = document.querySelector('#footerDiv1 > div:last-child');
         
         for(let linkTag=0; linkTag < 2; linkTag++) {
