@@ -537,13 +537,13 @@ footer > div {
     width: 100%;
 }
 
-#footerChildDiv2 {
+#footerDiv1 > div:last-child {
     width: 100%;
     display: flex;
     justify-content: space-evenly
 }
 
-#footerChildDiv2 > a {
+#footerDiv1 > div:last-child > a {
     text-decoration: none;
     color: var(--content);
     font-weight: bold;

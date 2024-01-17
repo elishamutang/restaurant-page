@@ -521,25 +521,23 @@ function footerSect() {
     // Footer section
     const footerSection = document.createElement('footer');
 
-    // Generate 3 divs inside footer section.
+    // Generate 2 divs inside footer section.
     for(let i=0; i < 2; i++) {
 
         const footerDiv = document.createElement('div');
         footerDiv.id = `footerDiv${i+1}`;
         footerDiv.className = 'footer';
 
-        if(i==0) {
-            for(let j=0; j < 2; j++) {
+        
+        for(let j=0; j < 2; j++) {
 
-                const footerChildDivs = document.createElement('div');
-                footerChildDivs.id = `footerChildDiv${j+1}`;
-                footerChildDivs.className = 'footerChildDivs';
+            const footerChildDivs = document.createElement('div');
+            footerChildDivs.className = 'footerChildDivs';
 
-                footerDiv.append(footerChildDivs);
+            footerDiv.append(footerChildDivs);
 
-            }
-            
         }
+            
 
         footerSection.append(footerDiv);
 
@@ -548,17 +546,17 @@ function footerSect() {
     // Footer logo
     const footerLogoDiv = linkImgs(1, [footerLogo], 1, 'footerLogoDiv', '');
 
-    // Wait until DOM is parsed and loaded, and then target footer child divs.
+    // Wait until DOM is parsed and loaded, and then target footer children.
     document.addEventListener('DOMContentLoaded', () => {
 
-        // Footer child div one.
-        const footerChildDivOne = document.querySelector('#footerChildDiv1');
+        // #footerChildDiv1
+        const footerChildDivOne = document.querySelector('#footerDiv1 > div:first-child');
 
-        // Append to footer child div one.
+        // Append to first child div.
         footerChildDivOne.append(footerLogoDiv[0]);
 
-        // Footer child div two (oriental kopi links)
-        const footerChildDivTwo = document.querySelector('#footerChildDiv2');
+        // #footerChildDiv2 (oriental kopi links)
+        const footerChildDivTwo = document.querySelector('#footerDiv1 > div:last-child');
         
         for(let linkTag=0; linkTag < 2; linkTag++) {
 
@@ -576,6 +574,8 @@ function footerSect() {
             footerChildDivTwo.append(footerLink);
 
         }
+
+        // #footerDiv2
 
     })
 
