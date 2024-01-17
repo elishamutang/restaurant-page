@@ -510,42 +510,61 @@ body {
 footer {
     grid-area: footer;
     width: 100%;
-    height: 40vh;
+    height: 20vh;
     background-color: var(--header);
 
     display: flex;
-    align-items: center;
+    justify-content: space-evenly;
 }
 
-footer > div {
-    height: 100%;
+.footer > div {
+    width: 100%;
 }
 
 #footerDiv1 {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 15px;
-    margin-left: 40px;
-}
-
-#footerLogoDiv {
-    width: 300px;
+    align-items: center;
+    gap: 2rem;
 }
 
 #footerLogoDiv > img {
     width: 100%;
 }
 
-#footerDiv1 > div:last-child {
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly
+#footerDivOneChildOne {
+    width: 30%;
 }
 
-#footerDiv1 > div:last-child > a {
+#footerDivOneChildTwo {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2rem;
+}
+
+#footerDivOneChildTwo > a {
     text-decoration: none;
     color: var(--content);
     font-weight: bold;
-    font-size: 18px;
+    font-size: 1.5em;
+    flex: 0;
+}
+
+#footerDiv2 {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+#footerDivTwoChildOne {
+    color: var(--content);
+    font-weight: bold;
+    font-size: 1.2em;
+    flex: 0;
+    white-space: nowrap;
+}
+
+#footerDivTwoChildTwo > a,
+#footerDivTwoChildTwo > a > img {
+    width: 30%;
 }
