@@ -1,14 +1,13 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Declare CSS variables */
 :root {
     --header: #3c5b46;
     --content: #f6f6e8;
     --tabBar: rgb(212, 39, 39);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 html, body {
