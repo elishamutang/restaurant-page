@@ -216,15 +216,15 @@ body {
 }
 
 #sliderTwo > div > img {
-    width: 100%;
+    width: 26%;
     height: auto;
 }
 
-/* #sliderTwo > div {
-    animation: sliderTwo 3s infinite;
-} */
+#sliderTwo > div {
+    animation: sliderTwo 10s linear infinite;
+}
 
-/* @keyframes sliderTwo {
+@keyframes sliderTwo {
     0% {
         transform: translateX(100%);
     }
@@ -233,7 +233,7 @@ body {
         transform: translateX(0);
     }
 
-} */
+}
 
 /* Old image div */
 #oldImg {
