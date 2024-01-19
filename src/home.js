@@ -57,6 +57,7 @@ export default function homePage() {
     mainContainer.append(randomHeaderImage('thirdHeader', randomHeaderImg3));
     mainContainer.append(history().signatureMerchandise());
     mainContainer.append(slider(4, [sambalRojak, malaPanMee, soupPanMee, tehTarik], 1, 'sliderTwo'));
+    mainContainer.append(productSlider());
     mainContainer.append(history().outlets());
     mainContainer.append(footerSect());
 }
@@ -85,6 +86,15 @@ function slider(numOfImgs, imageData, numOfDivs, sliderID) {
 function productSlider() {
 
     const products = [sambalRojak, malaPanMee, soupPanMee, tehTarik];
+
+    const sliderTwo = document.querySelector('#sliderTwo');
+    const secondSet = linkImgs(4, products, 1, '', 'wrapper');
+
+    secondSet.forEach((img) => {
+        sliderTwo.append(img);
+    })
+
+    return sliderTwo;
 
 }
 
