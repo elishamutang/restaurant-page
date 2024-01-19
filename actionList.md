@@ -1,7 +1,7 @@
 # Action List
 
 ## Complete home.js file:
-1. Fix 'slider2'.
+1. ~~Fix 'slider2'.~~
 
 ## Complete other tabs:
 1. Menu
