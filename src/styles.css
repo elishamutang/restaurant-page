@@ -204,19 +204,21 @@ body {
 #sliderTwo {
     width: 100%;
     display: flex;
-    gap: 0.5rem;
+    justify-content: space-evenly;
     overflow: hidden;
 
-    border: 2px solid red;
+    /* border: 2px solid red; */
 }
 
 #sliderTwo > div {
     display: flex;
     gap: 0.5rem;
+
+    border: 2px solid red;
 }
 
 #sliderTwo > div > img {
-    width: 26%;
+    width: 30%;
     height: auto;
 }
 
@@ -230,7 +232,7 @@ body {
     }
 
     100% {
-        transform: translateX(0);
+        transform: translateX(-100%);
     }
 
 }
