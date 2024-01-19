@@ -56,7 +56,7 @@ export default function homePage() {
     mainContainer.append(history().handmadeBread());
     mainContainer.append(randomHeaderImage('thirdHeader', randomHeaderImg3));
     mainContainer.append(history().signatureMerchandise());
-    productSlider();
+    mainContainer.append(slider(4, [sambalRojak, malaPanMee, soupPanMee, tehTarik], 1, 'sliderTwo'));
     mainContainer.append(history().outlets());
     mainContainer.append(footerSect());
 }
@@ -85,19 +85,6 @@ function slider(numOfImgs, imageData, numOfDivs, sliderID) {
 function productSlider() {
 
     const products = [sambalRojak, malaPanMee, soupPanMee, tehTarik];
-
-    // sliderTwo container
-    const sliderTwo = document.createElement('div');
-    sliderTwo.id = 'sliderTwo';
-
-    // Create image carousels;
-    const carouselOne = slider(4, products, 4, 'carouselOne');
-    const carouselTwo = slider(4, products, 4, 'carouselTwo');
-
-    sliderTwo.append(carouselOne);
-    sliderTwo.append(carouselTwo);
-
-    mainContainer.append(sliderTwo);
 
 }
 
