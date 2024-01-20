@@ -19,6 +19,11 @@ body {
     background-color: var(--content);
 }
 
+a {
+    text-decoration: none;
+    color: var(--content);
+}
+
 /* Make each section max-width: 100%*/
 #mainContainer > div {
     max-width: 100%;
@@ -555,8 +560,6 @@ footer {
 }
 
 #footerDivOneChildTwo > a {
-    text-decoration: none;
-    color: var(--content);
     font-weight: bold;
     font-size: 1.5rem;
     flex: 0;
