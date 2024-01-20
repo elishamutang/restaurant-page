@@ -1,8 +1,8 @@
 // This module is the main module containing of the tab switching logic.
 
 import styles from './styles.css';
-import { header, tabDiv } from './header.js';
-import { menuBarDivs } from './menuBar.js';
+import header from './header.js';
+import navBar from './menuBar.js';
 import homePage from './home.js';
 
 // Code below will need to be re-factored
@@ -11,12 +11,10 @@ import homePage from './home.js';
 export const mainContainer = document.querySelector('#mainContainer');
 
 // Append different sections to main web page.
-mainContainer.append(header);
+header();
 
-// Append menu bar items to menu bar.
-menuBarDivs.forEach((div) => {
-    tabDiv.append(div);
-})
+// Menu bar
+navBar();
 
 // Initial home page load-up
 homePage();
