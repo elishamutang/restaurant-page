@@ -30,8 +30,22 @@ const loadDOM = (function DOMHandler() {
 })();
 
 // Tab switching logic
-function tabSwitch() {
+function tabSwitch(e) {
     
-    console.log('test');
+    // Target nav bar elements
+    let navBarElems = e.target.textContent;
+
+    switch(navBarElems) {
+
+        case 'Home':
+            mainContainer.innerHTML = '';
+            header();
+            navBar();
+            homePage();
+            break;
+
+        case 'Menu':
+            console.log(`You clicked ${navBarElems}`);
+    }
 
 }
