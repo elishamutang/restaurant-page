@@ -2,7 +2,7 @@
 
 import styles from './styles.css';
 import header from './header.js';
-import navBar from './menuBar.js';
+import navBar from './navBar.js';
 import homePage from './home.js';
 
 // Target main container div
@@ -28,5 +28,6 @@ const loadDOM = (function DOMHandler() {
 // Tab switching logic
 function tabSwitch() {
     
+
 
 }
