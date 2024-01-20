@@ -5,16 +5,28 @@ import header from './header.js';
 import navBar from './menuBar.js';
 import homePage from './home.js';
 
-// Code below will need to be re-factored
-
 // Target main container div
 export const mainContainer = document.querySelector('#mainContainer');
 
 // Append different sections to main web page.
-header();
 
-// Menu bar
-navBar();
+// Load DOM
+const loadDOM = (function DOMHandler() {
 
-// Initial home page load-up
-homePage();
+    // Load header and navBar.
+    header();
+    navBar();
+    
+    // Initial load-up shows homepage.
+    homePage();
+
+    // Add event listener to navBar elements.
+    const headerLinks = document.querySelectorAll('div .menu-item');
+
+})();
+
+// Tab switching logic
+function tabSwitch() {
+    
+
+}
