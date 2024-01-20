@@ -1,4 +1,6 @@
 // Menu bar for webpage.
+import test from "./test";
+
 export default function navBar() {
 
     const menuBarItems = ['Home', 'Menu', 'Products', 'Outlets'];
@@ -16,7 +18,7 @@ export default function navBar() {
 
         if(menuBarItems[i] == 'Home') {
             itemLink.target = '_blank';
-            itemLink.href = 'https://www.google.com/'; // Testing links
+            itemLink.href = test; // Testing links
             menuBarDivs[i].append(itemLink);
         }
 

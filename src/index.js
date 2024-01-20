@@ -23,11 +23,15 @@ const loadDOM = (function DOMHandler() {
     // Add event listener to navBar elements.
     const headerLinks = document.querySelectorAll('div .menu-item');
 
+    headerLinks.forEach((link) => {
+        link.addEventListener('click', tabSwitch);
+    })
+
 })();
 
 // Tab switching logic
 function tabSwitch() {
     
-
+    console.log('test');
 
 }
