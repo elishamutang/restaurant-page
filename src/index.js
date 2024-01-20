@@ -11,7 +11,7 @@ export const mainContainer = document.querySelector('#mainContainer');
 // Append different sections to main web page.
 
 // Load DOM
-const loadDOM = (function DOMHandler() {
+(function DOMHandler() {
 
     // Load header and navBar.
     header();
@@ -34,18 +34,26 @@ function tabSwitch(e) {
     
     // Target nav bar elements
     let navBarElems = e.target.textContent;
+    console.log(navBarElems);
+
+    // Clear content
+    const pageContent = Array.from(document.querySelectorAll('#mainContainer > div, footer'));
+    pageContent.splice(0, 1);
+
+    pageContent.forEach((div) => {
+        // Remove each div except for header from the DOM.
+        div.remove();
+    })
 
     switch(navBarElems) {
 
         case 'Home':
-            mainContainer.innerHTML = '';
-            header();
-            navBar();
             homePage();
             break;
 
         case 'Menu':
             console.log(`You clicked ${navBarElems}`);
+            break;
     }
 
 }
