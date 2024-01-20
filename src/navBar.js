@@ -16,7 +16,7 @@ export default function navBar() {
 
         if(menuBarItems[i] == 'Home') {
             itemLink.target = '_blank';
-            itemLink.href = 'https://www.google.com/';
+            itemLink.href = 'https://www.google.com/'; // Testing links
             menuBarDivs[i].append(itemLink);
         }
 
