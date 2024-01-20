@@ -12,7 +12,6 @@ export const mainContainer = document.querySelector('#mainContainer');
 
 // Append different sections to main web page.
 mainContainer.append(header);
-// mainContainer.append(pictureDiv);
 
 // Append menu bar items to menu bar.
 menuBarDivs.forEach((div) => {
