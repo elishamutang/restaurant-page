@@ -16,6 +16,13 @@ export default function menuPage() {
     menuImgDiv.append(menuImgTag);
     mainContainer.append(menuImgDiv);
     
+    // Append signature menu section.
+    mainContainer.append(signatureSect());
+
+}
+
+function signatureSect() {
+
     // Signature menu section
     const signatureMenu = document.createElement('div');
     signatureMenu.id = 'signatureMenu';
@@ -50,6 +57,7 @@ export default function menuPage() {
     lastFlowerDiv.insertAdjacentElement('beforebegin', signatureTitle);
 
     signatureMenu.append(signatureHeader);
-    mainContainer.append(signatureMenu);
+
+    return signatureMenu;
 
 }
