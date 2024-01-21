@@ -5,6 +5,7 @@ import header from './header.js';
 import navBar from './navBar.js';
 import homePage from './home.js';
 import menuPage from './menu.js';
+import footerSect from './footer';
 
 // Target main container div
 export const mainContainer = document.querySelector('#mainContainer');
@@ -21,6 +22,9 @@ mainContainer.className = 'home';
     
     // Initial load-up shows homepage.
     homePage();
+
+    // Footer section
+    footerSect();
 
     // Add event listener to navBar elements.
     const headerLinks = document.querySelectorAll('div .menu-item');
@@ -39,7 +43,7 @@ function tabSwitch(e) {
     console.log(navBarElems);
 
     // Clear content
-    const pageContent = Array.from(document.querySelectorAll('#mainContainer > div'));
+    const pageContent = Array.from(document.querySelectorAll('#mainContainer > div, footer'));
     pageContent.splice(0, 1);
 
     pageContent.forEach((div) => {
