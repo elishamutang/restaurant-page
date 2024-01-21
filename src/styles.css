@@ -95,7 +95,7 @@ a {
         "toast rojak kopi cendol"
     ;
     column-gap: 20px;
-    row-gap: 50px;
+    row-gap: 40px;
 }
 
 .foodItems {
@@ -104,6 +104,7 @@ a {
 
 .foodItems > img {
     width: 100%;
+    border-radius: 10px;
 }
 
 /* Header div */
