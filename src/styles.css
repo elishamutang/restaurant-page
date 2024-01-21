@@ -76,6 +76,34 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    gap: 40px;
+}
+
+#foodContainer {
+    display: grid;
+    padding: 0 100px;
+    margin-bottom: 100px;
+    width: 100%;
+
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+        "nasiL rendangChicken meeSiam horFun"
+        "kueyTeow laksaMee nanyang chickenRice"
+        "malayFriedRice prawnFriedRice eggTart poloBun"
+        "toast rojak kopi cendol"
+    ;
+    column-gap: 20px;
+    row-gap: 50px;
+}
+
+.foodItems {
+    width: fit-content;
+}
+
+.foodItems > img {
+    width: 100%;
 }
 
 /* Header div */
