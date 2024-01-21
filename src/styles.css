@@ -62,11 +62,20 @@ a {
 
 .menu {
     grid-template-columns: 1fr;
-    grid-template-rows: 150px 700px auto;
+    grid-template-rows: 150px repeat(3, auto);
     grid-template-areas: 
         "header"
         "slider1"
+        "signatureMenu"
+        "footer"
     ;
+}
+
+#signatureMenu {
+    grid-area: signatureMenu;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Header div */
@@ -321,7 +330,7 @@ a {
     grid-area: history3;
 }
 
-.historySection.non-img > div:first-child {
+.non-img > div:first-child {
     width: 100%;
     margin-top: 30px;
 
