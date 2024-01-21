@@ -97,8 +97,11 @@ function menuItems() {
     foodContainer.id = 'foodContainer';
 
     foodItems.forEach((item) => {
-        console.log(item);
         foodContainer.append(item);
+
+        item.addEventListener('mouseover', () => {
+            console.log('hover');
+        })
     })
 
     return foodContainer;
