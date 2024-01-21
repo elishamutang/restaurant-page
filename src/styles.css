@@ -60,6 +60,15 @@ a {
     ;
 }
 
+.menu {
+    grid-template-columns: 1fr;
+    grid-template-rows: 150px 700px auto;
+    grid-template-areas: 
+        "header"
+        "slider1"
+    ;
+}
+
 /* Header div */
 #header {
     background-color: var(--header);
