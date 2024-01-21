@@ -8,6 +8,7 @@ import menuPage from './menu.js';
 
 // Target main container div
 export const mainContainer = document.querySelector('#mainContainer');
+mainContainer.className = 'home';
 
 // Append different sections to main web page.
 
@@ -49,11 +50,12 @@ function tabSwitch(e) {
     switch(navBarElems) {
 
         case 'Home':
+            mainContainer.className = 'home';
             homePage();
             break;
 
         case 'Menu':
-            console.log(`You clicked ${navBarElems}`);
+            mainContainer.className = 'menu';
             menuPage();
             break;
     }
