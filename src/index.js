@@ -4,6 +4,7 @@ import styles from './styles.css';
 import header from './header.js';
 import navBar from './navBar.js';
 import homePage from './home.js';
+import menuPage from './menu.js';
 
 // Target main container div
 export const mainContainer = document.querySelector('#mainContainer');
@@ -37,7 +38,7 @@ function tabSwitch(e) {
     console.log(navBarElems);
 
     // Clear content
-    const pageContent = Array.from(document.querySelectorAll('#mainContainer > div, footer'));
+    const pageContent = Array.from(document.querySelectorAll('#mainContainer > div'));
     pageContent.splice(0, 1);
 
     pageContent.forEach((div) => {
@@ -53,6 +54,7 @@ function tabSwitch(e) {
 
         case 'Menu':
             console.log(`You clicked ${navBarElems}`);
+            menuPage();
             break;
     }
 
