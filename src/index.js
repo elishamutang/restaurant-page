@@ -56,11 +56,13 @@ function tabSwitch(e) {
         case 'Home':
             mainContainer.className = 'home';
             homePage();
+            footerSect();
             break;
 
         case 'Menu':
             mainContainer.className = 'menu';
             menuPage();
+            footerSect();
             break;
     }
 
