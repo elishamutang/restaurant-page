@@ -315,7 +315,7 @@ function history() {
 
         // Header container
         const signatureHeader = document.createElement('div');
-        signatureHeader.id = 'signatureHeader';
+        signatureHeader.className = 'signatureHeader';
         
         const headerTitle = document.createElement('h1');
         headerTitle.textContent = 'Signature Merchandise';
@@ -367,7 +367,7 @@ function history() {
 
         // Header div
         const outletHeader = document.createElement('div');
-        outletHeader.id = 'outletHeader';
+        outletHeader.id = 'outletHeader non-img';
 
         const outletTitle = document.createElement('h1');
         outletTitle.textContent = 'Outlets';
