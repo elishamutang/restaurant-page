@@ -11,7 +11,6 @@ import footerSect from './footer';
 export const mainContainer = document.querySelector('#mainContainer');
 mainContainer.className = 'home';
 
-// Append different sections to main web page.
 
 // Load DOM
 (function DOMHandler() {
@@ -40,7 +39,6 @@ function tabSwitch(e) {
     
     // Target nav bar elements
     let navBarElems = e.target.textContent;
-    console.log(navBarElems);
 
     // Clear content
     const pageContent = Array.from(document.querySelectorAll('#mainContainer > div, footer'));
@@ -56,14 +54,14 @@ function tabSwitch(e) {
         case 'Home':
             mainContainer.className = 'home';
             homePage();
-            footerSect();
             break;
 
         case 'Menu':
             mainContainer.className = 'menu';
             menuPage();
-            footerSect();
             break;
     }
+
+    footerSect();
 
 }
