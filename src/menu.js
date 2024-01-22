@@ -90,19 +90,40 @@ function menuItems() {
                         hainaneseChickenRice, malayFriedRice, prawnFriedRice, signatureEggTart, poloBun, doubleButterKayaToast,
                         rojak, orientalKopi, cendol];
 
-    // Create 4x4 container to display each food.
+    // Create container to display each food.
     const foodItems = linkImgs(foodNames.length, foodImgs, foodNames.length, 'foodItem', 'foodItems');
 
     const foodContainer = document.createElement('div');
     foodContainer.id = 'foodContainer';
 
-    foodItems.forEach((item) => {
-        foodContainer.append(item);
+    for(let i=0; i<foodItems.length; i++) {
 
-        item.addEventListener('mouseover', () => {
-            console.log('hover');
+        // Add overlay for each food item to display name.
+        const foodNameDiv = document.createElement('div');
+        foodNameDiv.className = 'foodName';
+        foodNameDiv.textContent = foodNames[i];
+
+        // Event listener for mouse over.
+
+        foodItems[i].addEventListener('mouseover', (e) => {
+            foodItems[i].insertAdjacentElement('afterbegin', foodNameDiv);
+            
+            if(e.target.className == 'foodName') {
+                e.target.className = 'foodName fade-in';
+            }
+
         })
-    })
+
+        foodItems[i].addEventListener('mouseout', (e) => {
+            if(e.target.className == 'foodName fade-in') {
+                e.target.className = 'foodName';
+            }
+
+        })
+
+        foodContainer.append(foodItems[i]);
+
+    }
 
     return foodContainer;
 
