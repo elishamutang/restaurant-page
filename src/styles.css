@@ -123,6 +123,7 @@ a {
     border-radius: inherit;
     opacity: 0;
     transition: 0.5s;
+    text-align: center;
 }
 
 .foodName.fade-in {
