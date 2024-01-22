@@ -4,7 +4,7 @@
 1. ~~Fix 'slider2'.~~
 
 ## Complete other tabs:
-1. Menu
+1. ~~Menu~~ (finished)
 2. Products
 3. ~~Egg Tarts~~ (~~this can be~~ removed)
 4. Outlets
