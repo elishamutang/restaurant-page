@@ -101,12 +101,37 @@ a {
 .foodItems {
     width: fit-content;
     border-radius: 10px;
+    position: relative;
 }
 
 .foodItems > img {
     max-width: 100%;
     display: block;
     border-radius: 10px;
+}
+
+.foodName {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: inherit;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.foodName.fade-in {
+    transition: 0.5s;
+}
+
+.foodName.fade-in:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 1;
 }
 
 /* Header div */
