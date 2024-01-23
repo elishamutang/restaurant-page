@@ -50,6 +50,8 @@ function products() {
                             ' Original Pan Mee', 'Spicy Pan Mee', 'Mala Pan Mee', 'Soup Pan Mee', 'Classic Pineapple Tart',
                             'Cheese Pineapple Tart', 'Sambal Rojak'];
 
-    
+    const productImgs = [classicWhiteCoffee, roastedWhiteCoffee, noSugarWhiteCoffee, mocha, tehTarik, dripCoffee, traditionalKaya,
+                            pandanKaya, crunchyPeanutButter, creamyPeanutButter, originalPanMee, spicyPanMee, malaPanMee,
+                            soupPanMee, classicPineappleTart, cheesePineappleTart, sambalRojak];
 
 }
