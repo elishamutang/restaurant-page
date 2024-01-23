@@ -34,24 +34,28 @@ export default function menuPage() {
     mainContainer.append(menuImgDiv);
     
     // Append signature menu section.
-    mainContainer.append(signatureSect());
+    const signatureTitle = orientalTitle('signatureMenu', 'Signature Menu');
+    
+    signatureTitle.append(menuItems());
+
+    mainContainer.append(signatureTitle);
 
 }
 
-function signatureSect() {
+export function orientalTitle(sectionID, title) {
 
     // Signature menu section
-    const signatureMenu = document.createElement('div');
-    signatureMenu.id = 'signatureMenu';
-    signatureMenu.className = 'non-img';
+    const sectionDiv = document.createElement('div');
+    sectionDiv.id = sectionID;
+    sectionDiv.className = 'non-img';
 
     // Signature menu heading
-    const signatureHeader = document.createElement('div');
-    signatureHeader.className = 'signatureHeader';
+    const titleDiv = document.createElement('div');
+    titleDiv.className = 'signatureHeader';
 
-    const signatureTitle = document.createElement('h1');
-    signatureTitle.textContent = 'Signature Menu';
-    signatureTitle.className = 'headerTitle';
+    const titleText = document.createElement('h1');
+    titleText.textContent = title;
+    titleText.className = 'headerTitle';
 
     const flowerDivs = [];
 
@@ -66,17 +70,16 @@ function signatureSect() {
         flowerImgDiv.append(flowerImg);
 
         flowerDivs.push(flowerImgDiv);
-        signatureHeader.append(flowerImgDiv);
+        titleDiv.append(flowerImgDiv);
 
     }
 
     const lastFlowerDiv = flowerDivs[1];
-    lastFlowerDiv.insertAdjacentElement('beforebegin', signatureTitle);
+    lastFlowerDiv.insertAdjacentElement('beforebegin', titleText);
 
-    signatureMenu.append(signatureHeader);
-    signatureMenu.append(menuItems());
+    sectionDiv.append(titleDiv);
 
-    return signatureMenu;
+    return sectionDiv;
 
 }
 
