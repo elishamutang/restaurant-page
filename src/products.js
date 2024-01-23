@@ -1,5 +1,4 @@
 // Products page
-
 import productHeader from "./assets/products_header.jpg";
 import classicWhiteCoffee from "./assets/classic-white-coffee.jpg";
 import roastedWhiteCoffee from "./assets/roasted-white-coffee.jpg";
