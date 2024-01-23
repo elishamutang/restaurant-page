@@ -12,4 +12,5 @@
 
 Some items above can be removed to expedite the completion of this project.
 
+### Incorporate a buffer(?) js file to load all the imports for header and menu js file.
 ### After completing each tab, fix responsiveness.
