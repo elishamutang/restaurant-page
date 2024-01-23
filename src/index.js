@@ -6,6 +6,7 @@ import navBar from './navBar.js';
 import homePage from './home.js';
 import menuPage from './menu.js';
 import footerSect from './footer';
+import productPage from './products';
 
 // Target main container div
 export const mainContainer = document.querySelector('#mainContainer');
@@ -59,6 +60,11 @@ function tabSwitch(e) {
         case 'Menu':
             mainContainer.className = 'menu';
             menuPage();
+            break;
+
+        case 'Products':
+            mainContainer.className = 'products';
+            productPage();
             break;
     }
 
