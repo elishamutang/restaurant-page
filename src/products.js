@@ -46,17 +46,16 @@ export default function productPage() {
 
 function products() {
 
-    const productNames = ['Classic White Coffee', 'Roasted White Coffee', 'No Sugar Added White Coffee', 'Mocha', 'Teh Tarik',
-                            'Drip Coffee', 'Traditional Kaya', 'Pandan Kaya', 'Crunchy Peanut Butter', 'Creamy Peanut Butter',
-                            ' Original Pan Mee', 'Spicy Pan Mee', 'Mala Pan Mee', 'Soup Pan Mee', 'Classic Pineapple Tart',
-                            'Cheese Pineapple Tart', 'Sambal Rojak'];
+    const allProducts = productObject();
 
-    const productImgs = [classicWhiteCoffee, roastedWhiteCoffee, noSugarWhiteCoffee, mocha, tehTarik, dripCoffee, traditionalKaya,
-                            pandanKaya, crunchyPeanutButter, creamyPeanutButter, originalPanMee, spicyPanMee, malaPanMee,
-                            soupPanMee, classicPineappleTart, cheesePineappleTart, sambalRojak];
+    const productImgs = [];
+    
+    for(let idx in allProducts) {
+        productImgs.push(allProducts[idx].img);
+    }
 
     // Allocate each image into its own div.
-    const productItems = linkImgs(productImgs.length, productImgs, productImgs.length, 'productItem', 'productItems');
+    const productItems = linkImgs(allProducts.length, productImgs, allProducts.length, 'productItem', 'productItems');
 
     const productContainer = document.createElement('div');
     productContainer.id = 'productContainer';
@@ -66,7 +65,7 @@ function products() {
         // Add overlay for each food item to display name.
         const productNameDiv = document.createElement('div');
         productNameDiv.className = 'productName';
-        productNameDiv.textContent = productNames[i];
+        productNameDiv.textContent = allProducts[i].name;
 
         // Event listener for mouse over.
 
@@ -91,5 +90,98 @@ function products() {
     }
 
     return productContainer;
+
+}
+
+function productObject() {
+
+    return [
+        {
+            name: 'Classic White Coffee',
+            img: classicWhiteCoffee,
+            price: 'RM18.90'
+        },
+        {
+            name: 'Roasted White Coffee',
+            img: roastedWhiteCoffee,
+            price: 'RM21.90'
+        },
+        {
+            name: 'No Sugar Added White Coffee',
+            img: noSugarWhiteCoffee,
+            price: 'RM21.90'
+        },
+        {
+            name: 'Mocha',
+            img: mocha,
+            price: 'RM23.90'
+        },
+        {
+            name: 'Teh Tarik',
+            img: tehTarik,
+            price: 'RM18.90'
+        },
+        {
+            name: 'Drip Coffee',
+            img: dripCoffee,
+            price: 'RM28.90'
+        },
+        {
+            name: 'Traditional Kaya',
+            img: traditionalKaya,
+            price: 'RM8.90'
+        },
+        {
+            name: 'Pandan Kaya',
+            img: pandanKaya,
+            price: 'RM8.90'
+        },
+        {
+            name: 'Crunchy Peanut Butter',
+            img: crunchyPeanutButter,
+            price: 'RM14.90'
+        },
+        {
+            name: 'Creamy Peanut Butter',
+            img: creamyPeanutButter,
+            price: 'RM14.90'
+        },
+        {
+            name: 'Original Pan Mee',
+            img: originalPanMee,
+            price: 'RM4.90'
+        },
+        {
+            name: 'Spicy Pan Mee',
+            img: spicyPanMee,
+            price: 'RM5.90'
+        },
+        {
+            name: 'Mala Pan Mee',
+            img: malaPanMee,
+            price: 'RM6.90'
+        },
+        {
+            name: 'Soup Pan Mee',
+            img: soupPanMee,
+            price: 'RM5.90'
+        },
+        {
+            name: 'Classic Pineapple Tart',
+            img: classicPineappleTart,
+            price: 'RM39.00'
+        },
+        {
+            name: 'Cheese Pineapple Tart',
+            img: cheesePineappleTart,
+            price: 'RM46.00'
+        },
+        {
+            name: 'Sambal Rojak',
+            img: sambalRojak,
+            price: 'RM13.90'
+        }
+
+    ];
 
 }
