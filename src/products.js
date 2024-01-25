@@ -46,8 +46,10 @@ export default function productPage() {
 
 function products() {
 
+    // All products object
     const allProducts = productObject();
 
+    // Store product imgs
     const productImgs = [];
     
     for(let idx in allProducts) {
