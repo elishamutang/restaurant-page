@@ -156,13 +156,11 @@ a {
     text-align: center;
 }
 
-.foodName.fade-in,
-.productName.fade-in {
+.fade-in {
     transition: 0.5s;
 }
 
-.foodName.fade-in:hover,
-.productName.fade-in:hover {
+.fade-in:hover {
     background-color: rgba(0, 0, 0, 0.5);
     opacity: 1;
 }
