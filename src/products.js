@@ -64,10 +64,10 @@ function products() {
 
     for(let i=0; i<productItems.length; i++) {
 
-        // Add overlay for each food item to display name.
+        // Add overlay for each product to display product name.
         const productNameDiv = document.createElement('div');
         productNameDiv.className = 'productName';
-        productNameDiv.textContent = allProducts[i].name;
+        productNameDiv.innerHTML = `${allProducts[i].name}<br>${allProducts[i].price}`;
 
         // Event listener for mouse over.
 
@@ -84,7 +84,6 @@ function products() {
             if(e.target.className == 'productName fade-in') {
                 e.target.className = 'productName';
             }
-
         })
 
         productContainer.append(productItems[i]);
