@@ -19,6 +19,7 @@ import cheesePineappleTart from "./assets/cheese-pineapple-tart.jpg";
 import sambalRojak from "./assets/sambal-rojak-product.jpg";
 import { orientalTitle } from "./menu.js";
 import { mainContainer } from "./index.js";
+import { linkImgs } from "./home";
 
 
 export default function productPage() {
@@ -36,7 +37,8 @@ export default function productPage() {
 
     // Product title
     const productTitle = orientalTitle('productSection', 'All Products');
-    console.log(productTitle);
+
+    productTitle.append(products());
 
     mainContainer.append(productTitle);
 
@@ -52,5 +54,42 @@ function products() {
     const productImgs = [classicWhiteCoffee, roastedWhiteCoffee, noSugarWhiteCoffee, mocha, tehTarik, dripCoffee, traditionalKaya,
                             pandanKaya, crunchyPeanutButter, creamyPeanutButter, originalPanMee, spicyPanMee, malaPanMee,
                             soupPanMee, classicPineappleTart, cheesePineappleTart, sambalRojak];
+
+    // Allocate each image into its own div.
+    const productItems = linkImgs(productImgs.length, productImgs, productImgs.length, 'productItem', 'productItems');
+
+    const productContainer = document.createElement('div');
+    productContainer.id = 'productContainer';
+
+    for(let i=0; i<productItems.length; i++) {
+
+        // Add overlay for each food item to display name.
+        const productNameDiv = document.createElement('div');
+        productNameDiv.className = 'productName';
+        productNameDiv.textContent = productNames[i];
+
+        // Event listener for mouse over.
+
+        productItems[i].addEventListener('mouseover', (e) => {
+            productItems[i].insertAdjacentElement('afterbegin', productNameDiv);
+            
+            if(e.target.className == 'productName') {
+                e.target.className = 'productName fade-in';
+            }
+
+        })
+
+        productItems[i].addEventListener('mouseout', (e) => {
+            if(e.target.className == 'productName fade-in') {
+                e.target.className = 'productName';
+            }
+
+        })
+
+        productContainer.append(productItems[i]);
+
+    }
+
+    return productContainer;
 
 }
