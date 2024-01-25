@@ -71,8 +71,24 @@ a {
     ;
 }
 
+.products {
+    grid-template-areas:
+        "header"
+        "slider1"
+        "productSection"
+        "footer"
+    ;
+}
+
 #signatureMenu {
     grid-area: signatureMenu;
+}
+
+#productSection {
+    grid-area: productSection;
+}
+
+#signatureMenu, #productSection {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -80,7 +96,7 @@ a {
     gap: 40px;
 }
 
-#foodContainer {
+#foodContainer, #productContainer {
     display: grid;
     padding: 0 100px;
     margin-bottom: 100px;
@@ -98,19 +114,32 @@ a {
     row-gap: 40px;
 }
 
-.foodItems {
+#productContainer {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: 
+        "CWC RWC NSAWC Mocha"
+        "TehTarik DripCoffee Kaya PandanKaya"
+        "CrunchyPB CreamyPB PanMee SpicyPanMee"
+        "MalaPanMee SoupPanMee ClassicPT CheesePT"
+        "SambalRojak . . . "
+    ;
+}
+
+.foodItems, .productItems {
     width: fit-content;
     border-radius: 10px;
     position: relative;
 }
 
-.foodItems > img {
+.foodItems > img,
+.productItems > img {
     max-width: 100%;
     display: block;
     border-radius: 10px;
 }
 
-.foodName {
+.foodName, .productName {
     position: absolute;
     height: 100%;
     width: 100%;
@@ -127,11 +156,13 @@ a {
     text-align: center;
 }
 
-.foodName.fade-in {
+.foodName.fade-in,
+.productName.fade-in {
     transition: 0.5s;
 }
 
-.foodName.fade-in:hover {
+.foodName.fade-in:hover,
+.productName.fade-in:hover {
     background-color: rgba(0, 0, 0, 0.5);
     opacity: 1;
 }
