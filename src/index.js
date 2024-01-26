@@ -7,6 +7,7 @@ import homePage from './home.js';
 import menuPage from './menu.js';
 import footerSect from './footer';
 import productPage from './products';
+import outletPage from './outlets';
 
 // Target main container div
 export const mainContainer = document.querySelector('#mainContainer');
@@ -72,6 +73,11 @@ function tabSwitch(e) {
         case 'Products':
             mainContainer.className = 'products';
             productPage();
+            break;
+
+        case 'Outlets':
+            mainContainer.className = 'outlets';
+            outletPage();
             break;
     }
 
