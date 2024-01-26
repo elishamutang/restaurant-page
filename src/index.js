@@ -26,12 +26,15 @@ mainContainer.className = 'home';
     // Footer section
     footerSect();
 
-    // Add event listener to navBar elements.
+    // Add event listener to navBar elements and page title/company name.
     const headerLinks = document.querySelectorAll('div .menu-item');
 
     headerLinks.forEach((link) => {
         link.addEventListener('click', tabSwitch);
     })
+
+    const titleLink = document.querySelector('#companyName');
+    titleLink.addEventListener('click', tabSwitch);
 
 })();
 
@@ -39,7 +42,7 @@ mainContainer.className = 'home';
 function tabSwitch(e) {
     
     // Target nav bar elements
-    let navBarElems = e.target.textContent;
+    let linkElems = e.target.textContent;
 
     // Clear content
     const pageContent = Array.from(document.querySelectorAll('#mainContainer > div, footer'));
@@ -53,9 +56,10 @@ function tabSwitch(e) {
     // Re-directs user to top of page when switching between pages.
     window.scrollTo(0,0);
 
-    switch(navBarElems) {
+    switch(linkElems) {
 
         case 'Home':
+        case 'Oriental Kopi':
             mainContainer.className = 'home';
             homePage();
             break;
