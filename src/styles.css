@@ -60,7 +60,7 @@ a {
     ;
 }
 
-.menu, .products {
+.menu, .products, .outlets {
     grid-template-columns: 1fr;
     grid-template-rows: 150px repeat(3, auto);
     grid-template-areas: 
@@ -76,6 +76,15 @@ a {
         "header"
         "slider1"
         "productSection"
+        "footer"
+    ;
+}
+
+.outlets {
+    grid-template-areas: 
+        "header"
+        "slider1"
+        "outletSection"
         "footer"
     ;
 }
