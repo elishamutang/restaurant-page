@@ -1,12 +1,26 @@
-import orientalImg from './assets/oriental_picture.jpeg';
+// Outlets page.
+import orientalImg from './assets/oriental_picture.jpg';
+import { mainContainer } from './index.js';
+import { orientalTitle } from './menu.js';
 
-// Oriental kopi picture
-export const pictureDiv = document.createElement('div');
-pictureDiv.id = 'picture';
+export default function outletPage() {
 
-const image = document.createElement('img');
-image.src = orientalImg;
+    // Header image
+    const outletHeaderDiv = document.createElement('div');
+    outletHeaderDiv.id = 'outletHeader';
+    outletHeaderDiv.className = 'headerImg';
 
-pictureDiv.append(image);
+    const outletHeaderImg = document.createElement('img');
+    outletHeaderImg.src = orientalImg;
 
-// Branch address section
+    outletHeaderDiv.append(outletHeaderImg);
+    mainContainer.append(outletHeaderDiv);
+
+    // Outlet title
+    const outletTitle = orientalTitle('outletSection', 'Our Outlets');
+
+    // outletTitle.append(products());
+
+    mainContainer.append(outletTitle);
+
+}
