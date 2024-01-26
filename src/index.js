@@ -50,6 +50,9 @@ function tabSwitch(e) {
         div.remove();
     })
 
+    // Re-directs user to top of page when switching between pages.
+    window.scrollTo(0,0);
+
     switch(navBarElems) {
 
         case 'Home':
