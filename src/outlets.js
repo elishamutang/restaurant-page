@@ -47,16 +47,18 @@ function outletSect() {
     const outletContainer = document.createElement('div');
     outletContainer.id = 'outletContainer';
 
+    // KL Selangor Area
     const KLSelangorArea = document.createElement('div');
     KLSelangorArea.id = 'KLSelangorArea';
 
+    // Johor Area
     const johorSect = document.createElement('div');
     johorSect.id = 'johorSect';
 
     outletContainer.append(KLSelangorArea);
     outletContainer.append(johorSect);
 
-    // Outlet images
+    // Extract outlet images from outletInfo().
     const KLSelangorImgs = [];
 
     for(let i = 0; i < outletInfos.kualaLumpurSelangor.length; i++) {
