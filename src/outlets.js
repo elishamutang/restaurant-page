@@ -33,7 +33,7 @@ export default function outletPage() {
     // Outlet title
     const outletTitle = orientalTitle('outletSection', 'Our Outlets');
 
-    // mainContainer.append(outletSect());
+    outletTitle.append(outletSect());
 
     mainContainer.append(outletTitle);
 
@@ -68,6 +68,36 @@ function outletSect() {
     // Add mall images behind each outlet div and make it overlay like menu and product pages.
     const KLSelangorImgDivs = linkImgs(KLSelangorImgs.length, KLSelangorImgs, KLSelangorImgs.length, 'outlet', 'outletClass');
 
+    // KL Selangor Area
+    for(let i=0; i<KLSelangorImgDivs.length; i++) {
+
+        // Add overlay for each product to display product name.
+        const outletNameDiv = document.createElement('div');
+        outletNameDiv.className = 'outletName';
+        outletNameDiv.innerHTML = `${outletInfos.kualaLumpurSelangor[i].name}`;
+
+        // Event listener for mouse over.
+
+        KLSelangorImgDivs[i].addEventListener('mouseover', (e) => {
+            KLSelangorImgDivs[i].insertAdjacentElement('afterbegin', outletNameDiv);
+            
+            if(e.target.className == 'outletName') {
+                e.target.className = 'outletName fade-in';
+            }
+
+        })
+
+        KLSelangorImgDivs[i].addEventListener('mouseout', (e) => {
+            if(e.target.className == 'outletName fade-in') {
+                e.target.className = 'outletName';
+            }
+        })
+
+        KLSelangorArea.append(KLSelangorImgDivs[i]);
+
+    }
+
+    return outletContainer;
 
 }
 
