@@ -108,7 +108,7 @@ a {
 #outletSection > .signatureHeader > h1,
 #productSection > .signatureHeader > h1,
 #signatureMenu > .signatureHeader > h1 {
-    border-bottom: 2px solid var(--header);
+    border-bottom: 0.1em solid var(--header);
 }
 
 #foodContainer, #productContainer {
