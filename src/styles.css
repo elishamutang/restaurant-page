@@ -138,12 +138,18 @@ a {
 #outletContainer {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: repeat(2, auto);
+    grid-template-areas: 
+        "KLSelangor"
+        "Johor"
+    ;
     justify-items: center;
     align-items: center;
+    margin-bottom: 10%;
+    row-gap: 5%;
 }
 
-#KLSelangorArea {
+#KLSelangorArea, #johorSect {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     column-gap: 0.8rem;
@@ -151,6 +157,25 @@ a {
 
     margin-left: 10%;
     margin-right: 10%;
+}
+
+#KLSelangorArea {
+    grid-template-areas: 
+        "midValley pavillionKL TRX"
+        "klcc sunwayPyramid pavillionBJ"
+        "klia2Arrival klia2Departure Puchong"
+    ;
+}
+
+#johorSect {
+    grid-template-areas: 
+        "midvalleyJB jbcitysquare aeonTebrau"
+        ". johorJaya ."
+    ;
+}
+
+#Johor-Outlet4 {
+    grid-area: johorJaya;
 }
 
 .foodItems, .productItems, .outletClass {
@@ -177,11 +202,11 @@ a {
     width: 100%;
     color: white;
     cursor: pointer;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-weight: bold;
     padding-left: 1rem;
     padding-right: 1rem;
-    line-height: 2.5rem;
+    line-height: 1.2em;
 
     display: flex;
     justify-content: center;
@@ -629,6 +654,10 @@ a {
     #footerDivOneChildTwo {
         gap: 0.5rem !important;
         flex-direction: column;
+    }
+
+    .foodName, .productName, .outletName {
+        font-size: 1rem;
     }
 
 }
