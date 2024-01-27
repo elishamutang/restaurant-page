@@ -37,13 +37,10 @@ mainContainer.className = 'home';
     const titleLink = document.querySelector('#companyName');
     titleLink.addEventListener('click', tabSwitch);
 
-    const outletsBtn = document.querySelector('#outletLink');
-    outletsBtn.addEventListener('click', tabSwitch);
-
 })();
 
 // Tab switching logic
-function tabSwitch(e) {
+export function tabSwitch(e) {
     
     // Target nav bar elements
     let linkElems = e.target.textContent;

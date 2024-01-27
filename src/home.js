@@ -29,6 +29,7 @@ import soupPanMee from "./assets/soup-pan-mee.jpg";
 import tehTarik from "./assets/teh-tarik.jpg";
 import branchImg from "./assets/branch.jpg";
 import { orientalTitle } from "./menu.js";
+import { tabSwitch } from "./index.js";
 
 
 
@@ -353,6 +354,8 @@ function history() {
         outletLink.id = 'outletLink';
         outletLink.textContent = 'Our Outlets';
 
+        // Event listener to outlets page.
+        outletLink.addEventListener('click', tabSwitch);
 
         outletDiv.append(outletHeader);
         outletDiv.append(contentImg[0]);
