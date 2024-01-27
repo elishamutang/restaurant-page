@@ -37,6 +37,9 @@ mainContainer.className = 'home';
     const titleLink = document.querySelector('#companyName');
     titleLink.addEventListener('click', tabSwitch);
 
+    const outletsBtn = document.querySelector('#outletLink');
+    outletsBtn.addEventListener('click', tabSwitch);
+
 })();
 
 // Tab switching logic
@@ -44,6 +47,7 @@ function tabSwitch(e) {
     
     // Target nav bar elements
     let linkElems = e.target.textContent;
+    console.log(linkElems);
 
     // Clear content
     const pageContent = Array.from(document.querySelectorAll('#mainContainer > div, footer'));
@@ -76,6 +80,7 @@ function tabSwitch(e) {
             break;
 
         case 'Outlets':
+        case 'Our Outlets':
             mainContainer.className = 'outlets';
             outletPage();
             break;
