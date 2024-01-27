@@ -97,7 +97,7 @@ a {
     grid-area: productSection;
 }
 
-#signatureMenu, #productSection {
+#signatureMenu, #productSection, #outletSection {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -135,20 +135,43 @@ a {
     ;
 }
 
-.foodItems, .productItems {
+#outletContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+}
+
+#KLSelangorArea {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 0.8rem;
+    row-gap: 0.8rem;
+
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.foodItems, .productItems, .outletClass {
     width: fit-content;
     border-radius: 10px;
     position: relative;
 }
 
 .foodItems > img,
-.productItems > img {
+.productItems > img,
+.outletClass > img {
     max-width: 100%;
     display: block;
     border-radius: 10px;
 }
 
-.foodName, .productName {
+.outletClass > img {
+    min-height: 100%;
+}
+
+.foodName, .productName, .outletName {
     position: absolute;
     height: 100%;
     width: 100%;
