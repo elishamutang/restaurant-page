@@ -28,6 +28,7 @@ import sambalRojak from "./assets/sambal-rojak.jpg";
 import soupPanMee from "./assets/soup-pan-mee.jpg";
 import tehTarik from "./assets/teh-tarik.jpg";
 import branchImg from "./assets/branch.jpg";
+import { orientalTitle } from "./menu.js";
 
 
 
@@ -193,15 +194,7 @@ function history() {
     historySection.id = 'historySection';
     historySection.className = 'historySection';
 
-    const historySectionTitle = document.createElement('div');
-    historySectionTitle.id = 'historySectionTitle';
-    historySectionTitle.className = 'historySectionTitle';
-
-    const historySectionTitleImg = document.createElement('img');
-    historySectionTitleImg.src = historySectionHeader;
-    historySectionTitleImg.className = 'historyHeader';
-
-    historySectionTitle.append(historySectionTitleImg);
+    const historySectionTitle = orientalTitle('historySectionTitle', 'Brand Story');
 
     const historySectionWords = document.createElement('div');
     historySectionWords.id = 'historySectionWords';
@@ -235,15 +228,7 @@ function history() {
         huayangClassic.id = 'huayangClassic';
         huayangClassic.className = 'historySection';
 
-        const huayangTitleDiv = document.createElement('div');
-        huayangTitleDiv.id = 'huayangTitleDiv';
-        huayangTitleDiv.className = 'historySectionTitle';
-    
-        const huayangHeader = document.createElement('img');
-        huayangHeader.src = huayangClassicHeader;
-        huayangHeader.className = 'historyHeader';
-
-        huayangTitleDiv.append(huayangHeader);
+        const huayangTitleDiv = orientalTitle('huayangTitleDiv', 'Malaysian Local Cuisine');
     
         const huayangWords = document.createElement('div');
         huayangWords.id = 'huayangWords';
@@ -276,15 +261,7 @@ function history() {
         handmadeBreadDiv.id = 'handmadeBreadDiv';
         handmadeBreadDiv.className = 'historySection';
 
-        const handmadeBreadHeader = document.createElement('div');
-        handmadeBreadHeader.id = 'handmadeBreadHeader';
-        handmadeBreadHeader.className = 'historySectionTitle';
-
-        const handmadeBreadImg = document.createElement('img');
-        handmadeBreadImg.src = handmadeBreadPic;
-        handmadeBreadImg.className = 'historyHeader';
-
-        handmadeBreadHeader.append(handmadeBreadImg);
+        const handmadeBreadHeader = orientalTitle('handmadeBreadHeader', 'Homemade Traditional Toast');
 
         const handmadeBreadWords = document.createElement('div');
         handmadeBreadWords.id = 'handmadeBreadWords';
