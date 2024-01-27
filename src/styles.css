@@ -105,6 +105,12 @@ a {
     gap: 40px;
 }
 
+#outletSection > .signatureHeader > h1,
+#productSection > .signatureHeader > h1,
+#signatureMenu > .signatureHeader > h1 {
+    border-bottom: 2px solid var(--header);
+}
+
 #foodContainer, #productContainer {
     display: grid;
     padding: 0 100px;
@@ -186,9 +192,14 @@ a {
 
 #KLSelangorTitle, #johorTitle {
     color: var(--header);
-    font-size: 3em;
-    font-weight: bold;
+    font-size: 0.8em;
     justify-self: center;
+    /* border-bottom: 2px solid var(--header); */
+}
+
+#KLSelangorTitle > .signatureHeader,
+#johorTitle > .signatureHeader {
+    margin: 0;
 }
 
 #Johor-Outlet4 {
@@ -607,7 +618,7 @@ a {
     color: var(--header);
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 1000px) {
 
     .home {
         grid-template-columns: 100%;
@@ -678,7 +689,7 @@ a {
     }
 
     #KLSelangorTitle, #johorTitle {
-        font-size: 2em;
+        font-size: 0.5em;
     }
 
 }
