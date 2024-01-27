@@ -74,7 +74,9 @@ function outletSect() {
         // Add overlay for each product to display product name.
         const outletNameDiv = document.createElement('div');
         outletNameDiv.className = 'outletName';
-        outletNameDiv.innerHTML = `${outletInfos.kualaLumpurSelangor[i].name}`;
+        outletNameDiv.innerHTML = `${outletInfos.kualaLumpurSelangor[i].name}<br>
+                                    ${outletInfos.kualaLumpurSelangor[i].time}<br>
+                                    ${outletInfos.kualaLumpurSelangor[i].location}`;
 
         // Event listener for mouse over.
 
@@ -130,7 +132,7 @@ function outletInfo() {
         },
         {
             name: 'Sunway Pyramid',
-            time: ['Mon-Fri: 9am - 10pm', 'Sat-Sun: 8am - 10pm'],
+            time: ['Mon-Fri: 9am - 10pm', '<br> Sat-Sun: 8am - 10pm'],
             location: 'Blue Atrium, Lot G1.108 & 109, Ground Floor',
             img: sunwayPyramid
         },
