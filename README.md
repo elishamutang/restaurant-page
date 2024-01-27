@@ -8,14 +8,5 @@ The project mainly emphasizes on the application of NPM, webpack and building th
 
 - Since the page is incomplete, run `npm run dev` to have a look at the website.
 
-
-## Note-to-self
-
-- In dist folder, place images in a separate folder for clealiness.
-
-### Future Improvements
-
-- Use 2 columns instead of just 1, for accessibility purposes.
-
-### Link to website reference
+# Link to website reference
 - `https://www.orientalkopi.asia/`
