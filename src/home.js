@@ -343,27 +343,20 @@ function history() {
         outletDiv.className = 'historySection non-img';
 
         // Header div
-        const outletHeader = document.createElement('div');
-        outletHeader.id = 'outletHeader non-img';
-
-        const outletTitle = document.createElement('h1');
-        outletTitle.textContent = 'Outlets';
-        outletTitle.className = 'headerTitle';
-
-        const imageData = [headingFlower, headingFlower];
-
-        // Link imgs
-        const images = linkImgs(2, imageData, 2, 'outletDivs', 'headerDivs');
+        const outletHeader = orientalTitle('outletHeader non-img', 'Outlets');
 
         // Content div (image only);
         const contentImg = linkImgs(1, [branchImg], 1, 'outlet', 'headerImg');
 
+        // Outlet link
+        const outletLink  = document.createElement('button');
+        outletLink.id = 'outletLink';
+        outletLink.textContent = 'Our Outlets';
 
-        outletHeader.append(images[0]);
-        outletHeader.append(outletTitle);
-        outletHeader.append(images[1]);
+
         outletDiv.append(outletHeader);
         outletDiv.append(contentImg[0]);
+        outletDiv.append(outletLink);
 
         return outletDiv;
 
