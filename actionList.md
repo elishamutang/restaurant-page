@@ -7,7 +7,7 @@
 1. ~~Menu~~ (finished)
 2. ~~Products~~ (finished)
 3. ~~Egg Tarts~~ (~~this can be~~ removed)
-4. Outlets
+4. ~~Outlets~~ (finished)
 5. ~~Contact Us~~ (~~maybe this can we~~ removed)
 
 Some items above can be removed to expedite the completion of this project.
