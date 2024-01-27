@@ -91,21 +91,18 @@ function outletSect() {
     })
 
     // Area titles
-    const KLSelangorTitle = document.createElement('div');
-    KLSelangorTitle.id = 'KLSelangorTitle';
-    KLSelangorTitle.textContent = 'KL & Selangor Area';
+    const KLSelangorTitle = orientalTitle('KLSelangorTitle', 'Kuala Lumpur & Selangor Area');
 
     KLSelangorArea.insertAdjacentElement('afterbegin', KLSelangorTitle);
 
-    const johorTitle = document.createElement('div');
-    johorTitle.id = 'johorTitle';
-    johorTitle.textContent = 'Johor Area';
+    const johorTitle = orientalTitle('johorTitle', 'Johor Area');
 
     johorSect.insertAdjacentElement('afterbegin', johorTitle);
 
     return outletContainer;
 
 }
+
 
 function generateOverlay(imgDiv, outlet) {
 
