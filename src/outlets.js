@@ -63,25 +63,54 @@ function outletSect() {
 
     for(let i = 0; i < outletInfos.kualaLumpurSelangor.length; i++) {
         KLSelangorImgs.push(outletInfos.kualaLumpurSelangor[i].img);
+    };
+
+    const johorImgs = [];
+
+    for(let j = 0; j < outletInfos.johorArea.length; j++) {
+        johorImgs.push(outletInfos.johorArea[j].img);
     }
 
     // Add mall images behind each outlet div and make it overlay like menu and product pages.
-    const KLSelangorImgDivs = linkImgs(KLSelangorImgs.length, KLSelangorImgs, KLSelangorImgs.length, 'outlet', 'outletClass');
+    const KLSelangorImgDivs = linkImgs(KLSelangorImgs.length, KLSelangorImgs, KLSelangorImgs.length, 'KL-Selangor-Outlet', 'outletClass');
 
-    // KL Selangor Area
-    for(let i=0; i<KLSelangorImgDivs.length; i++) {
+    // KL Selangor Area.
+    const KLSelangorImgDivResult = generateOverlay(KLSelangorImgDivs, outletInfos.kualaLumpurSelangor);
+
+    KLSelangorImgDivResult.forEach((outlet) => {
+        KLSelangorArea.append(outlet);
+    })
+
+    // Johor Area.
+    const johorImgDivs = linkImgs(johorImgs.length, johorImgs, johorImgs.length, 'Johor-Outlet', 'outletClass');
+
+    const johorImgDivResult = generateOverlay(johorImgDivs, outletInfos.johorArea);
+
+    johorImgDivResult.forEach((outlet) => {
+        johorSect.append(outlet);
+    })
+
+    return outletContainer;
+
+}
+
+function generateOverlay(imgDiv, outlet) {
+
+    const resultDiv = [];
+
+    for(let i=0; i<imgDiv.length; i++) {
 
         // Add overlay for each product to display product name.
         const outletNameDiv = document.createElement('div');
         outletNameDiv.className = 'outletName';
-        outletNameDiv.innerHTML = `${outletInfos.kualaLumpurSelangor[i].name}<br>
-                                    ${outletInfos.kualaLumpurSelangor[i].time}<br>
-                                    ${outletInfos.kualaLumpurSelangor[i].location}`;
+        outletNameDiv.innerHTML = `${outlet[i].name}<br>
+                                    ${outlet[i].time}<br>
+                                    ${outlet[i].location}`;
 
         // Event listener for mouse over.
 
-        KLSelangorImgDivs[i].addEventListener('mouseover', (e) => {
-            KLSelangorImgDivs[i].insertAdjacentElement('afterbegin', outletNameDiv);
+        imgDiv[i].addEventListener('mouseover', (e) => {
+            imgDiv[i].insertAdjacentElement('afterbegin', outletNameDiv);
             
             if(e.target.className == 'outletName') {
                 e.target.className = 'outletName fade-in';
@@ -89,19 +118,20 @@ function outletSect() {
 
         })
 
-        KLSelangorImgDivs[i].addEventListener('mouseout', (e) => {
+        imgDiv[i].addEventListener('mouseout', (e) => {
             if(e.target.className == 'outletName fade-in') {
                 e.target.className = 'outletName';
             }
         })
 
-        KLSelangorArea.append(KLSelangorImgDivs[i]);
+        resultDiv.push(imgDiv[i]);
 
     }
 
-    return outletContainer;
+    return resultDiv;
 
 }
+
 
 function outletInfo() {
 
