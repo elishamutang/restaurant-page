@@ -15,4 +15,4 @@ Some items above can be removed to expedite the completion of this project.
 ## To Do:
 1. Incorporate a buffer(?) js file to load all the imports for header and menu js file.
 2. After completing each tab, fix responsiveness.
-3. Fix home page titles, some in english, some in mandarin. Make it uniform/consistent.
+3. ~~Fix home page titles, some in english, some in mandarin. Make it uniform/consistent.~~
