@@ -1,7 +1,7 @@
 :root {
-    --header: #3c5b46;
+    --header: #456d52;
     --content: #f6f6e8;
-    --tabBar: rgb(212, 39, 39);
+    --tabBar: rgb(200, 40, 40);
 }
 
 * {
