@@ -1486,7 +1486,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _assets_teh_tarik_jpg__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./assets/teh-tarik.jpg */ "./src/assets/teh-tarik.jpg");
 /* harmony import */ var _assets_branch_jpg__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./assets/branch.jpg */ "./src/assets/branch.jpg");
 /* harmony import */ var _menu_js__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./menu.js */ "./src/menu.js");
+/* harmony import */ var _footer_js__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./footer.js */ "./src/footer.js");
 // Homepage (or initial load-up page)
+
 
 
 
@@ -1547,6 +1549,8 @@ function homePage() {
     _index_js__WEBPACK_IMPORTED_MODULE_0__.mainContainer.append(slider(4, [_assets_sambal_rojak_jpg__WEBPACK_IMPORTED_MODULE_25__, _assets_mala_pan_mee_jpg__WEBPACK_IMPORTED_MODULE_24__, _assets_soup_pan_mee_jpg__WEBPACK_IMPORTED_MODULE_26__, _assets_teh_tarik_jpg__WEBPACK_IMPORTED_MODULE_27__], 1, 'sliderTwo'));
     _index_js__WEBPACK_IMPORTED_MODULE_0__.mainContainer.append(productSlider());
     _index_js__WEBPACK_IMPORTED_MODULE_0__.mainContainer.append(history().outlets());
+    
+    (0,_footer_js__WEBPACK_IMPORTED_MODULE_30__["default"])();
 }
 
 
@@ -2039,9 +2043,6 @@ mainContainer.className = 'home';
     // Initial load-up shows homepage.
     (0,_home_js__WEBPACK_IMPORTED_MODULE_3__["default"])();
 
-    // Footer section
-    (0,_footer__WEBPACK_IMPORTED_MODULE_5__["default"])();
-
     // Add event listener to navBar elements and page title/company name.
     const headerLinks = document.querySelectorAll('div .menu-item');
 
@@ -2098,8 +2099,6 @@ function tabSwitch(e) {
             break;
     }
 
-    (0,_footer__WEBPACK_IMPORTED_MODULE_5__["default"])();
-
 }
 
 /***/ }),
@@ -2135,7 +2134,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _assets_rojak_jpg__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./assets/rojak.jpg */ "./src/assets/rojak.jpg");
 /* harmony import */ var _assets_oriental_kopi_jpg__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./assets/oriental-kopi.jpg */ "./src/assets/oriental-kopi.jpg");
 /* harmony import */ var _assets_cendol_jpg__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./assets/cendol.jpg */ "./src/assets/cendol.jpg");
+/* harmony import */ var _footer_js__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./footer.js */ "./src/footer.js");
 // Menu page
+
 
 
 
@@ -2176,6 +2177,8 @@ function menuPage() {
     signatureTitle.append(menuItems());
 
     _index_js__WEBPACK_IMPORTED_MODULE_0__.mainContainer.append(signatureTitle);
+
+    (0,_footer_js__WEBPACK_IMPORTED_MODULE_20__["default"])();
 
 }
 
@@ -2335,7 +2338,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _index_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./index.js */ "./src/index.js");
 /* harmony import */ var _menu_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./menu.js */ "./src/menu.js");
 /* harmony import */ var _home_js__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./home.js */ "./src/home.js");
+/* harmony import */ var _footer__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./footer */ "./src/footer.js");
 // Outlets page.
+
 
 
 
@@ -2373,6 +2378,8 @@ function outletPage() {
     outletTitle.append(outletSect());
 
     _index_js__WEBPACK_IMPORTED_MODULE_13__.mainContainer.append(outletTitle);
+
+    (0,_footer__WEBPACK_IMPORTED_MODULE_16__["default"])();
 
 }
 
@@ -2607,7 +2614,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _menu_js__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./menu.js */ "./src/menu.js");
 /* harmony import */ var _index_js__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./index.js */ "./src/index.js");
 /* harmony import */ var _home__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./home */ "./src/home.js");
+/* harmony import */ var _footer__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./footer */ "./src/footer.js");
 // Products page
+
 
 
 
@@ -2650,6 +2659,8 @@ function productPage() {
     productTitle.append(products());
 
     _index_js__WEBPACK_IMPORTED_MODULE_19__.mainContainer.append(productTitle);
+
+    (0,_footer__WEBPACK_IMPORTED_MODULE_21__["default"])();
 
 }
 
