@@ -30,6 +30,7 @@ import tehTarik from "./assets/teh-tarik.jpg";
 import branchImg from "./assets/branch.jpg";
 import { orientalTitle } from "./menu.js";
 import { tabSwitch } from "./index.js";
+import footerSect from "./footer.js";
 
 
 
@@ -59,6 +60,8 @@ export default function homePage() {
     mainContainer.append(slider(4, [sambalRojak, malaPanMee, soupPanMee, tehTarik], 1, 'sliderTwo'));
     mainContainer.append(productSlider());
     mainContainer.append(history().outlets());
+    
+    footerSect();
 }
 
 

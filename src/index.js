@@ -24,9 +24,6 @@ mainContainer.className = 'home';
     // Initial load-up shows homepage.
     homePage();
 
-    // Footer section
-    footerSect();
-
     // Add event listener to navBar elements and page title/company name.
     const headerLinks = document.querySelectorAll('div .menu-item');
 
@@ -82,7 +79,5 @@ export function tabSwitch(e) {
             outletPage();
             break;
     }
-
-    footerSect();
 
 }

@@ -20,6 +20,7 @@ import sambalRojak from "./assets/sambal-rojak-product.jpg";
 import { orientalTitle } from "./menu.js";
 import { mainContainer } from "./index.js";
 import { linkImgs } from "./home";
+import footerSect from "./footer";
 
 
 export default function productPage() {
@@ -41,6 +42,8 @@ export default function productPage() {
     productTitle.append(products());
 
     mainContainer.append(productTitle);
+
+    footerSect();
 
 }
 

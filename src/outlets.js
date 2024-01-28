@@ -16,6 +16,7 @@ import johorJayaJB from './assets/johor_jaya_jb.jpeg';
 import { mainContainer } from './index.js';
 import { orientalTitle } from './menu.js';
 import { linkImgs } from './home.js';
+import footerSect from './footer';
 
 export default function outletPage() {
 
@@ -36,6 +37,8 @@ export default function outletPage() {
     outletTitle.append(outletSect());
 
     mainContainer.append(outletTitle);
+
+    footerSect();
 
 }
 

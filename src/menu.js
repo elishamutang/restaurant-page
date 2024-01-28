@@ -19,6 +19,7 @@ import doubleButterKayaToast from "./assets/double-butter-kaya-toast.jpg";
 import rojak from "./assets/rojak.jpg";
 import orientalKopi from "./assets/oriental-kopi.jpg";
 import cendol from "./assets/cendol.jpg";
+import footerSect from "./footer.js";
 
 export default function menuPage() {
 
@@ -39,6 +40,8 @@ export default function menuPage() {
     signatureTitle.append(menuItems());
 
     mainContainer.append(signatureTitle);
+
+    footerSect();
 
 }
 
