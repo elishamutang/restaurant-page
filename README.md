@@ -6,5 +6,7 @@ The project mainly emphasizes on the application of NPM, webpack and building th
 # Live preview at
 `https://elishamutang.github.io/restaurant-page/`
 
+Please note that this clone is not optimized for Mobile viewing yet, and hence is best to view it on the web browser such as Google Chrome.
+
 # Link to website reference
 - `https://www.orientalkopi.asia/`
